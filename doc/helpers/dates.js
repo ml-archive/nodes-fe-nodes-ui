@@ -1,4 +1,4 @@
 module.exports.currentYear = function () { 
-  d = new Date();
+  var d = new Date();
   return d.getFullYear();
 };

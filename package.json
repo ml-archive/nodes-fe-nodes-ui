@@ -36,5 +36,6 @@
   },
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  }
+  },
+  "version": "0.0.0"
 }
