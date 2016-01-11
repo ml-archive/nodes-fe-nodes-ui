@@ -1,0 +1,9 @@
+.docs--layout-topbar {
+	@include whitespace($type: padding, $side: horizontal);
+
+	@include background-color($secondary-color-darker);
+	@include font-color($secondary-color-lighter);
+
+	display: flex;
+	align-items: center;
+}

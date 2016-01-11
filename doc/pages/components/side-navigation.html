@@ -1,0 +1,63 @@
+---
+title: Side-navigation
+layout: component.html
+---
+<h1 class="docs--page-header">Side-navigation</h1>
+
+<p class="docs--page-description">
+    A core component in the nStack views, the side-navigation is designed to contain the most prominent navigation.
+    We have not yet figured out wether to have inter-feature navigation or feature-specific navigation in this component just yet!
+</p>
+
+
+<ul class="side-navigation">
+
+    <li class="side-navigation__logo">
+        <a href="#">
+            <img src="../assets/img/n-stock-logo.svg"/>
+        </a>
+    </li>
+
+    <li class="side-navigation__heading">Admin Tab</li>
+    <li class="side-navigation__item active">
+        <a href="#" data-search="">
+            <i class="fa fa-tachometer"></i>
+            Dashboard
+        </a>
+    </li>
+
+    <li class="side-navigation__item side-navigation--sub-navigation">
+        <span data-toggle="collapse" data-target="#expand1">
+            <i class="fa fa-users"></i>
+            Users
+        </span>
+        <ul id="expand1" class="side-navigation__sub-navigation collapse">
+            <li class="side-navigation__item">
+                <a href="#" data-search="">
+                    <i class="fa fa-tachometer"></i>
+                    Dashboard
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="side-navigation__heading">User</li>
+    <li class="side-navigation__item">
+        <a href="#" data-search="">
+            <i class="fa fa-tachometer"></i>
+            Dashboard
+        </a>
+    </li>
+
+    <li class="side-navigation__item side-navigation--sub-navigation">
+        <span data-toggle="collapse" data-target="#expand2">
+            <i class="fa fa-users"></i>
+            Users
+        </span>
+        <ul id="expand2" class="side-navigation__sub-navigation collapse">
+            <li class="side-navigation__item">
+                <a href="#" data-search="">Getting Started</a>
+            </li>
+        </ul>
+    </li>
+</ul>

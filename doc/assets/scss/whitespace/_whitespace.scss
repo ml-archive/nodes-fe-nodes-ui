@@ -1,0 +1,45 @@
+.docs--whitespace-example-wrapper {
+	background: tomato;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,.5) 4px, rgba(255,255,255,.5) 8px);
+	margin-bottom: 20px;
+}
+.docs--whitespace-example {
+	border: 1px solid darken(green, 5%);
+	width: 400px;
+	height: 140px;
+	margin-bottom: 20px;
+
+
+
+
+	> div {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: green;
+		box-sizing: border-box;
+	}
+}
+
+.docs--whitespace-orange .snippet,
+.docs--whitespace-green .snippet {
+	@include clearfix;
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.docs--whitespace-green .snippet {
+	background-color: green;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,.5) 4px, rgba(255,255,255,.5) 8px);
+}
+.docs--whitespace-orange .snippet {
+	background: tomato;
+	background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,.5) 4px, rgba(255,255,255,.5) 8px);
+}
+.docs--whitespace-orange .snippet [class*=margin] div,
+.docs--whitespace-green .snippet [class*=padding] div {
+	background: green;
+}

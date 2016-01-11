@@ -1,0 +1,245 @@
+---
+title: Responsive Tables
+layout: nested-component.html
+---
+<h1 class="docs--page-header">Responsive Tables</h1>
+<p class="docs--page-description">
+    Tables are not responsive by default. Both of our responsive solutions does have some implications, so we prefer that you choose to use them actively.
+</p>
+
+<h2 class="docs--section-header">
+    Horizontally scrolling tables
+</h2>
+<p class="docs--section-description">
+    Wrap a table in a <code>&lt;div&gt;</code> with <code>.table-responsive</code> and the table itself will keep it's natural width, while the wrapping div will have horizontal scrolling.
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    Username
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    Role
+                </td>
+                <td>
+                    Birthday
+                </td>
+                <td>
+                    Status
+                </td>
+                <td>
+                    Last login
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    John
+                </td>
+                <td>
+                    Doe
+                </td>
+                <td>
+                    jd
+                </td>
+                <td>
+                    john.doe@company.com
+                </td>
+                <td>
+                    Administrator
+                </td>
+                <td>
+                    21/05/1980
+                </td>
+                <td>
+                    Active
+                </td>
+                <td>
+                    19/11/2014
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    John
+                </td>
+                <td>
+                    Doe
+                </td>
+                <td>
+                    jd
+                </td>
+                <td>
+                    john.doe@company.com
+                </td>
+                <td>
+                    Administrator
+                </td>
+                <td>
+                    21/05/1980
+                </td>
+                <td>
+                    Active
+                </td>
+                <td>
+                    19/11/2014
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    John
+                </td>
+                <td>
+                    Doe
+                </td>
+                <td>
+                    jd
+                </td>
+                <td>
+                    john.doe@company.com
+                </td>
+                <td>
+                    Administrator
+                </td>
+                <td>
+                    21/05/1980
+                </td>
+                <td>
+                    Active
+                </td>
+                <td>
+                    19/11/2014
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<h2 class="docs--section-header">
+    Collapsing Whitespace tables
+</h2>
+<p class="docs--section-description">
+    Add a <code>.table-collapse</code> to the actual table to have it's paddings and fontsize shrink at small breakpoints.
+</p>
+<table class="table table-collapse">
+    <thead>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Username
+            </td>
+            <td>
+                Email
+            </td>
+            <td>
+                Role
+            </td>
+            <td>
+                Birthday
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Last login
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td>
+                19/11/2014
+            </td>
+        </tr>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td>
+                19/11/2014
+            </td>
+        </tr>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td>
+                19/11/2014
+            </td>
+        </tr>
+    </tbody>
+</table>

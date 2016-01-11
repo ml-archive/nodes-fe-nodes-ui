@@ -1,0 +1,22 @@
+# Grunt aliases
+---
+# Build everything
+build:
+  - 'clean'
+  - 'assemble'
+  - 'useminPrepare'
+  - 'sass'
+  - 'postcss'
+  - 'copy'
+  - 'concat'
+  - 'uglify'
+  - 'usemin'
+  - 'modernizr'
+# Server
+server:
+  - 'build'
+  - 'connect'
+  - 'watch'
+# Default
+default:
+  - 'server'

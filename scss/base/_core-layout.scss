@@ -1,0 +1,68 @@
+body,
+.core-layout {
+	overflow: hidden;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	max-height: 100%;
+}
+
+.core-layout__topbar {
+	@include background-color($secondary-color);
+
+	height: $core-topbar-height;
+	min-height: $core-topbar-height;
+	max-height: $core-topbar-height;
+
+}
+.core-layout__page {
+	@include layout($direction: horizontal, $wrap: false);
+	@include flex();
+	min-height: 0;
+	max-height:calc(100vh - #{$core-topbar-height});
+}
+
+.core-layout__sidebar,
+.core-layout__content {
+	margin: 0;
+}
+
+.core-layout__sidebar {
+	@include layout($direction: vertical, $wrap: false);
+	@include background-color($secondary-color-dark);
+
+	width: $core-sidebar-width;
+	min-width: $core-sidebar-width;
+	max-width: $core-sidebar-width;
+
+	.sidebar__header {
+
+	}
+	.sidebar__content {
+		@include flex($flex-grow: 1, $flex-shrink: 1);
+		min-height: 0;
+		overflow-y: auto;
+	}
+}
+
+.core-layout__content {
+	@include flex($flex-shrink: 1);
+
+	.page-content {
+		@include scrollbar($thumb-color: $secondary-color);
+	}
+}
+
+// TODO: IK HER
+
+
+// If we are shoing the enviroment messages, we must make room for shizznickle
+body.local,
+body.staging {
+
+	//.core-layout__sidebar .side-navigation,
+	//.core-layout__content .page-content > div {
+	//	padding-bottom: 40px;
+	//}
+
+}

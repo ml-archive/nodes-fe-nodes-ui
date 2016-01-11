@@ -1,0 +1,16 @@
+.alert {
+	margin: 2.0rem 0 0;
+
+	&.alert-dismissible {
+		padding: 1.0rem 3.5rem 1.0rem 1.5rem;
+
+		.close {
+			top: 0.3rem;
+			right: -2.0rem;
+		}
+	}
+
+	> .fa {
+		margin-right: 0.4rem;
+	}
+}

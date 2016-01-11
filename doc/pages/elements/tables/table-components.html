@@ -1,0 +1,206 @@
+---
+title: Table Components
+layout: nested-component.html
+---
+<h1 class="docs--page-header">Table Components</h1>
+
+<h2 class="docs--section-header">
+    Numbers and dates
+</h2>
+
+<p class="docs--page-description">
+    Numbers and dates can be hard to quickly digest using normal fonts. Use these helper classes to apply a monospaced font instead.
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                Numbers
+            </td>
+            <td>
+                Dates
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="table-data-number">
+                398.382,20
+            </td>
+            <td class="table-data-date">
+                15-01-2014
+            </td>
+        </tr>
+        <tr>
+            <td class="table-data-number">
+                398.382,20
+            </td>
+            <td class="table-data-date">
+                15-01-2014
+            </td>
+        </tr>
+        <tr>
+            <td class="table-data-number">
+                398.382,20
+            </td>
+            <td class="table-data-date">
+                15-01-2014
+            </td>
+        </tr>
+        <tr>
+            <td class="table-data-number">
+                398.382,20
+            </td>
+            <td class="table-data-date">
+                15-01-2014
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">
+    Table Subheaders
+</h2>
+
+<p class="docs--page-description">
+    Use subheaders in <code>&lt;thead&gt;</code> to connect multiple columns under one name. Just don't forget to add the appropriate colspan attributes.
+</p>
+
+<table class="table">
+    <thead>
+        <tr class="table-subheader">
+            <td colspan="3">
+                Group of columns
+            </td>
+            <td colspan="4">
+                Group of columns
+            </td>
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>Lorem</td>
+            <td>Lorem</td>
+            <td>Lorem</td>
+            <td>Lorem</td>
+            <td>Lorem</td>
+            <td>Lorem</td>
+        </tr>
+    </thead>
+</table>
+
+<h2 class="docs--section-header">
+    Table Actions
+</h2>
+
+<p class="docs--page-description">
+    We use buttons and links alot in our tables. Adding this class will help making the cell look good regardless of the amount of buttons you might decide to put in there.
+</p>
+<div class="text-info docs--panel docs--panel-info docs--panel-designers">
+    <p>
+        Table rules still apply. All other cells in the row expands along with the cell with actions.
+    </p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Username
+            </td>
+            <td>
+                Email
+            </td>
+            <td>
+                Role
+            </td>
+            <td>
+                Birthday
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td class="table-actions">
+                <button class="btn btn-sm btn-default">Action</button>
+                <button class="btn btn-sm btn-default">Action</button>
+                <button class="btn btn-sm btn-default">Action</button>
+                <button class="btn btn-sm btn-danger">Action</button>
+                <button class="btn btn-sm btn-warning">Action</button>
+                <button class="btn btn-sm btn-danger"><i class="fa fa-bus"></i></button>
+                <button class="btn btn-sm btn-warning"><i class="fa fa-search"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">
+    Table Actions
+</h2>
+
+<p class="docs--page-description">
+    We add sorting buttons automatically on our javascript backed data-tables. But if you want to sort using Laravel or something else, you can add an element to a <code>&lt;td&gt;</code> in your table header.
+    Use <code>.sorting</code> when the current column is not being sorted, <code>.sorting_asc</code> for ascending and <code>.sorting_desc</code> for descending.
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td class="sorting">
+                Sortable
+            </td>
+            <td class="sorting_asc">
+                Sortable
+            </td>
+            <td class="sorting_desc">
+                Sortable
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Not here though
+            </td>
+            <td>
+                Not here though
+            </td>
+            <td>
+                Not here though
+            </td>
+        </tr>
+    </tbody>
+</table>

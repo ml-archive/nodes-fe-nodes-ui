@@ -1,0 +1,28 @@
+.docs--collapser {
+	position: relative;
+	cursor: pointer;
+	padding-right: 20px;
+
+	&:after {
+		display: block;
+
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		margin-top: -10px;
+		right: 0;
+
+		font-family: FontAwesome;
+		content: "\f106";
+		line-height: 20px;
+		text-align: center;
+
+		transition: transform .2s;
+		transform: rotate(180deg);
+	}
+
+	&.docs--collapser--open:after {
+		transform: rotate(0deg);
+	}
+}

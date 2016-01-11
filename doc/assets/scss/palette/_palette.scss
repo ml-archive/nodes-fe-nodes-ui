@@ -1,0 +1,52 @@
+.docs--visual-example .docs--palette-list {
+	@include clearfix;
+}
+.docs--palette-list {
+	width: 100%;
+	float: left;
+	padding: 0;
+	list-style: none;
+	@media (min-width: $screen-sm-min) {
+		width: 400px;
+		margin: 10px;
+	}
+}
+
+.docs--palette {
+	position: relative;
+	padding: 20px;
+
+	&--large {
+		padding: 40px 20px;
+	}
+
+	&:after {
+		content: attr(title);
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		color: #fff;
+	}
+
+	&[class*=dark]:after {
+		color: #fff;
+	}
+	&[class*=light]:after {
+		color: #000;
+	}
+
+	> span {
+		display: block;
+		padding: 5px 0;
+	}
+
+}
+.docs--palette-title {
+	padding: 20px;
+}
+.docs--palette-opacity {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}

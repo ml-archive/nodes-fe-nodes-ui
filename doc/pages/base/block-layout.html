@@ -1,0 +1,75 @@
+---
+title: Block-layout
+layout: component.html
+---
+<style>
+    .demo ul li span {
+        display: block;
+        height: 40px;
+        background-color: #eee;
+        text-align: center;
+    }
+</style>
+<h1 class="docs--page-header">Block-layout</h1>
+
+<p class="docs--page-description">
+    Block layouts give you a way to evenly split contents of a list within the grid. If you wanted to create a row of five images or paragraphs that need to stay evenly spaced no matter the screen size, the block layout is for you.
+</p>
+
+<h2 class="docs--section-header">Items per rows</h2>
+
+<p class="docs--section-description">
+    You can change the ammount of items shown in a row on different viewport widths.
+</p>
+
+<p class="docs--section-description">
+    Note: If you want to maintain some padding between the list-items, make sure to wrap your content in some block-level element.
+</p>
+
+<table class="docs--section-guide table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.small-block-layout-[1-12]</code></td>
+            <td>for screens &lt;767px</td>
+        </tr>
+        <tr>
+            <td><code>.medium-block-layout-[1-12]</code></td>
+            <td>for screens &gt;768px & &lt;991px</td>
+        </tr>
+        <tr>
+            <td><code>.large-block-layout-[1-12]</code></td>
+            <td>for screens &gt;992px & &lt;1199px</td>
+        </tr>
+        <tr>
+            <td><code>.x-large-block-layout-[1-12]</code></td>
+            <td>for screens &gt;1200px</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+    <div class="docs--example-container demo docs--prism" data-xrayhtml><ul class="small-block-layout-3 medium-block-layout-4 large-block-layout-6 x-large-block-layout-7">
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+</ul></div>
+</div>

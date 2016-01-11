@@ -1,0 +1,584 @@
+---
+title: Dropdown basics
+layout: nested-component.html
+---
+<style>
+    .animation-demo .dropdown-content {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+</style>
+
+<h1 class="docs--page-header">Dropdown basics</h1>
+
+<h2 class="docs--section-header">
+    Dropdown types
+</h2>
+<p class="docs--section-description">
+    We have expanded on the basic Bootstrap dropdowns. A consequence of this is that the markup required can be a little more complicated, but it also makes the dropdowns alot more flexible.
+</p>
+
+<p class="docs--component-lead">
+    The classic <code>&lt;ul&gt;</code> dropdown
+</p>
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Basic
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+<p class="docs--component-lead">
+    An <code>&lt;ul&gt;</code> inside a <code>.dropdown</code> container. (Not much point in this, but it is possible.)
+</p>
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        <code>&lt;ul&gt;</code> inside a <code>.dropdown</code> container
+    </button>
+    <div class="dropdown-menu">
+        <ul>
+            <li>
+                <a href="#">
+                    Item
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Item
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Item
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Item
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<p class="docs--component-lead">
+    A content-dropdown. This is the most advanced dropdown available, and as such it varants it's own documentation! See more examples on how to use it here: <a href="{{rel 'components/dropdowns/content-dropdown.html'}}">Content-dropdowns</a>
+</p>
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Content dropdown
+    </button>
+    <div class="dropdown-menu dropdown-lg">
+        <div class="dropdown-content">
+            <article class="row">
+                <div class="col-xs-12">
+                    <h1>Lorem ipsum.</h1>
+                </div>
+                <div class="col-xs-12">
+                    <p class="lead">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="col-xs-12">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At excepturi obcaecati provident quod ut. Ad asperiores atque fugiat, harum, illo nam odio officia officiis quam quia quos reprehenderit sunt veritatis!</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<h2 class="docs--section-header">
+    Dropups
+</h2>
+<p class="docs--section-description">
+    You can have your "dropdowns" expand upwards instead of downwards!
+</p>
+<div class="dropup">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Small dropdown
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h2 class="docs--section-header">
+    Sizes
+</h2>
+<p class="docs--section-description">
+    Want wider or more narrow dropdowns? We offer two additional sizes for your dropdowns. Add <code>.dropdown-sm</code> or <code>.dropdown-lg</code> to the <code>.dropdown-menu</code>.
+</p>
+
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Small dropdown
+    </button>
+    <ul class="dropdown-menu dropdown-sm">
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Large dropdown
+    </button>
+    <ul class="dropdown-menu dropdown-lg">
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h2 class="docs--section-header">
+    Colors
+</h2>
+<p class="docs--section-description">
+    Dropdowns comes in two colored flavors - the standard white, and an inverted dark dropdown. Simply add the class <code>.dropdown-inverse</code> to the dropdown to make it dark.
+</p>
+
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Inversed dropdown
+    </button>
+    <ul class="dropdown-menu dropdown-inverse">
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h2 class="docs--section-header">
+    Alignment
+</h2>
+<p class="docs--section-description">
+    You can control the horizontal alignment of the dropdown, relative to the <code>.dropdown</code> container by adding <code>.align-left</code>(default) or <code>.align-right</code> to the <code>.dropdown-menu</code>.
+    This is very useful if you know that your dropdown resides close to the right edge of the viewport.
+</p>
+
+<div class="row">
+    <div class="col-xs-12 col-md-4">
+        <div class="dropdown">
+            <button class="btn btn-default" data-toggle="dropdown">
+                Right aligned
+            </button>
+            <ul class="dropdown-menu align-right">
+                <li>
+                    <a href="#">
+                        Item
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Item
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Item
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Item
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2 class="docs--section-header">
+    Animations
+</h2>
+
+<p class="docs--section-description">
+    We have created three types of animations to be used with the dropdowns.
+    Apply these to the <code>.dropdown-menu</code> itself.
+</p>
+
+<table class="docs--section-guide table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.animate-expand</code></td>
+            <td>Expands and fades the menu and the inner <code>.dropdown-content</code> from 0 height. <br/>
+                NOTE: This animation relies on a "magic number" for it's expanded height. If you build a dropdown which get's cut off, then you need to adjust the <code>max-height</code> property of your specific dropdown. The global, and dangerous scss variable can be found in _custom.scss under <code>$animation-expand-magic-number</code><br/>
+                NOTE: This animation requires the <code>.dropdown-content</code> wrapper.
+            </td>
+        </tr>
+        <tr>
+            <td><code>.animate-fade</code></td>
+            <td>A classic fading animation</td>
+        </tr>
+        <tr>
+            <td><code>.animate-fade-up</code></td>
+            <td>Fades and translates the menu up</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropdown">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropdown Expand Animation
+                </button>
+                <div class="dropdown-menu animate-expand">
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropup">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropup Expand Animation
+                </button>
+                <div class="dropdown-menu animate-expand">
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Item
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropdown">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropdown Fade Animation
+                </button>
+                <ul class="dropdown-menu animate-fade">
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropup">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropup Fade Animation
+                </button>
+                <ul class="dropdown-menu animate-fade">
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropdown">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropdown Fade-up Animation
+                </button>
+                <ul class="dropdown-menu animate-fade-up">
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="animation-demo">
+            <div class="dropup">
+                <button class="btn btn-default" data-toggle="dropdown">
+                    Dropup Fade-up Animation
+                </button>
+                <ul class="dropdown-menu animate-fade-up">
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="docs--section-header">
+    Dropdown components
+</h2>
+<p class="docs--section-description">
+    Dropdowns comes with a few sub-components to aid in building beautiful dropdowns
+</p>
+<div class="dropdown open">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Default
+    </button>
+    <ul class="dropdown-menu">
+        <li class="dropdown-header">
+            .dropdown-header
+        </li>
+        <li>
+            <a href="#">
+                below me is a &lt;li class="divider"&gt;
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="dropdown">
+    <button class="btn btn-default" data-toggle="dropdown">
+        Inverse
+    </button>
+    <ul class="dropdown-menu dropdown-inverse">
+        <li class="dropdown-header">
+            .dropdown-header
+        </li>
+        <li>
+            <a href="#">
+                below me is a &lt;li class="divider"&gt;
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Item
+            </a>
+        </li>
+    </ul>
+</div>

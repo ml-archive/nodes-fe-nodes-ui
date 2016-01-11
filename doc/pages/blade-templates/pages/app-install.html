@@ -1,0 +1,153 @@
+---
+title: App Install
+layout: blade-templates.html
+---
+<div class="layout vertical fit scroll">
+    <header class="layout vertical flex-1 app-install__header">
+        <div class="flex jumbotron jumbotron-inverse text-center whitespace-horizontal reset-whitespace-bottom">
+            <img src="../../assets/img/n-stack-logo.svg" class="logo logo-small"/>
+            <h1>iOS9 Enterprise installation guide</h1>
+            <div class="slick-slider-indicators"></div>
+        </div>
+        <div class="panel background-secondary-darker">
+            <div class="panel-body">
+                <div class="slick-slider-child">
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                    <div class="slick-slide__wrapper">
+                        <div class="slick-slide__inner">
+                            <p class="no-margin-bottom text-secondary-light">Open the link to the enterprise build on your test device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="flex-2 app-install__carousel">
+        <div class="slick-slider">
+
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>    {"default":{"[IMAGE]":null},"ios_app_install":{"[IMAGE]":null,"step1Text":"Step 1 text","step2Text":"Step 2 text","step3Text":"Step 3 text","step4Text":"Step 4 text","step5Text":"Step 5 text","step6Text":"Step 6 text","step7Text":"Step 7 text","step8Text":"Step 8 text","step9Text":"Step 9 text"},"android_app_install":{"[IMAGE]":null,"step1Text":"Step 1 text","step2Text":"Step 2 text","step3Text":"Step 3 text","step4Text":"Step 4 text","step5Text":"Step 5 text","step6Text":"Step 6 text","step7Text":"Step 7 text","step8Text":"Step 8 text","step9Text":"Step 9 text"}}
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+            <div class="slick-slide__wrapper">
+                <div class="slick-slide__inner">
+                    <img class="img-responsive" src="//placehold.it/320x480" alt=""/>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        var appInstallSlickSettings = {
+
+            mobileFirst: true,
+            slidesToShow: 1,
+            infinite: false,
+            centerMode: true,
+
+            customPaging: function(slider, i) {
+                return '<span></span>';
+            },
+            appendDots: $('.slick-slider-indicators'),
+
+            arrows: false,
+            dots: true,
+
+            asNavFor: '.slick-slider-child'
+        };
+
+        var appInstallChildSlickSettings = {
+
+            slidesToShow: 1,
+            infinite: false,
+            arrows: false,
+            dots: false,
+            asNavFor: '.slick-slider'
+
+        };
+
+        $('.slick-slider').slick(appInstallSlickSettings);
+        $('.slick-slider-child').slick(appInstallChildSlickSettings);
+
+    });
+</script>

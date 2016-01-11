@@ -1,0 +1,32 @@
+$topbar-height: 60px;
+$sidebar-width: 300px;
+
+.docs--layout-container {
+	overflow: hidden;
+}
+
+.docs--layout-topbar {
+	min-height: $topbar-height;
+	max-height: $topbar-height;
+}
+
+.docs--layout-page {
+	min-height: calc(100% - #{$topbar-height});
+	max-height: calc(100% - #{$topbar-height});
+}
+
+.docs--layout-sidebar {
+	min-width: $sidebar-width;
+	max-width: $sidebar-width;
+}
+
+.docs--layout-content {
+	@include whitespace($type: padding, $side: vertical, $size: sm);
+	@include whitespace($type: padding, $side: horizontal);
+}
+
+#docs--get-me-out-of-here {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+}

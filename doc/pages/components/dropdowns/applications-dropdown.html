@@ -1,0 +1,97 @@
+---
+title: Applications dropdown
+layout: nested-component.html
+---
+<h1 class="docs--page-header">Applications dropdown</h1>
+
+<p class="docs--page-description">
+    This dropdown is designed specifically for the topbar. It can contain application info and related shortcuts.
+</p>
+
+<div class="dropdown dropdown-applications open">
+    <button class="btn btn-transparent" data-toggle="dropdown">
+        <i class="fa fa-user"></i>
+    </button>
+    <div class="dropdown-menu dropdown-inverse animate-expand align-right">
+        <div class="dropdown-content">
+            <p class="dropdown-content__title">
+                Application
+            </p>
+            <div class="application">
+                <div class="application__icon">
+                    <img class="img-responsive" src="//placehold.it/300x300"/>
+                </div>
+                <div class="application__info">
+                    <span class="application__info-name" title="eBoks">
+                        eBoks
+                        <span class="indicator indicator-lg indicator-success indicator-baseline"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="application-actions">
+                <button class="btn btn-sm btn-transparent application__dashboard">
+                    <i class="fa fa-tachometer"></i>
+                    Dashboard
+                </button>
+                <button data-toggle="tooltip" data-placement="left" title="Edit application"
+                        class="btn btn-sm btn-transparent application__settings">
+                    <i class="fa fa-pencil"></i>
+                </button>
+            </div>
+            <p class="dropdown-content__title application-list-title">
+                Switch application
+            </p>
+            <div class="application-list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            eBoks
+                            <span class="indicator indicator-success indicator-baseline"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                            <span class="indicator indicator-success indicator-baseline"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                            <span class="indicator indicator-danger indicator-baseline"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                            <span class="indicator indicator-danger indicator-baseline"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                            <span data-toggle="tooltip" data-placement="left" title="In production"
+                                  class="indicator indicator-success indicator-baseline"></span>
+                        </a>
+                    </li>
+                    <li class="application-list__more">
+                        <a href="#">
+                            <i class="fa fa-plus"></i>
+                            more
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="company-actions">
+                <button class="btn btn-transparent company__invite">
+                    <i class="fa fa-user-plus"></i>
+                    Invite to company
+                </button>
+                <button data-toggle="tooltip" data-placement="left" title="Edit company"
+                        class="button btn btn-transparent company__settings">
+                    <i class="fa fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

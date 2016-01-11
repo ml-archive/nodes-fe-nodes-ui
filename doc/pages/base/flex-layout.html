@@ -1,0 +1,246 @@
+---
+title: Flex-layout
+layout: component.html
+---
+<style>
+    .demo .layout div {
+        background-color: #eee;
+        padding: 12px;
+        margin: 4px;
+    }
+    .demo .layout.scroll {
+        height: 200px;
+    }
+    .demo.demo-large .layout {
+        height: 300px;
+    }
+</style>
+
+<h1 class="docs--page-header">
+    Flex-box Layout system
+</h1>
+<p class="docs--page-description">
+    Many of the layout rules involve combinations of multiple classes (such as layout horizontal wrap above).
+    The order in which the classes are specified doesn't matter, so layout horizontal and horizontal layout are equivalent.
+</p>
+<p class="docs--page-callout">
+    https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+</p>
+
+<h2 class="docs--section-header">Horizontal and vertical layout</h2>
+<p class="docs--section-description">
+    Create a flex container that lays out its children vertically or horizontally.
+    Layouts acts like a .row from bootstrap.
+</p>
+<table class="docs--section-guide table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.layout.horizontal</code></td>
+            <td>Horizontal layout container</td>
+        </tr>
+        <tr>
+            <td><code>.layout.vertical</code></td>
+            <td>Vertical layout container</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml><div class="layout horizontal wrap">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+    <div class="docs--example-container demo docs--prism" data-xrayhtml class="docs--prism"><div class="layout vertical wrap">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Make stuff scrollable</h2>
+<p class="docs--section-description">
+    To make a block element scrollable, simply add the <code>.scroll</code> class to the element. We make sure it scrolls smoothly on mobile!
+</p>
+<p class="docs--page-callout">
+    This is NOT a "recycleView" "scrollView" or whatever your native language offers for virtual scrolling.
+</p>
+
+<div class="docs--code-example">
+    <div class="docs--example-container demo">
+        <div class="layout horizontal wrap scroll">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti dolorum eveniet, ipsa iste laudantium, magni nam necessitatibus quibusdam suscipit unde velit. Autem beatae corporis dolor doloremque eligendi est fuga fugit hic, illo ipsam officia pariatur perspiciatis possimus reprehenderit soluta sunt tempore voluptatem voluptates. Amet beatae delectus dolor doloribus ipsam molestias quas quasi! Aperiam, consectetur consequatur culpa dolor excepturi expedita hic magni neque, omnis pariatur quae quas quod reprehenderit tempora voluptatem. Accusamus autem delectus ea explicabo incidunt nobis quia vel? Alias amet asperiores, atque consectetur consequuntur distinctio doloremque doloribus harum, labore magnam nulla obcaecati odit perferendis porro quia reiciendis repudiandae rerum soluta unde ut veniam voluptas voluptates voluptatum. Aspernatur, aut beatae corporis, culpa dolores ducimus illo ipsa itaque magnam maxime omnis perspiciatis porro reiciendis ullam unde? Ab aspernatur beatae blanditiis delectus deserunt distinctio dolor eius enim eos excepturi fugiat, harum illo ipsa iste, libero modi nulla odio perferendis qui quia quibusdam quidem quod reiciendis repudiandae sunt temporibus tenetur voluptas? Accusantium, blanditiis consectetur deleniti nesciunt odit officia possimus quaerat sint. Blanditiis consectetur dolor eum iusto, maxime nam obcaecati praesentium, quam quis recusandae sed sequi totam velit voluptas voluptatum. Aliquam, aut cupiditate et fuga itaque non placeat recusandae reprehenderit tempore ut. Accusamus assumenda, at aut autem consequuntur cum dignissimos distinctio, dolorem dolorum earum excepturi exercitationem facilis illo ipsa laborum maxime, nam neque omnis quasi quis quisquam quos reiciendis rerum sapiente sequi tempore ullam voluptatum! Ad aperiam atque dolorum eos error est ex illum ipsa libero magni, molestias mollitia nihil nobis quae recusandae rerum sit ullam? Aspernatur corporis dolore in odio. Architecto eligendi error facilis in magni nam quas quo ut vel? Debitis hic ipsam iure officia provident, recusandae sapiente sint voluptate. Asperiores cum dicta doloremque earum, eos maiores molestias, nisi odit quo repellat sint vel vero. In maiores nisi sequi ullam voluptatem?</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="docs--section-header">Flex-sizing</h2>
+<p class="docs--section-description">
+    By nature flex-boxes expand to fill up their container on a distributed basis. You can override this behavior by using the <code>.flex</code> class.
+    A <code>.flex-2</code> container placed next to a <code>.flex-1</code> container will take up double as much room
+    This works alot like the Bootstrap grid which you might already be familiar with.
+</p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml class="docs--prism">
+<div class="layout horizontal wrap">
+    <div class="flex-1">One</div>
+    <div class="flex-2">Two</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-4">Four</div>
+    <div class="flex-4">Four</div>
+    <div class="flex-4">Four</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-5">Five</div>
+    <div class="flex-7">Seven</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-6">Six</div>
+    <div class="flex-6">Six</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-8">Eight</div>
+    <div class="flex-4">Four</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-1">One :-o</div>
+    <div class="flex-1">One :-o</div>
+</div>
+</div>
+</div>
+
+<h2 class="docs--section-header">Vertical Alignment</h2>
+<p class="docs--section-description">
+    Flexbox has a lot of very valuable features, the most prominent being alignment of flex-boxes within a layout container.
+</p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal center">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal end">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Horizontal Alignment</h2>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal center-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal end-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal around-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Mix it together</h2>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Aligning individual flex-boxes</h2>
+<p class="docs--section-description">
+    The individual flex-boxes can also be aligned
+</p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start justified">
+    <div class="self-start">One</div>
+    <div class="self-center">Two</div>
+    <div class="self-stretch">Three</div>
+    <div class="self-end">Four</div>
+</div></div>
+</div>

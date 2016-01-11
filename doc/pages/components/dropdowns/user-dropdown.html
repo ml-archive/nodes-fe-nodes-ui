@@ -1,0 +1,106 @@
+---
+title: User dropdown
+layout: nested-component.html
+---
+<h1 class="docs--page-header">User dropdown</h1>
+
+<p class="docs--page-description">
+    This dropdown is designed specifically for the topbar. It can contain user information, company information and more.
+</p>
+
+<div class="dropdown dropdown-user open">
+    <button class="btn btn-transparent" data-toggle="dropdown">
+        <i class="fa fa-user"></i>
+    </button>
+    <div class="dropdown-menu dropdown-inverse animate-expand align-right">
+        <div class="dropdown-content">
+            <p class="dropdown-content__title">
+                User
+            </p>
+            <div class="user">
+                <div class="user__profile">
+                    <img class="img-responsive" src="//placehold.it/300x300"/>
+                </div>
+                <div class="user__info">
+                    <span class="user__info-name" title="John Doe">
+                        John Doe
+                    </span>
+                    <span class="user__info-email" title="john.doe.doe.doe.doe.doe.doe.doe.doe@email.com">
+                        john.doe.doe.doe.doe.doe.doe.doe.doe@email.com
+                    </span>
+                </div>
+            </div>
+            <div class="user-actions">
+                <button class="btn btn-sm btn-transparent user__sign-out">
+                    <i class="fa fa-sign-out"></i>
+                    Sign out
+                </button>
+                <button data-toggle="tooltip" data-placement="left" title="Edit user"
+                        class="btn btn-sm btn-transparent user__settings">
+                    <i class="fa fa-pencil"></i>
+                </button>
+            </div>
+            <p class="dropdown-content__title">
+                Company
+            </p>
+            <div class="company">
+                <div class="company__profile">
+                    <img class="img-responsive" src="//placehold.it/300x300"/>
+                </div>
+                <div class="company__info">
+                    <span class="company__info-name">
+                        Nodes Agency
+                    </span>
+                </div>
+            </div>
+            <p class="dropdown-content__title company-list-title">
+                Switch company
+            </p>
+            <div class="company-list">
+                <ul>
+                    <li>
+                        <a href="#">
+                            eBoks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            eBoks
+                        </a>
+                    </li>
+                    <li class="company-list__more">
+                        <a href="#">
+                            <i class="fa fa-plus"></i>
+                            more
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="company-actions">
+                <button class="btn btn-transparent company__invite">
+                    <i class="fa fa-user-plus"></i>
+                    Invite to company
+                </button>
+                <button data-toggle="tooltip" data-placement="left" title="Edit company"
+                        class="button btn btn-transparent company__settings">
+                    <i class="fa fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

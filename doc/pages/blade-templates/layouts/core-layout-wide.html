@@ -1,0 +1,275 @@
+---
+title: Core layout wide
+layout: blade-templates.html
+---
+<div class="layout vertical fit core-layout core-layout-wide">
+
+    <div class="core-layout__topbar flex-1">
+        <div class="top-bar">
+            <div class="top-bar__left">
+                <a class="logo" href="#">
+                    <img src="../../assets/img/n-stack-logo.svg" class="logo logo-small"/>
+                </a>
+
+                <div class="dropdown dropdown-features">
+                    <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-th"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-inverse animate-expand align-right">
+                        <div class="dropdown-content">
+                            <p class="dropdown-content__title">Features</p>
+                            <ul class="small-block-layout-3">
+
+                                <li class="app-tile app-tile-xs app-tile-square app-tile-transparent-inverse">
+                                    <a href="#">
+                                        <i class="fa fa-flag-o"></i>
+                                        Translate
+                                    </a>
+                                </li>
+
+                                <li class="app-tile app-tile-xs app-tile-square app-tile-transparent-inverse">
+                                    <a href="#">
+                                        <i class="fa fa-bell-o"></i>
+                                        Notify
+                                    </a>
+                                </li>
+
+                                <li class="app-tile app-tile-xs app-tile-square app-tile-transparent-inverse">
+                                    <a href="#">
+                                        <i class="fa fa-bell-o"></i>
+                                        Content
+                                    </a>
+                                </li>
+
+                                <li class="app-tile app-tile-xs app-tile-square app-tile-transparent-inverse">
+                                    <a href="#">
+                                        <i class="fa fa-comments-o"></i>
+                                        Feedback
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-bar__right">
+
+                <div class="top-bar__actions-left">
+                    <div class="dropdown dropdown-applications">
+                        <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                            Application: eBoks
+                        </button>
+                        <div class="dropdown-menu dropdown-inverse dropdown-lg animate-expand">
+                            <div class="dropdown-content">
+                                <p class="dropdown-content__title">
+                                    Application
+                                </p>
+                                <div class="application">
+                                    <div class="application__icon">
+                                        <img class="img-responsive" src="//placehold.it/300x300"/>
+                                    </div>
+                                    <div class="application__info">
+                                    <span class="application__info-name" title="eBoks">
+                                        eBoks
+                                        <span class="indicator indicator-success indicator-baseline"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="application-actions">
+                                    <button class="btn btn-sm btn-transparent application__dashboard">
+                                        <i class="fa fa-tachometer"></i>
+                                        Dashboard
+                                    </button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Edit application"
+                                            class="btn btn-sm btn-transparent application__settings">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                                <p class="dropdown-content__title application-list-title">
+                                    Switch application
+                                </p>
+                                <div class="application-list">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                                <span class="indicator indicator-success indicator-baseline"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                                <span class="indicator indicator-success indicator-baseline"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                                <span class="indicator indicator-danger indicator-baseline"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                                <span class="indicator indicator-danger indicator-baseline"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            <span data-toggle="tooltip" data-placement="left" title="In production"
+                                                  class="indicator indicator-success indicator-baseline"></span>
+                                            </a>
+                                        </li>
+                                        <li class="application-list__more">
+                                            <a href="#">
+                                                <i class="fa fa-plus"></i>
+                                                more
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-bar__actions-right">
+                    <div class="dropdown dropdown-user">
+                        <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-inverse animate-expand align-right">
+                            <div class="dropdown-content">
+                                <p class="dropdown-content__title">
+                                    User
+                                </p>
+                                <div class="user">
+                                    <div class="user__profile">
+                                        <img class="img-responsive" src="//placehold.it/300x300"/>
+                                    </div>
+                                    <div class="user__info">
+                                    <span class="user__info-name" title="John Doe">
+                                        John Doe
+                                    </span>
+                                    <span class="user__info-email" title="john.doe.doe.doe.doe.doe.doe.doe.doe@email.com">
+                                        john.doe.doe.doe.doe.doe.doe.doe.doe@email.com
+                                    </span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn btn-sm btn-transparent user__sign-out">
+                                        <i class="fa fa-sign-out"></i>
+                                        Sign out
+                                    </button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Edit user"
+                                            class="btn btn-sm btn-transparent user__settings">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                                <p class="dropdown-content__title">
+                                    Company
+                                </p>
+                                <div class="company">
+                                    <div class="company__profile">
+                                        <img class="img-responsive" src="//placehold.it/300x300"/>
+                                    </div>
+                                    <div class="company__info">
+                                    <span class="company__info-name">
+                                        Nodes Agency
+                                    </span>
+                                    </div>
+                                </div>
+                                <p class="dropdown-content__title company-list-title">
+                                    Switch company
+                                </p>
+                                <div class="company-list">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li class="company-list__more">
+                                            <a href="#">
+                                                <i class="fa fa-plus"></i>
+                                                more
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="company-actions">
+                                    <button class="btn btn-transparent company__invite">
+                                        <i class="fa fa-user-plus"></i>
+                                        Invite to company
+                                    </button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Edit company"
+                                            class="button btn btn-transparent company__settings">
+                                        <i class="fa fa-cog"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown dropdown-admin">
+                        <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-inverse animate-fade align-right">
+                            <li>
+                                <a href="#">
+                                    nStack Documentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    nStack Styleguide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Some other admin action
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    All your base...
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="core-layout__content flex-2">
+
+        content
+
+    </div>
+
+</div>

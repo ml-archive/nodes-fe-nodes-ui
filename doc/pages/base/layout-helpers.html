@@ -1,0 +1,62 @@
+---
+title: Layout Helpers
+layout: component.html
+---
+<style>
+    .demo .layout {
+        height: 200px;
+    }
+    .demo .layout .fit {
+        background: rgba(255, 0, 0, 0.1);
+    }
+    .demo .fixed-bottom,
+    .demo .fixed-left,
+    .demo .fixed-right,
+    .demo .fixed-top {
+        background: rgba(255, 0, 0, 0.1);
+    }
+    .demo .fixed-bottom,
+    .demo .fixed-top {
+        height: 30px;
+    }
+    .demo .fixed-right,
+    .demo .fixed-left {
+        width: 30px;
+    }
+</style>
+<h1 class="docs--page-header">
+    Layout helpers
+</h1>
+<p class="docs--page-description">
+    ...
+</p>
+<h2 class="docs--section-header">Fit within parent container</h2>
+<p class="docs--section-description">
+    Absolutely position an element within it's parent and makes it take up all available space.
+</p>
+<div class="text-info docs--panel docs--panel-info">
+    Remember to add a <code>.relative</code> class to the parent container.
+</div>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml><div class="layout horizontal relative">
+    <div class="fit">I will fit to my parent</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Fit within viewport</h2>
+<p class="docs--section-description">
+    Fix elements to the viewport.
+</p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml><div class="fixed-top">
+</div>
+<div class="fixed-right">
+</div>
+<div class="fixed-bottom">
+</div>
+<div class="fixed-left">
+</div></div>
+</div>
