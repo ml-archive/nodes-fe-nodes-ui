@@ -2,7 +2,8 @@
 module.exports = {
   dist: {
     options: {
-      sourceMap: true
+      sourceMap: true,
+      includePaths: ['bower_components']
     },
     files: {
       '<%= paths.dist %>assets/css/nodes.css': '<%= files.scss %>',
