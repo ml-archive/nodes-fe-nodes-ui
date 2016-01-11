@@ -3,7 +3,7 @@
 # Build everything
 build:
   - 'clean'
-  - 'assemble'
+  - 'newer:assemble'
   - 'useminPrepare'
   - 'sass'
   - 'postcss'
@@ -12,6 +12,10 @@ build:
   - 'uglify'
   - 'usemin'
   - 'modernizr'
+# Just the styling
+styles:
+  - 'sass'
+  - 'postcss'
 # Server
 server:
   - 'build'

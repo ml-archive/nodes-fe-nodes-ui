@@ -3,9 +3,11 @@ module.exports = {
 		map: true,
 		processors: [
 			require('autoprefixer')({
-				browsers: ['last 2 versions', 'ie >= 10']
+				browsers: ['last 2 versions']
 			})
 		]
 	},
-	src: ['<%= paths.dist %>assets/css/*.css']
+	dist: {
+		src: '<%= paths.dist %>assets/css/*.css'
+	}
 };
