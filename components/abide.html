@@ -1,0 +1,650 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Abide Validation | Foundation Docs</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <link href="../assets/css/docs.css" rel="stylesheet" />
+        <link href="../assets/css/nodes.css" rel="stylesheet" />
+
+        <script src="../assets/js/modernizr.js"></script>
+    </head>
+    <body class="fullbleed">
+
+        <div class="layout vertical fit docs--layout-container">
+
+            <div class="flex-1 docs--layout-topbar">
+                Nodes UI Framework
+            </div>
+
+            <div class="layout horizontal docs--layout-page">
+                <div class="flex-1 scroll docs--layout-sidebar">
+                    <div class="docs--search">
+    <input type="text" class="docs--search__input" placeholder="search">
+    <ul class="docs--search__results"></ul>
+</div>
+<ul class="docs--sidebar">
+
+    <!-- Setup / Readme / Etc -->
+    <li class="docs--sidebar__heading">Setup</li>
+    <li class="docs--sidebar__item">
+        <a href="../index.html" data-search="">Getting Started</a>
+    </li>
+
+    <!-- Base Styles -->
+    <li data-toggle="collapse"
+        data-target="#baseCollapse"
+        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        Base
+    </li>
+
+    <ul id="baseCollapse" class="docs--sidebar__collapse collapse in">
+        <!-- Layout -->
+        <li data-toggle="collapse"
+            data-target="#layoutCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Layout
+        </li>
+        <ul id="layoutCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="../base/layout-helpers.html" data-search="">Layout Helpers</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../base/flex-layout.html" data-search="">Flex-layout</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../base/block-layout.html" data-search="">Block-layout</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../base/whitespace.html" data-search="">Whitespace</a>
+            </li>
+        </ul>
+
+        <!-- Colors -->
+        <li class="docs--sidebar__item">
+            <a href="../base/colors.html" data-search="">Colors</a>
+        </li>
+
+        <!-- Typography -->
+        <li class="docs--sidebar__item">
+            <a href="../base/typography.html" data-search="">Typography</a>
+        </li>
+    </ul>
+
+    <!-- Elements -->
+    <li data-toggle="collapse"
+        data-target="#elementsCollapse"
+        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        Elements
+    </li>
+
+    <ul id="elementsCollapse" class="docs--sidebar__collapse collapse in">
+        <!-- Tables -->
+        <li data-toggle="collapse"
+            data-target="#tablesCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Tables
+        </li>
+        <ul id="tablesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-types.html" data-search="">Table Types</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-colors.html" data-search="">Table Colors</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-components.html" data-search="">Table Components</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-sizing.html" data-search="">Table Sizing</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-responsive.html" data-search="">Responsive Tables</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-building.html" data-search="">Building Tables</a>
+            </li>
+        </ul>
+
+        <!-- Forms -->
+    </ul>
+
+
+
+
+
+    <li class="docs--sidebar__heading">Elements</li>
+
+    <!-- Tables -->
+    <li class="docs--sidebar__sub-heading">Tables</li>
+
+
+    <!-- Forms -->
+    <li class="docs--sidebar__sub-heading">Forms</li>
+    <li class="docs--sidebar__item">
+        <a href="forms/form-basics.html" data-search="">Form Basics</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="forms/input-basics.html" data-search="">Input Basics</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="forms/action-wrappers.html" data-search="">Action Wrappers</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="forms/floating-labels.html" data-search="">Floating Labels</a>
+    </li>
+
+    <!-- Buttons -->
+    <li class="docs--sidebar__sub-heading">Buttons</li>
+    <li class="docs--sidebar__item">
+        <a href="../elements/buttons.html" data-search="">Buttons</a>
+    </li>
+
+    <li class="docs--sidebar__item">
+        <a href="../elements/indicators.html" data-search="">Indicators</a>
+    </li>
+
+    <li class="docs--sidebar__heading">Components</li>
+    <li class="docs--sidebar__item">
+        <a href="breadcrumbs.html" data-search="">Breadcrumbs</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="page-header.html" data-search="">Page-header</a>
+    </li>
+    <li class="docs--sidebar__item">
+    <a href="app-tiles.html" data-search="">App-tiles</a>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Dropdowns</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="dropdowns/basics-dropdown.html" data-search="">Dropdown Basics</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="dropdowns/content-dropdown.html" data-search="">Content-dropdowns</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="dropdowns/features-dropdown.html" data-search="">Features dropdown</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="dropdowns/user-dropdown.html" data-search="">User dropdown</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="dropdowns/applications-dropdown.html" data-search="">Applications dropdown</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Sidebar</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="sidebar/basic-sidebar.html" data-search="">Sidebar Basics</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="sidebar/sidebar-components.html" data-search="">Sidebar Components</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Panels</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+            <a href="panels/panel-basics.html" data-search="">Panel Basics</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__item">
+      <a href="side-navigation.html" data-search="">Side-navigation</a>
+    </li>
+
+    <li class="docs--sidebar__heading">Blade Templates</li>
+    <li class="docs--sidebar__has-subnav">
+        <span>Layouts</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-wide.html" data-search="">Core Layout Wide</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-toggle-sidebar.html" data-search="">Core Layout Toggle Sidebar</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-dashboard.html" data-search="">Core Layout Dashboard</a>
+            </li>
+    </li>
+    <li class="docs--sidebar__has-subnav">
+        Pages
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/pages/app-install.html" data-search="">App Install</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+                </div>
+                <div class="flex-2 scroll docs--layout-content">
+                    <h3 class="subheader">Abide is an HTML5 form validation library that supports the native API by using patterns and required attributes.</h3>
+
+<hr>
+<form data-abide id="testForm">
+  <fieldset>
+    <legend>Fieldset</legend>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label for="password">Password <small>required</small>
+          <input type="password" id="password" placeholder="LittleW0men." name="password" required>
+        </label>
+        <small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+      </div>
+      <div class="large-12 columns">
+        <label for="confirmPassword">Confirm Password <small>required</small>
+          <input type="password" id="confirmPassword" placeholder="LittleW0men." name="confirmPassword" required data-equalto="password">
+        </label>
+        <small class="error">Passwords must match.</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label for="email">Email
+          <input type="email" id="email" placeholder="foundation@zurb.com">
+        </label>
+        <small class="error">Valid email required.</small>
+      </div>
+      <div class="large-4 columns">
+        <label for="url">URL <small>required</small>
+          <input type="url" id="url" placeholder="http://zurb.com" required>
+        </label>
+        <small class="error">Valid URL required.</small>
+      </div>
+      <div class="large-4 columns">
+        <div class="row collapse">
+          <label for="customDropdown1">Hardest to find in grocery <small>required</small>
+            <select id="customDropdown1" class="medium" required>
+              <option value="">Select grocery item</option>
+              <option value="first">Green Chilies</option>
+              <option value="second">Raisins</option>
+              <option value="third">Panko bread crumbs</option>
+              <option value="fourth">Assistance</option>
+            </select>
+          </label>
+          <small class="error">Broke.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label for="radio1"><input name="radioButtons" type="radio" id="radio1" required> Radio Button 1</label>
+        <label for="radio2"><input name="radioButtons" type="radio" id="radio2" required> Radio Button 2</label>
+        <label for="radio3"><input name="radioButtons" type="radio" id="radio3" required> Radio Button 3</label>
+      </div>
+      <div class="large-6 columns">
+        <label for="checkbox1"><input type="checkbox" id="checkbox1" required> Label for Checkbox</label>
+        <label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED required> Label for Checkbox</label>
+        <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" required> Label for Checkbox</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label for="remarks">Closing Remarks</label>
+        <textarea id="remarks" name="remarks" placeholder="Leave your remarks here."></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <button type="submit" class="medium button green">Submit</button>
+      </div>
+    </div>
+        <div class="row">
+      <div class="large-12 columns">
+        <button type="reset" class="medium button green">Reset</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+
+<hr>
+<h2 id="setting-up-validation">Setting Up Validation</h2>
+<p>To enable validation with Abide, add the <code>data-abide</code> attribute to your <code>form</code> element. Then add the <code>required</code> attribute to each input that you want to require. Additionaly, you can define a <code>pattern</code> to define restraints on what users can input.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">data-abide</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"name-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Your name <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">required</span> <span class="attribute">pattern</span>=<span class="value">"[a-zA-Z]+"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Name is required and must be a string.<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"email-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Email <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">required</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>An email address is required.<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></code></pre>
+
+
+<hr>
+<h2 id="predefined-patterns">Predefined Patterns</h2>
+<p>Abide has several patterns common validation patterns built into the library:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Valid Example or Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alpha</td>
+      <td>Foundation</td>
+    </tr>
+    <tr>
+      <td>alpha_numeric</td>
+      <td>A1Sauce</td>
+    </tr>
+    <tr>
+      <td>integer</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>number</td>
+      <td>2937</td>
+    </tr>
+    <tr>
+      <td>card</td>
+      <td>visa, amex, mastercard</td>
+    </tr>
+    <tr>
+      <td>cvv</td>
+      <td>384 or 3284</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>foundation@zurb.com</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td><a href="http://zurb.com">http://zurb.com</a></td>
+    </tr>
+    <tr>
+      <td>domain</td>
+      <td>zurb.com</td>
+    </tr>
+    <tr>
+      <td>datetime</td>
+      <td>YYYY-MM-DDThh:mm:ssTZD</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td>time</td>
+      <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>dateISO</td>
+      <td>not sure yet</td>
+    </tr>
+    <tr>
+      <td>month_day_year</td>
+      <td>MM/DD/YYYY</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>#FFF or #FFFFFF</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>You can also use these patterns by setting the input&#39;s type to the name of the pattern instead of using the pattern attribute:</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">required</span>&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"url"</span>&gt;</span></div></code></pre>
+
+
+<p>There is a good list of valid HTML5 input types on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input">Mozilla Developer Network</a>. Try avoiding patterns defined by type that do not match the specification.</p>
+<p>You can use the following shortcut for named patterns that aren&#39;t valid input types:</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">pattern</span>=<span class="value">"integer"</span>&gt;</span></div></code></pre>
+
+
+<hr>
+<h2 id="custom-named-patterns">Custom Named Patterns</h2>
+<p>By overriding Abide during Foundation initilization, you can define your own custom patterns or override the default patterns to validate against.</p>
+<pre><code class="language-javascript"><div class="code-container">$(document)
+  .foundation({
+    abide : {
+      patterns: {
+        dashes_only: <span class="regexp">/^[0-9-]*$/</span>,
+        ip_address: <span class="regexp">/^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/</span>
+      }
+    }
+  });</div></code></pre>
+
+
+<p>You can then use these custom patterns like you would the predefined patterns in your markup:</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">class</span>=<span class="value">"custom"</span> <span class="attribute">data-abide</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">label</span>&gt;</span>Serial Number
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">pattern</span>=<span class="value">"dashes_only"</span> <span class="attribute">required</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></code></pre>
+
+
+<hr>
+<h2 id="equal-to">Equal To</h2>
+<p>To add a confirmation field, you can define the <code>data-equalto</code> attribute.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">data-abide</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"password-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Password <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">id</span>=<span class="value">"password"</span> <span class="attribute">required</span> <span class="attribute">pattern</span>=<span class="value">"[a-zA-Z]+"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Your password must match the requirements<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"password-confirmation-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Confirm Password <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">required</span> <span class="attribute">pattern</span>=<span class="value">"[a-zA-Z]+"</span> <span class="attribute">data-equalto</span>=<span class="value">"password"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>The password did not match<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></code></pre>
+
+
+
+<hr>
+<h2 id="error-messages">Error Messages</h2>
+<p>To display an error message for your invalid form element, include a <code>small</code> tag with an <code>error</code> class as a sibling of your input.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"input-wrapper"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">label</span>&gt;</span>Email Address <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">required</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>A valid email address is required.<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+
+
+<p>We have wrapped our input in a div in the example above. This div will receive an <code>error</code> class when the input is invalid. This class will show our error message and style the label and input accordingly.</p>
+<p>Invalid inputs inherit a <code>data-invalid</code> attribute.</p>
+<hr>
+<h2 id="events">Events</h2>
+<p>If a submit event is fired, a <code>valid.fndtn.abide</code> event is triggered when the form is valid and an <code>invalid.fndtn.abide</code> event is triggered when the form is invalid.</p>
+<div class="panel">
+  <p><strong>Deprecation Notice</strong></p>
+  <p>Previous versions of the abide plugin emitted un-namespaced <code>valid</code> and <code>invalid</code> events, however, these have been replaced by the namespaced <code>valid.fndtn.abide</code> and <code>invalid.fndtn.abide</code> events. The un-namespaced events have been fully deprecated.</p>
+</div>
+
+<p>You can bind to these events and fire your own callback:</p>
+<pre><code class="language-javascript"><div class="code-container">$(<span class="string">'#myForm'</span>)
+  .on(<span class="string">'invalid.fndtn.abide'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">var</span> invalid_fields = $(<span class="keyword">this</span>).find(<span class="string">'[data-invalid]'</span>);
+    console.log(invalid_fields);
+  })
+  .on(<span class="string">'valid.fndtn.abide'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    console.log(<span class="string">'valid!'</span>);
+  });</div></code></pre>
+
+
+
+<p>To handle the <code>submit</code> event yourself, use <code>data-abide=&quot;ajax&quot;</code> instead of <code>data-abide</code> inside the <code>form</code> tag.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">data-abide</span>=<span class="value">"ajax"</span> <span class="attribute">id</span>=<span class="value">"myform"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"name-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span>&gt;</span>Your name <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"users_name"</span> <span class="attribute">required</span> <span class="attribute">pattern</span>=<span class="value">"[a-zA-Z]+"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Name is required and must be a string.<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></code></pre>
+<pre><code class="language-javascript"><div class="code-container">$(<span class="string">'#myform'</span>).on(<span class="string">'valid.fndtn.abide'</span>, <span class="keyword">function</span>() {
+  <span class="comment">// Handle the submission of the form</span>
+});</div></code></pre>
+
+
+
+<hr>
+<h2 id="custom-validators">Custom Validators</h2>
+<p><code>equalTo</code> is actually an example of a built-in validator. To get an idea of how validators work, check out the implementation of <code>equalTo</code>:</p>
+<pre><code class="language-javascript"><div class="code-container">equalTo: <span class="keyword">function</span>(el, required, parent) {
+  <span class="keyword">var</span> from  = document.getElementById(el.getAttribute(<span class="keyword">this</span>.add_namespace(<span class="string">'data-equalto'</span>))).value,
+      to    = el.value,
+      valid = (from === to);
+
+  <span class="keyword">return</span> valid;
+}</div></code></pre>
+
+
+<p>Your function will be passed three arguments: <code>el</code>, <code>required</code>, and <code>parent</code>. These are the elements being validated, whether or not it was marked as required, and the parent of the element being validated, respectively.
+Your function should return <code>true</code> if the element is valid, or <code>false</code> if it is invalid. You can define your custom validators and pass them into abide options when initializing foundation. See the Configuration section for more details on defining custom validators.</p>
+<p>Suppose you&#39;ve defined a custom validator <code>diceRoll</code> which randomly marks your element as valid or invalid. You would use it like so:</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">data-abide-validator</span>=<span class="value">"diceRoll"</span>&gt;</span></div></code></pre>
+
+
+
+<p>Additionally, if you are using a custom validator and specify an input type or a pattern on the input, Abide will check both when validating the input. The following will check your input value against the built in email pattern as well as your isAllowed custom validator function:</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">data-abide-validator</span>=<span class="value">"isAllowed"</span>&gt;</span></div></code></pre>
+
+
+<p>You can also use multiple custom validators if you wish by separating the names of the custom validators with a space. The input, however, must pass ALL validations in order for the input to be considered valid. The example below would only be valid if the the outcome of <code>diceRoll</code> is true AND the input is within the array of accepted inputs of <code>isAllowed</code>.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">data-abide-validator</span>=<span class="value">"diceRoll isAllowed"</span>&gt;</span></div></code></pre>
+
+
+
+<hr>
+<h2 id="accessibility">Accessibility</h2>
+<p>For the most part, Abide is accessible on its own. Our JavaScript will add the attribute <code>aria-invalid</code> to any form fields deemed invalid. However, to properly connect errors to form fields, you&#39;ll need to do a little extra work. The error&#39;s container should have a unique ID, which our JavaScript will use to bind the error message to its input if there&#39;s an error.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">data-abide</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"name-field"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">"input-example"</span>&gt;</span>Your name <span class="tag">&lt;<span class="title">small</span>&gt;</span>required<span class="tag">&lt;/<span class="title">small</span>&gt;</span><span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"input-example"</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">required</span> <span class="attribute">pattern</span>=<span class="value">"[a-zA-Z]+"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">small</span> <span class="attribute">class</span>=<span class="value">"error"</span>&gt;</span>Name is required and must be a string.<span class="tag">&lt;/<span class="title">small</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span></div></code></pre>
+<hr>
+<h3 id="adding-new-abide-content-after-page-load">Adding New Abide Content After Page Load</h3>
+<p>If you add new content after the page has been loaded, you will need to reinitialize the Foundation JavaScript by running the following:</p>
+<pre><code class="language-javascript"><div class="code-container">$(document).foundation(<span class="string">'abide'</span>, <span class="string">'reflow'</span>);</div></code></pre>
+
+
+<p>Reflow will make Foundation check the DOM for any elements and re-apply any listeners to them.</p>
+<hr>
+<h2 id="using-the-javascript">Using the Javascript</h2>
+<div class="panel">
+  Before you can use Abide you&#39;ll want to verify that jQuery and <code>foundation.js</code> are available on your page. You can refer to the <a href="../javascript.html">Javascript documentation</a> on setting that up.
+</div>
+
+<p>Just add <code>foundation.abide.js</code> AFTER the <code>foundation.js</code> file. Your markup should look something like this:</p>
+<p>Required Foundation Library: <code>foundation.abide.js</code></p>
+<h3 id="optional-javascript-configuration">Optional Javascript Configuration</h3>
+<pre><code class="language-javascript"><div class="code-container">$(document).foundation({
+  abide : {
+    live_validate : <span class="literal">true</span>, <span class="comment">// validate the form as you go</span>
+    validate_on_blur : <span class="literal">true</span>, <span class="comment">// validate whenever you focus/blur on an input field</span>
+    focus_on_invalid : <span class="literal">true</span>, <span class="comment">// automatically bring the focus to an invalid input field</span>
+    error_labels: <span class="literal">true</span>, <span class="comment">// labels with a for="inputId" will recieve an `error` class</span>
+    <span class="comment">// the amount of time Abide will take before it validates the form (in ms). </span>
+    <span class="comment">// smaller time will result in faster validation</span>
+    timeout : <span class="number">1000</span>,
+    patterns : {
+      alpha: <span class="regexp">/^[a-zA-Z]+$/</span>,
+      alpha_numeric : <span class="regexp">/^[a-zA-Z0-9]+$/</span>,
+      integer: <span class="regexp">/^[-+]?\d+$/</span>,
+      number: <span class="regexp">/^[-+]?[1-9]\d*$/</span>,
+
+      <span class="comment">// amex, visa, diners</span>
+      card : <span class="regexp">/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/</span>,
+      cvv : <span class="regexp">/^([0-9]){3,4}$/</span>,
+
+      <span class="comment">// http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#valid-e-mail-address</span>
+      email : <span class="regexp">/^[a-zA-Z0-9.!#$%&amp;'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/</span>,
+
+      url: <span class="regexp">/(https?|ftp|file|ssh):\/\/(((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&amp;'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-zA-Z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&amp;'\(\)\*\+,;=]|:|@)+(\/(([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&amp;'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&amp;'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-zA-Z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&amp;'\(\)\*\+,;=]|:|@)|\/|\?)*)?/</span>,
+      <span class="comment">// abc.de</span>
+      domain: <span class="regexp">/^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/</span>,
+
+      datetime: <span class="regexp">/([0-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))/</span>,
+      <span class="comment">// YYYY-MM-DD</span>
+      date: <span class="regexp">/(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))/</span>,
+      <span class="comment">// HH:MM:SS</span>
+      time : <span class="regexp">/(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]){2}/</span>,
+      dateISO: <span class="regexp">/\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2}/</span>,
+      <span class="comment">// MM/DD/YYYY</span>
+      month_day_year : <span class="regexp">/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/</span>,
+
+      <span class="comment">// #FFF or #FFFFFF</span>
+      color: <span class="regexp">/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/</span>
+    },
+    validators: {
+      diceRoll: <span class="keyword">function</span>(el, required, parent) {
+        <span class="keyword">var</span> possibilities = [<span class="literal">true</span>, <span class="literal">false</span>];
+        <span class="keyword">return</span> possibilities[Math.round(Math.random())];
+      },
+      isAllowed: <span class="keyword">function</span>(el, required, parent) {
+        <span class="keyword">var</span> possibilities = [<span class="string">'a@zurb.com'</span>, <span class="string">'b.zurb.com'</span>];
+        <span class="keyword">return</span> possibilities.indexOf(el.val) &gt; -<span class="number">1</span>;
+      }
+    }
+  }
+});</div></code></pre>
+
+
+
+<hr>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="../assets/js/vendor.js"></script>
+        <script src="../assets/js/docs.js"></script>
+        <script src="../assets/js/nodes.js"></script>
+
+    </body>
+
+</html>

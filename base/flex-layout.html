@@ -1,0 +1,490 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Flex-layout | Foundation Docs</title>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <link href="../assets/css/docs.css" rel="stylesheet" />
+        <link href="../assets/css/nodes.css" rel="stylesheet" />
+
+        <script src="../assets/js/modernizr.js"></script>
+    </head>
+    <body class="fullbleed">
+
+        <div class="layout vertical fit docs--layout-container">
+
+            <div class="flex-1 docs--layout-topbar">
+                Nodes UI Framework
+            </div>
+
+            <div class="layout horizontal docs--layout-page">
+                <div class="flex-1 scroll docs--layout-sidebar">
+                    <div class="docs--search">
+    <input type="text" class="docs--search__input" placeholder="search">
+    <ul class="docs--search__results"></ul>
+</div>
+<ul class="docs--sidebar">
+
+    <!-- Setup / Readme / Etc -->
+    <li class="docs--sidebar__heading">Setup</li>
+    <li class="docs--sidebar__item">
+        <a href="../index.html" data-search="">Getting Started</a>
+    </li>
+
+    <!-- Base Styles -->
+    <li data-toggle="collapse"
+        data-target="#baseCollapse"
+        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        Base
+    </li>
+
+    <ul id="baseCollapse" class="docs--sidebar__collapse collapse in">
+        <!-- Layout -->
+        <li data-toggle="collapse"
+            data-target="#layoutCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Layout
+        </li>
+        <ul id="layoutCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="layout-helpers.html" data-search="">Layout Helpers</a>
+            </li>
+            <li class="docs--sidebar__item active">
+                <a href="flex-layout.html" data-search="">Flex-layout</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="block-layout.html" data-search="">Block-layout</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="whitespace.html" data-search="">Whitespace</a>
+            </li>
+        </ul>
+
+        <!-- Colors -->
+        <li class="docs--sidebar__item">
+            <a href="colors.html" data-search="">Colors</a>
+        </li>
+
+        <!-- Typography -->
+        <li class="docs--sidebar__item">
+            <a href="typography.html" data-search="">Typography</a>
+        </li>
+    </ul>
+
+    <!-- Elements -->
+    <li data-toggle="collapse"
+        data-target="#elementsCollapse"
+        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        Elements
+    </li>
+
+    <ul id="elementsCollapse" class="docs--sidebar__collapse collapse in">
+        <!-- Tables -->
+        <li data-toggle="collapse"
+            data-target="#tablesCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Tables
+        </li>
+        <ul id="tablesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-types.html" data-search="">Table Types</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-colors.html" data-search="">Table Colors</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-components.html" data-search="">Table Components</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-sizing.html" data-search="">Table Sizing</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-responsive.html" data-search="">Responsive Tables</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../elements/tables/table-building.html" data-search="">Building Tables</a>
+            </li>
+        </ul>
+
+        <!-- Forms -->
+    </ul>
+
+
+
+
+
+    <li class="docs--sidebar__heading">Elements</li>
+
+    <!-- Tables -->
+    <li class="docs--sidebar__sub-heading">Tables</li>
+
+
+    <!-- Forms -->
+    <li class="docs--sidebar__sub-heading">Forms</li>
+    <li class="docs--sidebar__item">
+        <a href="../components/forms/form-basics.html" data-search="">Form Basics</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="../components/forms/input-basics.html" data-search="">Input Basics</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="../components/forms/action-wrappers.html" data-search="">Action Wrappers</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="../components/forms/floating-labels.html" data-search="">Floating Labels</a>
+    </li>
+
+    <!-- Buttons -->
+    <li class="docs--sidebar__sub-heading">Buttons</li>
+    <li class="docs--sidebar__item">
+        <a href="../elements/buttons.html" data-search="">Buttons</a>
+    </li>
+
+    <li class="docs--sidebar__item">
+        <a href="../elements/indicators.html" data-search="">Indicators</a>
+    </li>
+
+    <li class="docs--sidebar__heading">Components</li>
+    <li class="docs--sidebar__item">
+        <a href="../components/breadcrumbs.html" data-search="">Breadcrumbs</a>
+    </li>
+    <li class="docs--sidebar__item">
+        <a href="../components/page-header.html" data-search="">Page-header</a>
+    </li>
+    <li class="docs--sidebar__item">
+    <a href="../components/app-tiles.html" data-search="">App-tiles</a>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Dropdowns</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../components/dropdowns/basics-dropdown.html" data-search="">Dropdown Basics</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../components/dropdowns/content-dropdown.html" data-search="">Content-dropdowns</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../components/dropdowns/features-dropdown.html" data-search="">Features dropdown</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../components/dropdowns/user-dropdown.html" data-search="">User dropdown</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../components/dropdowns/applications-dropdown.html" data-search="">Applications dropdown</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Sidebar</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../components/sidebar/basic-sidebar.html" data-search="">Sidebar Basics</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../components/sidebar/sidebar-components.html" data-search="">Sidebar Components</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__has-subnav">
+        <span>Panels</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+            <a href="../components/panels/panel-basics.html" data-search="">Panel Basics</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="docs--sidebar__item">
+      <a href="../components/side-navigation.html" data-search="">Side-navigation</a>
+    </li>
+
+    <li class="docs--sidebar__heading">Blade Templates</li>
+    <li class="docs--sidebar__has-subnav">
+        <span>Layouts</span>
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-wide.html" data-search="">Core Layout Wide</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-toggle-sidebar.html" data-search="">Core Layout Toggle Sidebar</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/layouts/core-layout-dashboard.html" data-search="">Core Layout Dashboard</a>
+            </li>
+    </li>
+    <li class="docs--sidebar__has-subnav">
+        Pages
+        <ul class="docs--sidebar__subnav">
+            <li class="docs--sidebar__item">
+                <a href="../blade-templates/pages/app-install.html" data-search="">App Install</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+                </div>
+                <div class="flex-2 scroll docs--layout-content">
+                    <style>
+    .demo .layout div {
+        background-color: #eee;
+        padding: 12px;
+        margin: 4px;
+    }
+    .demo .layout.scroll {
+        height: 200px;
+    }
+    .demo.demo-large .layout {
+        height: 300px;
+    }
+</style>
+
+<p><h1 class="docs--page-header">
+    Flex-box Layout system
+</h1></p>
+<p class="docs--page-description">
+    Many of the layout rules involve combinations of multiple classes (such as layout horizontal wrap above).
+    The order in which the classes are specified doesn&#39;t matter, so layout horizontal and horizontal layout are equivalent.
+</p>
+<p class="docs--page-callout">
+    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+</p>
+
+<p><h2 class="docs--section-header">Horizontal and vertical layout</h2></p>
+<p class="docs--section-description">
+    Create a flex container that lays out its children vertically or horizontally.
+    Layouts acts like a .row from bootstrap.
+</p>
+<table class="docs--section-guide table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.layout.horizontal</code></td>
+            <td>Horizontal layout container</td>
+        </tr>
+        <tr>
+            <td><code>.layout.vertical</code></td>
+            <td>Vertical layout container</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml><div class="layout horizontal wrap">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+    <div class="docs--example-container demo docs--prism" data-xrayhtml class="docs--prism"><div class="layout vertical wrap">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<h2 class="docs--section-header">Make stuff scrollable</h2>
+<p class="docs--section-description">
+    To make a block element scrollable, simply add the <code>.scroll</code> class to the element. We make sure it scrolls smoothly on mobile!
+</p>
+<p class="docs--page-callout">
+    This is NOT a &quot;recycleView&quot; &quot;scrollView&quot; or whatever your native language offers for virtual scrolling.
+</p>
+
+<div class="docs--code-example">
+    <div class="docs--example-container demo">
+        <div class="layout horizontal wrap scroll">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti dolorum eveniet, ipsa iste laudantium, magni nam necessitatibus quibusdam suscipit unde velit. Autem beatae corporis dolor doloremque eligendi est fuga fugit hic, illo ipsam officia pariatur perspiciatis possimus reprehenderit soluta sunt tempore voluptatem voluptates. Amet beatae delectus dolor doloribus ipsam molestias quas quasi! Aperiam, consectetur consequatur culpa dolor excepturi expedita hic magni neque, omnis pariatur quae quas quod reprehenderit tempora voluptatem. Accusamus autem delectus ea explicabo incidunt nobis quia vel? Alias amet asperiores, atque consectetur consequuntur distinctio doloremque doloribus harum, labore magnam nulla obcaecati odit perferendis porro quia reiciendis repudiandae rerum soluta unde ut veniam voluptas voluptates voluptatum. Aspernatur, aut beatae corporis, culpa dolores ducimus illo ipsa itaque magnam maxime omnis perspiciatis porro reiciendis ullam unde? Ab aspernatur beatae blanditiis delectus deserunt distinctio dolor eius enim eos excepturi fugiat, harum illo ipsa iste, libero modi nulla odio perferendis qui quia quibusdam quidem quod reiciendis repudiandae sunt temporibus tenetur voluptas? Accusantium, blanditiis consectetur deleniti nesciunt odit officia possimus quaerat sint. Blanditiis consectetur dolor eum iusto, maxime nam obcaecati praesentium, quam quis recusandae sed sequi totam velit voluptas voluptatum. Aliquam, aut cupiditate et fuga itaque non placeat recusandae reprehenderit tempore ut. Accusamus assumenda, at aut autem consequuntur cum dignissimos distinctio, dolorem dolorum earum excepturi exercitationem facilis illo ipsa laborum maxime, nam neque omnis quasi quis quisquam quos reiciendis rerum sapiente sequi tempore ullam voluptatum! Ad aperiam atque dolorum eos error est ex illum ipsa libero magni, molestias mollitia nihil nobis quae recusandae rerum sit ullam? Aspernatur corporis dolore in odio. Architecto eligendi error facilis in magni nam quas quo ut vel? Debitis hic ipsam iure officia provident, recusandae sapiente sint voluptate. Asperiores cum dicta doloremque earum, eos maiores molestias, nisi odit quo repellat sint vel vero. In maiores nisi sequi ullam voluptatem?</p>
+        </div>
+    </div>
+</div>
+
+<p><h2 class="docs--section-header">Flex-sizing</h2></p>
+<p><p class="docs--section-description">
+    By nature flex-boxes expand to fill up their container on a distributed basis. You can override this behavior by using the <code>.flex</code> class.
+    A <code>.flex-2</code> container placed next to a <code>.flex-1</code> container will take up double as much room
+    This works alot like the Bootstrap grid which you might already be familiar with.
+</p></p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo docs--prism" data-xrayhtml class="docs--prism">
+<div class="layout horizontal wrap">
+    <div class="flex-1">One</div>
+    <div class="flex-2">Two</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+    <div class="flex-1">One</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+    <div class="flex-2">Two</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+    <div class="flex-3">Three</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-4">Four</div>
+    <div class="flex-4">Four</div>
+    <div class="flex-4">Four</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-5">Five</div>
+    <div class="flex-7">Seven</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-6">Six</div>
+    <div class="flex-6">Six</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-8">Eight</div>
+    <div class="flex-4">Four</div>
+</div>
+<div class="layout horizontal wrap">
+    <div class="flex-1">One :-o</div>
+    <div class="flex-1">One :-o</div>
+</div>
+</div>
+</div>
+
+<p><h2 class="docs--section-header">Vertical Alignment</h2></p>
+<p><p class="docs--section-description">
+    Flexbox has a lot of very valuable features, the most prominent being alignment of flex-boxes within a layout container.
+</p></p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal center">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal end">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<p><h2 class="docs--section-header">Horizontal Alignment</h2></p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal center-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal end-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal around-justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<p><h2 class="docs--section-header">Mix it together</h2></p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start justified">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+</div></div>
+</div>
+
+<p><h2 class="docs--section-header">Aligning individual flex-boxes</h2></p>
+<p><p class="docs--section-description">
+    The individual flex-boxes can also be aligned
+</p></p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+<div class="docs--example-container demo demo-large docs--prism" data-xrayhtml><div class="layout horizontal start justified">
+    <div class="self-start">One</div>
+    <div class="self-center">Two</div>
+    <div class="self-stretch">Three</div>
+    <div class="self-end">Four</div>
+</div></div>
+</div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="../assets/js/vendor.js"></script>
+        <script src="../assets/js/docs.js"></script>
+        <script src="../assets/js/nodes.js"></script>
+
+    </body>
+
+</html>
