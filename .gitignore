@@ -50,6 +50,8 @@ test/tmp
 test/version_tmp
 tmp
 
+src
+src.map
 
 pizza/
 npm-debug.log

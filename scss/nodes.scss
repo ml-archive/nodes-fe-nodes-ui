@@ -16,7 +16,7 @@
 @import "base/flex-layout";
 @import "base/grid-layout";
 @import "base/block-layout";
-@import "base/core-layout";
+@import "core/core-layout";
 @import "base/colors";
 @import "base/whitespace";
 @import "base/typography";
@@ -43,8 +43,8 @@
 @import "components/breadcrumbs";
 @import "components/jumbotron";
 @import "components/page-header";
-@import "components/core-sidebar";
-@import "components/core-top-bar";
+@import "core/core-sidebar";
+@import "core/core-top-bar";
 @import "components/app-tiles";
 @import "components/charts";
 @import "components/sidebar";
@@ -56,6 +56,7 @@
 @import "components/alerts";
 @import "components/navigation";
 @import "components/flash-messages";
+@import "components/collapse";
 
 /**
  * Pages

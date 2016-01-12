@@ -1,5 +1,83 @@
 jQuery(document).ready(function($) {
 
+	var BREAKPOINTS = {
+		xs: 480,
+		sm: 768,
+		md: 992,
+		lg: 1200,
+		xl: 1440,
+		xxl: 1920
+	};
+
+	$(window).smartresize(function() {
+		var winWidth = window.innerWidth;
+
+		if(winWidth > BREAKPOINTS.sm - 1) {
+			$('.core-layout').removeClass('core-layout--left-open');
+			$('.core-layout__sidebar-wrapper').removeAttr('style');
+			$('.core-layout__sidebar').removeAttr('style');
+		}
+
+	});
+	$('.core__left-sidebar-toggle').on('click', function() {
+
+		var LEFT_MENU_OPEN_CLASS = 'core-layout--left-open';
+
+		var $coreLayout = $('.core-layout');
+		var $sidebar = $('.core-layout__sidebar-wrapper');
+		var $content = $('.core-layout__sidebar');
+
+		var isSidebarVisible = $coreLayout.hasClass('core-layout--left-open');
+
+		isSidebarVisible ? _animateOut() : _animateIn();
+
+		function _animateIn() {
+			$sidebar.velocity({
+				opacity: 1
+			}, {
+				duration: 200,
+				display: 'block',
+				complete: function() {
+					$coreLayout.addClass(LEFT_MENU_OPEN_CLASS);
+					$sidebar.on('click', function(e) {
+						if(e.target.className !== 'core-layout__sidebar-wrapper') {
+							return;
+						}
+						_animateOut();
+					});
+				}
+			});
+
+			$content.velocity({
+				translateX: '0%'
+			}, {
+				duration: 200,
+				delay: 200
+			});
+		}
+
+		function _animateOut() {
+			$sidebar.velocity({
+				opacity: 0
+			}, {
+				duration: 200,
+				display: 'none',
+				complete: function() {
+					$coreLayout.removeClass(LEFT_MENU_OPEN_CLASS);
+				}
+			});
+
+			$content.velocity({
+				translateX: '-100%'
+			}, {
+				duration: 200,
+				delay: 100
+			});
+		}
+
+	});
+
+
 	// Configure Chart.js globals
 	Chart.defaults.global.responsive = true;
 	Chart.defaults.global.maintainAspectRatio = false;
@@ -33,7 +111,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// Init equalheight plugin
-	rightHeight.init();
+	//rightHeight.init();
 
 	// Highlight selected radio-/checkboxes
 	$('.checkbox,.radio').each(function() {
@@ -185,4 +263,32 @@ jQuery(document).ready(function($) {
 	$('#capabilities-toggle-slug :checkbox').each(function() {
 		Nodes.capabilityToggleSlug($(this));
 	});
-})
+});
+
+(function($,sr){
+
+	// debouncing function from John Hann
+	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+	var debounce = function (func, threshold, execAsap) {
+		var timeout;
+
+		return function debounced () {
+			var obj = this, args = arguments;
+			function delayed () {
+				if (!execAsap)
+					func.apply(obj, args);
+				timeout = null;
+			};
+
+			if (timeout)
+				clearTimeout(timeout);
+			else if (execAsap)
+				func.apply(obj, args);
+
+			timeout = setTimeout(delayed, threshold || 100);
+		};
+	}
+	// smartresize
+	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');

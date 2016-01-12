@@ -1,0 +1,55 @@
+.core-layout__topbar {
+
+	.dropdown-toggle {
+		@include font-color($secondary-color-light);
+	}
+
+	.open > .btn.btn-transparent.dropdown-toggle {
+		&:hover, &.hover {
+
+		}
+		&:focus, &.focus,
+		&:active, &.active {
+			@include font-color($secondary-color-light);
+		}
+	}
+
+	.top-bar__actions-left,
+	.top-bar__actions-right {
+		flex-basis: 50%;
+	}
+	.top-bar__actions-left {
+		justify-content: flex-start;
+	}
+	.top-bar__actions-right {
+		justify-content: flex-end;
+	}
+}
+.top-bar__left {
+	@media (min-width: $screen-sm) {
+		@include background-color($secondary-color-darker);
+	}
+}
+.top-bar__right {
+	.dropdown-toggle:hover, .dropdown-toggle.hover,
+	.dropdown-toggle:focus, .dropdown-toggle.focus,
+	.dropdown-toggle:active, .dropdown-toggle.active,
+	.open > .btn.btn-transparent.dropdown-toggle {
+		@include font-color(darken($secondary-color-light, 5%));
+	}
+}
+
+.top-bar a.logo {
+	display: block;
+	width: $logo-size-small;
+	height: $logo-size-small;
+}
+
+.top-bar .dropdown {
+
+	[data-toggle="dropdown"] {
+		height: 60px;
+		border: none;
+	}
+
+}

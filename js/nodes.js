@@ -1,4 +1,3 @@
-console.log('nodes.js');
 var Nodes = (function() {
 	return {
 		/**

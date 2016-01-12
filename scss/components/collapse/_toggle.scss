@@ -1,0 +1,12 @@
+.collapse-toggle img {
+	@include whitespace($side: right, $type: margin);
+	width: 30px;
+	float: left;
+}
+.collapse-toggle span,
+.collapse-toggle img {
+
+}
+.collapse-toggle span {
+	line-height: 30px;
+}

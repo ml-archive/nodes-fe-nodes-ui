@@ -1,3 +1,7 @@
+.core-layout__sidebar {
+	@include background-color($secondary-color-darker);
+}
+
 .sidebar__header {
 	@include clearfix;
 	@include whitespace($side: vertical, $type: margin);

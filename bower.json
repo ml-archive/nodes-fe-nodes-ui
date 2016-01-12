@@ -1,33 +1,33 @@
 {
-	"name": "nodes-ui",
-	"ignore": [
-		".grunt",
-		".tmp",
-		"bower_components",
-		"dist",
-		"doc",
-		"grunt",
-		"lib",
-		"node_modules"
-	],
-	"dependencies": {
-		"Chart.js": "~1.0.2",
-		"blueimp-file-upload": "~9.11.2",
-		"bootbox.js": "4.4.0",
-		"bootstrap-sass": "3.3.5",
-		"font-awesome": "4.4.0",
-		"jquery": "2.1.4",
-		"jquery-ui": "1.9.2",
-		"slick-carousel": "~1.5.8"
-	},
-	"devDependencies": {
-		"prism": "~1.0.1",
-		"zeroclipboard": "~2.2.0"
-	},
-	"main": [
-		"js/nodes.js",
-		"js/scripts.js",
-		"scss/nodes.scss"
-	],
-	"private": false
+  "name": "nodes-ui",
+  "ignore": [
+    ".grunt",
+    ".tmp",
+    "bower_components",
+    "dist",
+    "doc",
+    "grunt",
+    "lib",
+    "node_modules"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2",
+    "bootbox.js": "4.4.0",
+    "bootstrap-sass": "3.3.5",
+    "font-awesome": "4.4.0",
+    "jquery": "2.1.4",
+    "slick-carousel": "~1.5.8",
+    "velocity": "~1.2.3",
+    "right-height": "https://github.com/cferdinandi/right-height.git#~4.1.0"
+  },
+  "devDependencies": {
+    "prism": "~1.0.1",
+    "zeroclipboard": "~2.2.0"
+  },
+  "main": [
+    "js/nodes.js",
+    "js/scripts.js",
+    "scss/nodes.scss"
+  ],
+  "private": false
 }

@@ -1,5 +1,6 @@
 @mixin scrollbar($background-color: transparent, $thumb-color: $primary-color) {
 	&::-webkit-scrollbar {
+		-webkit-appearance: none;
 		width: 12px;
 	}
 

@@ -184,6 +184,11 @@
     <li class="docs--sidebar__has-subnav">
         <span>Layouts</span>
         <ul class="docs--sidebar__subnav">
+
+            <li class="docs--sidebar__item{{#is basename "core-layout"}} active{{/is}}">
+                <a href="{{rel 'blade-templates/layouts/core-layout.html'}}" data-search="">Core Layout Playground</a>
+            </li>
+
             <li class="docs--sidebar__item{{#is basename "core-layout-wide"}} active{{/is}}">
                 <a href="{{rel 'blade-templates/layouts/core-layout-wide.html'}}" data-search="">Core Layout Wide</a>
             </li>
