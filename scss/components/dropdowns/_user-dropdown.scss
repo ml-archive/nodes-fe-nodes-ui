@@ -1,3 +1,16 @@
+.user__info-button {
+	.user__info-avatar {
+		@include whitespace($side: right, $type: margin, $size: sm );
+		float: left;
+		width: 30px;
+		height: 30px;
+	}
+	.user__info-name {
+		display: block;
+		line-height: 30px;
+	}
+}
+
 .dropdown.dropdown-user {
 	@include font-color($secondary-color-light);
 

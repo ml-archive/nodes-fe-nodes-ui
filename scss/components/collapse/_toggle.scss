@@ -1,3 +1,7 @@
+.collapse-toggle {
+	@include clearfix;
+	display: block;
+}
 .collapse-toggle img {
 	@include whitespace($side: right, $type: margin);
 	width: 30px;
@@ -5,8 +9,13 @@
 }
 .collapse-toggle span,
 .collapse-toggle img {
-
+	float: left;
 }
 .collapse-toggle span {
 	line-height: 30px;
+}
+
+.sidebar__collapse .collapse-toggle {
+	width: 100%;
+	text-align: left;
 }

@@ -18,6 +18,11 @@
 	@include whitespace($side: vertical, $size: sm);
 	@include layout($wrap: false);
 	align-items: center;
+
+	.fa {
+		@include whitespace($side: right, $size: sm, $type: margin);
+	}
+
 	.btn-group {
 		margin-left: auto;
 		opacity: 0;

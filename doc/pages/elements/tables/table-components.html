@@ -162,13 +162,145 @@ layout: nested-component.html
                 <button class="btn btn-sm btn-warning">Action</button>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-bus"></i></button>
                 <button class="btn btn-sm btn-warning"><i class="fa fa-search"></i></button>
+                <div class="table-dropdown">
+                    <button class="btn btn-transparent" data-dropdown data-options="{position: 'bottom right'}">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-play-circle"></i>
+                                Restart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-trash-o"></i>
+                                Forget
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </td>
         </tr>
     </tbody>
 </table>
 
 <h2 class="docs--section-header">
-    Table Actions
+    Table Dropdowns
+</h2>
+
+<p class="docs--page-description">
+    Adding 500 buttons to a table-cell is horrible, so we also offer a dropdown specifically designed to be used with tables. The dropdown is not the default bootstrap dropdown, but instead a more advanced build by Hubspot.
+</p>
+<div class="text-info docs--panel docs--panel-info docs--panel-developers">
+    <p>
+        Dropdowns build with Drop from Hubspot can be configured by adding a <code>data-options</code> attribute with a object of options to the triggering button, ie.: <code>data-options="{position: 'bottom right'}"</code>.
+    </p>
+    <p>
+        Read all about Drop here: <a href="http://github.hubspot.com/drop/" target="_blank">http://github.hubspot.com/drop/</a>
+    </p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Username
+            </td>
+            <td>
+                Email
+            </td>
+            <td>
+                Role
+            </td>
+            <td>
+                Birthday
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td class="table-actions">
+                <div class="table-dropdown">
+                    <button class="btn btn-transparent" data-dropdown data-options="{position: 'bottom right'}">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-play-circle"></i>
+                                Restart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-trash-o"></i>
+                                Forget
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">
+    Table Sorters
 </h2>
 
 <p class="docs--page-description">

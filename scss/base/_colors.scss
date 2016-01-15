@@ -700,27 +700,27 @@
 //
 // Borders
 //
-[class*="border"]:not(.table) {
+[class*="use-border"]:not(.table) {
 	border: 1px solid;
 }
-[class*="border-vertical"]:not(.table) {
+[class*="use-border-vertical"]:not(.table) {
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 }
-[class*="border-horizontal"]:not(.table) {
+[class*="use-border-horizontal"]:not(.table) {
 	border-right: 1px solid;
 	border-left: 1px solid;
 }
-[class*="border-top"]:not(.table) {
+[class*="use-border-top"]:not(.table) {
 	border-top: 1px solid;
 }
-[class*="border-right"]:not(.table) {
+[class*="use-border-right"]:not(.table) {
 	border-right: 1px solid;
 }
-[class*="border-bottom"]:not(.table) {
+[class*="use-border-bottom"]:not(.table) {
 	border-bottom: 1px solid;
 }
-[class*="border-left"]:not(.table) {
+[class*="use-border-left"]:not(.table) {
 	border-left: 1px solid;
 }
 

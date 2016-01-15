@@ -17,7 +17,8 @@
     "jquery": "2.1.4",
     "slick-carousel": "~1.5.8",
     "velocity": "~1.2.3",
-    "right-height": "https://github.com/cferdinandi/right-height.git#~4.1.0"
+    "right-height": "https://github.com/cferdinandi/right-height.git#~4.1.0",
+    "tether-drop": "~1.4.2"
   },
   "devDependencies": {
     "prism": "~1.0.1",

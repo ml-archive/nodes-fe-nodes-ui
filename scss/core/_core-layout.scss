@@ -4,6 +4,10 @@ html, body {
 	max-height: 100%;
 	overflow: hidden;
 }
+body.local,
+body.staging {
+	padding-bottom: 40px;
+}
 
 .core-layout {
 	width: 100%;
@@ -30,8 +34,8 @@ html, body {
 		display: flex;
 		flex-basis: 100%;
 		align-items: center;
-		justify-content: space-between;
 		@media (min-width: $screen-sm) {
+			justify-content: space-between;
 			min-width: $core-sidebar-width;
 			max-width: $core-sidebar-width;
 		}
@@ -137,6 +141,7 @@ html, body {
 	max-height: 100%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	width: 100%;
 
 
 	.page-content {

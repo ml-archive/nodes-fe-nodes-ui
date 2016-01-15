@@ -1,5 +1,33 @@
 jQuery(document).ready(function($) {
 
+	$('[data-dropdown]').each(function(i, el) {
+		initDrop($(this));
+	});
+
+	function evalDataOptions(str) {
+		try {
+			return eval( '(' + str + ')' )
+		} catch(e) {
+			throw e;
+		}
+
+	}
+
+	function initDrop(el) {
+
+		var $el = $(el);
+
+		var $dropdownContent = $(el).parent().find('.dropdown-menu');
+
+		var opts = evalDataOptions($el.data('options'));
+
+		opts.target = $el[0];
+		opts.content = $dropdownContent[0];
+
+		new Drop(opts);
+
+	}
+
 	var BREAKPOINTS = {
 		xs: 480,
 		sm: 768,

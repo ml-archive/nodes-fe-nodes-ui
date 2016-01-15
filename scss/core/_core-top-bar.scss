@@ -19,15 +19,49 @@
 		flex-basis: 50%;
 	}
 	.top-bar__actions-left {
-		justify-content: flex-start;
+		justify-content: center;
+		@media (min-width: $screen-sm) {
+			justify-content: flex-start;
+		}
 	}
 	.top-bar__actions-right {
 		justify-content: flex-end;
 	}
 }
 .top-bar__left {
+	@include whitespace($side: horizontal);
+	@include background-color($secondary-color-dark);
 	@media (min-width: $screen-sm) {
-		@include background-color($secondary-color-darker);
+	}
+
+	.core__left-sidebar-toggle {
+		position: absolute;
+		top: $whitespace-root * $whitespace-small-modifier;
+		left: $whitespace-root * $whitespace-small-modifier;
+		@media (min-width: $screen-sm) {
+			position: static;
+		}
+	}
+
+	.application-brand {
+		@include clearfix;
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+		@media (min-width: $screen-sm) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		> * {
+			display: block;
+			float: left;
+		}
+		.application-title {
+			@include whitespace($side: left, $type: margin, $size: sm);
+			@include font-color($gray-lighter);
+			font-size: $font-size-large;
+		}
 	}
 }
 .top-bar__right {

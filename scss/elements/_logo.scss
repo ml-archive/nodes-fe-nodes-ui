@@ -1,8 +1,46 @@
-img.logo {
+.logo {
+	position: relative;
 	width: $logo-size;
 	height: $logo-size;
+	display: inline-block;
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.logo-gradient__0 {
+		stop-color: $primary-color-dark;
+	}
+	.logo-gradient__100 {
+		stop-color: $primary-color;
+	}
 }
-img.logo.logo-small {
+.logo.logo-small {
 	width: $logo-size-small;
 	height: $logo-size-small;
+}
+
+i.fa.fa-nodes {
+	width: 1em;
+	height: 1em;
+	svg .logo-icon-gradient__0 {
+		stop-color: $white;
+	}
+	svg .logo-icon-gradient__100 {
+		stop-color: $white;
+	}
+}
+a.list-group-item:hover,
+li.list-group-item:hover {
+	.fa.fa-nodes {
+		svg .logo-icon-gradient__0 {
+			stop-color: $primary-color;
+		}
+		svg .logo-icon-gradient__100 {
+			stop-color: $primary-color;
+		}
+	}
 }
