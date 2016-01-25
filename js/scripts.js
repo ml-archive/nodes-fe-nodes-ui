@@ -2,6 +2,12 @@ jQuery(document).ready(function($) {
 
 	$('.file-picker').filePicker();
 
+
+	/**
+	 * Datetime picker
+	 */
+	$('.date-picker').datetimepickerWrapper();
+
 	//$(document).on('change', '.btn-file :file', function() {
 	//	var input = $(this),
 	//			numFiles = input.get(0).files ? input.get(0).files.length : 1,
