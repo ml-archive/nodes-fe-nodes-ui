@@ -29,6 +29,17 @@ module.exports = {
 			dest: '<%= paths.dist %>assets/'
 		}]
 	},
+	jsModules: {
+		files: [{
+			expand: true,
+			dot: true,
+			cwd: '<%= paths.js %>/modules',
+			src: [
+				'*.js'
+			],
+			dest: '<%= paths.dist %>assets/js/modules'
+		}]
+	},
 	zeroclipboard: {
 		files: [{
 			src: ['<%= paths.vendor %>zeroclipboard/dist/ZeroClipboard.swf'],

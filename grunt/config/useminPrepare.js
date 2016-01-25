@@ -1,5 +1,5 @@
 module.exports = {
-	html: '<%= paths.doc %>layouts/default.html',
+	html: '<%= paths.doc %>includes/footer.html',
 	options: {
 		dest: '<%= paths.dist %>',
 		flow: {

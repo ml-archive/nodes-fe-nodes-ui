@@ -141,7 +141,7 @@ function setFile() {
 }
 
 function removeFile() {
-
+	console.log('CLICK');
 }
 
 /*
@@ -180,6 +180,9 @@ $.plugin = function( name, object ) {
 	};
 };
 
+// Register the plugin
+$.plugin('filePicker', filePicker);
+
 // Usage:
 // With myObject, we could now essentially do this:
 // $.plugin('myobj', myObject);
@@ -188,9 +191,3 @@ $.plugin = function( name, object ) {
 // $('#elem').myobj({name: "John"});
 // var inst = $('#elem').data('myobj');
 // inst.myMethod('I am a method');
-
-
-
-
-
-
