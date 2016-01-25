@@ -1,5 +1,27 @@
 jQuery(document).ready(function($) {
 
+	$('.file-picker').filePicker();
+
+	//$(document).on('change', '.btn-file :file', function() {
+	//	var input = $(this),
+	//			numFiles = input.get(0).files ? input.get(0).files.length : 1,
+	//			label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+	//	input.trigger('fileselect', [numFiles, label]);
+	//});
+	//
+	//$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+	//
+	//	var input = $(this).parents('.input-group').find(':text'),
+	//			log = numFiles > 1 ? numFiles + ' files selected' : label;
+	//
+	//	if( input.length ) {
+	//		input.val(log);
+	//	} else {
+	//		if( log ) alert(log);
+	//	}
+	//
+	//});
+
 	$('[data-dropdown]').each(function(i, el) {
 		initDrop($(this));
 	});
@@ -291,6 +313,37 @@ jQuery(document).ready(function($) {
 	$('#capabilities-toggle-slug :checkbox').each(function() {
 		Nodes.capabilityToggleSlug($(this));
 	});
+
+	/**
+	 * Session-based "Alerts" / "Toasts"
+	 *
+	 * These alerts are inserted into the DOM from Laravel, and not inserted by JS. Still deserves some animation love.
+	 * We animate them in, and fade them out again after Nodes.alerts.autoCloseDelay seconds...
+	 */
+	if($('.alert.to-be-animated-in').length > 0) {
+
+		$('.alert.to-be-animated-in').each(function(i) {
+
+
+			if(i > 0) {
+				Nodes.alerts.animateIn($(this), 100*i, true);
+			} else {
+				Nodes.alerts.animateIn($(this), 0, true);
+			}
+
+		});
+
+		setTimeout(function() {
+			$( $('.alert:not(.to-be-animated-in)').get().reverse() ).each(function(i) {
+
+				if(i > 0) {
+					Nodes.alerts.animateOut($(this), 100*i, true);
+				} else {
+					Nodes.alerts.animateOut($(this), 0, true);
+				}
+			})
+		}, Nodes.alerts.autoCloseDelay);
+	}
 });
 
 (function($,sr){

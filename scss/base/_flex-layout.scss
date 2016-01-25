@@ -258,3 +258,33 @@ body.fullbleed {
 	display: flex;
 	align-items: center;
 }
+.center-vertical-sm {
+	@media (min-width: $screen-sm) {
+		display: flex;
+		align-items: center;
+	}
+}
+.center-vertical-md {
+	@media (min-width: $screen-md) {
+		display: flex;
+		align-items: center;
+	}
+}
+.center-vertical-lg {
+	@media (min-width: $screen-lg) {
+		display: flex;
+		align-items: center;
+	}
+}
+.center-vertical-xl {
+	@media (min-width: $screen-xl) {
+		display: flex;
+		align-items: center;
+	}
+}
+.center-vertical-xxl {
+	@media (min-width: $screen-xxl) {
+		display: flex;
+		align-items: center;
+	}
+}

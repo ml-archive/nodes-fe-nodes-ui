@@ -397,6 +397,27 @@ var Nodes = (function() {
 				});
 			}
 
-		}
+		},
+
+		alerts: {
+			autoCloseDelay: 8000,
+			activeAlerts: [],
+			animateIn: function(element, staggerDelay) {
+
+				$(element).delay(staggerDelay || 0).queue(function() {
+					$(element).removeClass('to-be-animated-in').dequeue();
+				});
+
+				Nodes.alerts.activeAlerts.push($(element));
+			},
+			animateOut: function(element, staggerDelay) {
+				$(element).delay(staggerDelay || 0).queue(function() {
+					$(element).addClass('to-be-animated-out').dequeue();
+				});
+				$(element).one('transitionend webkitTransitionEnd oTransitionEnd', function() {
+					$(this).remove();
+				});
+			}
+		},
 	};
 })();

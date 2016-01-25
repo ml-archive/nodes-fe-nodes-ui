@@ -1,16 +1,33 @@
-.alert {
+.page-alerts {
+	position: fixed;
+	top: $core-topbar-height + 20px;
+	right: 40px;
+	width: $core-sidebar-width;
+	z-index: 1000;
+}
 
+.page-alerts {
+	.alert {
+		@include whitespace();
 
-	&.alert-dismissible {
+		border-radius: 0;
+		opacity: 1;
 
+		transition: opacity 0.2s, transform 0.3s;
 
-		.close {
-
-
+		&.to-be-animated-in {
+			opacity: 0;
+			transform: translateX(100%);
+		}
+		&.to-be-animated-out {
+			opacity: 0;
+			transform: translateX(-100%);
 		}
 	}
-
-	> .fa {
-		margin-right: 0.4rem;
+	.alert:last-of-type {
+		@include whitespace($side: bottom, $type: margin);
+	}
+	.alert-dismissible .close {
+		right: 0;
 	}
 }

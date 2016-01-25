@@ -5,6 +5,7 @@
 		td {
 			padding: $padding-base-vertical $padding-large-vertical;
 			font-weight: $font-weight-semi-bold;
+			border-bottom-width: 0;
 		}
 	}
 	> tbody > tr {

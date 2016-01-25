@@ -7,7 +7,6 @@
  * Third-party plugins
  */
 @import "plugins/slick-carousel";
-@import "plugins/drop";
 
 /**
  * Base
@@ -58,6 +57,7 @@
 @import "components/navigation";
 @import "components/flash-messages";
 @import "components/collapse";
+@import "components/avatars";
 
 /**
  * Pages

@@ -212,6 +212,17 @@
 .margin-top-xl {
 	margin-top: $whitespace-root * $whitespace-xlarge-modifier;
 }
+.xs-down-margin-top-lg {
+	@media (max-width: $screen-sm) {
+		margin-top: $whitespace-root * $whitespace-large-modifier;
+	}
+}
+.md-margin-top-lg {
+	@media (min-width: $screen-md) {
+		margin-top: $whitespace-root * $whitespace-large-modifier;
+	}
+}
+
 
 // Right only
 .margin-right {
@@ -263,6 +274,71 @@
 .margin-left-xl {
 	margin-left: $whitespace-root * $whitespace-xlarge-modifier;
 }
+
+.margin-left-auto {
+	margin-left: $whitespace-root * $whitespace-base-modifier;
+}
+.margin-left-xs-auto {
+	@media (min-width: $screen-xs) {
+		margin-left: auto;
+	}
+}
+.margin-left-sm-auto {
+	@media (min-width: $screen-sm) {
+		margin-left: auto;
+	}
+}
+.margin-left-md-auto {
+	@media (min-width: $screen-md) {
+		margin-left: auto;
+	}
+}
+.margin-left-lg-auto {
+	@media (min-width: $screen-lg) {
+		margin-left: auto;
+	}
+}
+.margin-left-xl-auto {
+	@media (min-width: $screen-xl) {
+		margin-left: auto;
+	}
+}
+.margin-left-xxl-auto {
+	@media (min-width: $screen-xxl) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-xs-auto {
+	@media (max-width: $screen-xs) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-sm-auto {
+	@media (max-width: $screen-sm) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-md-auto {
+	@media (max-width: $screen-md) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-lg-auto {
+	@media (max-width: $screen-lg) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-xl-auto {
+	@media (max-width: $screen-xl) {
+		margin-left: auto;
+	}
+}
+.margin-left-down-xxl-auto {
+	@media (max-width: $screen-xxl) {
+		margin-left: auto;
+	}
+}
+
 
 //
 // Resets
