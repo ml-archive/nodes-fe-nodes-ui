@@ -37,6 +37,8 @@
 // to model (e.g. a car)
 var filePicker = {
 	init: function( options, elem ) {
+		console.log('den nye filepicker');
+
 		// Mix in the passed-in options with the default options
 		this.options = $.extend( {}, this.options, options );
 
