@@ -11,7 +11,6 @@ build:
   - 'concat'
   - 'uglify'
   - 'usemin'
-  - 'modernizr'
 # Just the styling
 styles:
   - 'sass'
