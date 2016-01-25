@@ -16,6 +16,14 @@ build:
 styles:
   - 'sass'
   - 'postcss'
+# Just the scripts
+scripts:
+  - 'assemble'
+  - 'useminPrepare'
+  - 'copy'
+  - 'concat'
+  - 'uglify'
+  - 'usemin'
 # Server
 server:
   - 'build'

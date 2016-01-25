@@ -2,19 +2,7 @@
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>{{default title meta}} | Foundation Docs</title>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" href="/favicon.ico">
-
-        <link href="{{assets}}/css/docs.css" rel="stylesheet" />
-        <link href="{{assets}}/css/nodes.css" rel="stylesheet" />
-
-        <script src="{{assets}}/js/modernizr.js"></script>
+        {{> head}}
     </head>
     <body class="fullbleed">
 
@@ -37,24 +25,7 @@
 
         </div>
 
-        <!-- build:js assets/js/vendor.js -->
-        <!-- bower:js -->
-        <script src="../../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../../bower_components/Chart.js/Chart.js"></script>
-        <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="../../bower_components/bootbox.js/bootbox.js"></script>
-        <script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
-        <script src="../../bower_components/velocity/velocity.js"></script>
-        <script src="../../bower_components/velocity/velocity.ui.js"></script>
-        <script src="../../bower_components/tether/dist/js/tether.js"></script>
-        <script src="../../bower_components/tether-drop/dist/js/drop.js"></script>
-        <!-- endbower -->
-        <script src="../../bower_components/prism/prism.js"></script>
-        <script src="../../bower_components/right-height/dist/js/right-height.js"></script>
-        <!-- endbuild -->
-
-        <script src="{{assets}}/js/docs.js"></script>
-        <script src="{{assets}}/js/nodes.js"></script>
+        {{> footer}}
     </body>
 
 </html>
