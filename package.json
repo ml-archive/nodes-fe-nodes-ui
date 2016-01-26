@@ -3,6 +3,7 @@
   "devDependencies": {
     "assemble": "0.4.42",
     "autoprefixer": "^6.0.3",
+    "ghooks": "1.0.3",
     "grunt": "~0.4.4",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compress": "~0.7.0",
@@ -23,7 +24,8 @@
     "highlight.js": "~7.3.0",
     "jasmine-jquery": "imtapps/node-jasmine-jquery",
     "load-grunt-config": "~0.16.0",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "validate-commit-msg": "1.1.1"
   },
   "keywords": [
     "handlebars-helper-rel",
@@ -36,5 +38,22 @@
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert",
+        "custom"
+      ],
+      "warnOnFail": true
+    }
+  }
 }
