@@ -15,11 +15,12 @@ layout: nested-component.html
 </h2>
 <form>
     <label for="backendUserFormImage">Image</label>
-    <div class="form-group input-group file-picker">
+    <div class="form-group input-group file-picker"
+         data-file="file.php" data-disable-preview="false">
 
         <div class="file-picker__inner">
             <div class="file-picker__zone">
-                <!--<img src="http://placehold.it/500x500" class="file-picker__preview img-responsive img-thumb">-->
+                <img src="" class="file-picker__preview img-responsive img-thumb">
                 <i class="file-picker__icon fa"></i>
                 <span class="file-picker__drop-text">Drop your file here</span>
 

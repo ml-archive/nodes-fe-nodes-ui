@@ -39,31 +39,98 @@ var filePicker = {
 	init: function( options, elem ) {
 		console.log('den nye filepicker');
 
-		// Mix in the passed-in options with the default options
-		this.options = $.extend( {}, this.options, options );
+		var self = this;
+
+		var dragEnterTarget = null;
 
 		// Save the element reference, both as a jQuery
 		// reference and a normal reference
 		this.elem  = elem;
 		this.$elem = $(elem);
 
-		this.$body = $('body');
+		// Mix in the passed-in options with the default options
+		this.options = $.extend( {}, this.options, options );
 
-		this.$fileInput = this.$elem.find('file-picker__file-input');
+		if(this.$elem.data('disable-preview')) {
+			this.options.disablePreview = this.$elem.data('disable-preview');
+		}
+
+		this.$fileInput = this.$elem.find('.file-picker__file-input');
 		this.$fileOutput = this.$elem.find('.file-picker__file-name');
-
 		this.$previewImg = this.$elem.find('.file-picker__preview');
 		this.$previewIcon = this.$elem.find('.file-picker__icon');
-
 		this.$clearInputBtn = this.$elem.find('.file-picker__clear');
+		this.$dropZone = this.$elem.find('.file-picker__zone');
 
+		console.log(this.options.disablePreview);
 
-		/////// Bind events her, der
-		this.$fileInput.bind('change', inputOnChange);
-		this.$elem.bind('dragover', inputOnDragOver);
-		this.$elem.bind('drop', inputOnDrop);
+		if(this.options.disablePreview) {
+			this.$dropZone.hide();
+		}
 
-		this.$clearInputBtn.bind('click', removeFile);
+		if(this.$elem.data('image') && !this.$elem.data('file')) {
+			this.$previewImg.attr('src', this.$elem.data('image'));
+			this.$clearInputBtn.show();
+			fileName(this.$fileOutput, this.$elem.data('image'));
+		}
+
+		if(this.$elem.data('file') && !this.$elem.data('image')) {
+			previewIcon(this.$previewIcon, {name: this.$elem.data('file')}, this.options.filePatterns);
+			this.$clearInputBtn.show();
+			fileName(this.$fileOutput, this.$elem.data('file'));
+		}
+
+		this.$fileInput.bind('change', function(e) {
+			var file = this.files[0];
+			if(file) {
+				if(_fileIsImage(file) && !self.options.disablePreview) {
+					previewImg(self.$previewImg, file);
+				} else {
+					previewIcon(self.$previewIcon, file, self.options.filePatterns);
+				}
+
+				fileName(self.$fileOutput, file.name);
+
+				self.$clearInputBtn.show();
+			} else {
+				removeFile(e, self.$previewImg, self.$previewIcon, self.$fileInput, self.$fileOutput, self.$clearInputBtn);
+			}
+		});
+		this.$elem.bind('dragover', function(e) {
+			e.preventDefault();
+		});
+		this.$elem.bind('dragenter', function(e) {
+			dragEnterTarget = e.originalEvent.target;
+			e.stopPropagation();
+			e.preventDefault();
+			self.$dropZone.addClass('highlight');
+			return false;
+		});
+		this.$elem.bind('dragleave', function(e) {
+			if(dragEnterTarget == e.originalEvent.target) {
+				e.stopPropagation();
+				e.preventDefault();
+				self.$dropZone.removeClass('highlight');
+			}
+		});
+		this.$elem.bind('drop', function(e) {
+			if(e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files) {
+				e.preventDefault();
+				self.$fileInput.prop('files', e.originalEvent.dataTransfer.files);
+				self.$dropZone.removeClass('highlight');
+			}
+		});
+		this.$clearInputBtn.bind('click', function(e) {
+			removeFile(e, self.$previewImg, self.$previewIcon, self.$fileInput, self.$fileOutput, self.$clearInputBtn);
+		});
+		window.addEventListener('dragover',function(e){
+			e = e || event;
+			e.preventDefault();
+		},false);
+		window.addEventListener('drop',function(e){
+			e = e || event;
+			e.preventDefault();
+		},false);
 
 		// return this so that we can chain and use the bridge with less code.
 		return this;
@@ -72,7 +139,7 @@ var filePicker = {
 		disablePreview: false,
 		filePatterns: {
 			'IMG': {
-				icon: 'file-image-o',
+				icon: 'fa-file-image-o',
 				match: /\.(gif|jpg|jpeg|tiff|png)$/i
 			},
 			//'FALLBACK': 'file-o',
@@ -85,9 +152,10 @@ var filePicker = {
 			//'TEXT': 'file-text-o',
 			//'ARCHIVE': 'file-archive-o',
 			'CODE': {
-				icon: 'file-code-o',
+				icon: 'fa-file-code-o',
 				match: /\.(php|js|css|html|json)$/i
-			}
+			},
+			'FALLBACK': 'fa-file-o'
 		}
 	},
 	myMethod: function( msg ){
@@ -124,24 +192,55 @@ function inputOnDragLeave(e) {
 /*
 	Primary Methods
  */
-function previewImg(img) {
+function previewImg($img, file) {
+	if(!file) {
+		return $img.attr('src');
+	}
+
+	var reader = new FileReader();
+	reader.onload = function(e) {
+		$img.attr('src', e.target.result);
+	};
+	return reader.readAsDataURL(file);
+}
+
+function previewIcon($icon, file, patterns) {
+
+	var iconClass = _mapFileExtensionToIcon(file, patterns);
+	$icon.addClass(iconClass).show();
 
 }
 
-function previewIcon(iconType) {
+function fileName($fileOutput, fileName) {
+	if(!fileName) {
+		return $fileOutput.val();
+	}
 
-}
-
-function fileName(fileName) {
-
+	$fileOutput.val(fileName);
 }
 
 function setFile() {
 
 }
 
-function removeFile() {
-	console.log('CLICK');
+function removeFile(e, $img, $icon, $fileInput, $fileOutput, $clearBtn) {
+	e.preventDefault();
+
+	$fileInput.wrap('<form>').closest('form').get(0).reset();
+	$fileInput.unwrap();
+
+	if($img) {
+		$img.attr('src', '');
+	}
+	if($icon) {
+		var newClass = $icon.attr('class').split(' ')[0];
+		$icon.attr('class', newClass + ' fa').hide();
+	}
+
+	$clearBtn.hide();
+
+	$fileOutput.val('');
+
 }
 
 /*
@@ -151,12 +250,31 @@ function _safeEval(obj) {
 
 }
 
-function _mapFileExtensionToIcon(file) {
+function _mapFileExtensionToIcon(file, patterns) {
 
+	var iconClass = patterns['FALLBACK'];
+
+	for(var key in patterns) {
+		if(patterns.hasOwnProperty(key)) {
+			if(checkFiletype(patterns[key], file.name)) {
+				iconClass = patterns[key].icon;
+			}
+		}
+	}
+
+	return iconClass;
+
+	function checkFiletype(filePattern, file) {
+		return file.match(filePattern.match);
+	}
 }
 
 function _fileIsImage(file) {
+	return file.type.match(/image[\/\-\w]*/);
+}
 
+function _inputHasFile($input) {
+	return $input.files[0] || false;
 }
 
 // Object.create support test, and fallback for browsers without it
