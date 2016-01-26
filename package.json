@@ -40,6 +40,9 @@
   },
   "version": "0.0.0",
   "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
     "validate-commit-msg": {
       "types": [
         "feat",
