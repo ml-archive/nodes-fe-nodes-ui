@@ -1,15 +1,13 @@
 /*
- Events:
-
- Methods:
-
- Super Methods (should call above based on if/elses):
-
  Settings (data-*):
+ - options
+ - toggle
 
  On init:
+ - Configure and initialize datetimepicker plugin <https://eonasdan.github.io/bootstrap-datetimepicker>
 
  Helper Methods (Private):
+ - Eval data-options
 
  */
 
@@ -17,9 +15,6 @@
  * ...
  * Author: Alexander Hafstad <alhl@nodes.dk>
  */
-
-// myObject - an object representing a concept that you want
-// to model (e.g. a car)
 var datetimepickerWrapper = {
 	init: function( options, elem ) {
 		// Save the element reference, both as a jQuery
@@ -29,19 +24,27 @@ var datetimepickerWrapper = {
 
 		// Mix in the passed-in options with the default options
 		this.options = $.extend( {}, this.options, options );
+
+		// Set format depending on data-toggle
+		this.toggle = this.$elem.data('toggle');
+
+		if(this.toggle === 'date') {
+			this.options.format = 'YYYY-MM-DD';
+		} else if(this.toggle === 'time') {
+			this.options.format = 'HH:mm';
+		}
+
 		// Mix in the data-options with the options
 		this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
 
-
+		// Initialize datetimepicker plugin
 		this.$elem.datetimepicker(this.options);
-
-
-		console.log('Datetime picker wrapper', this.options);
 
 		// return this so that we can chain and use the bridge with less code.
 		return this;
 	},
 	options: {
+		format: 'YYYY-MM-DD HH:mm',
 		calendarWeeks: false,
 		allowInputToggle: true,
 		icons: {
@@ -57,16 +60,6 @@ var datetimepickerWrapper = {
 		}
 	}
 };
-
-/*
- Event Methods
- */
-
-
-/*
- Primary Methods
- */
-
 
 /*
  Helper Methods
@@ -99,12 +92,3 @@ $.plugin = function( name, object ) {
 
 // Register the plugin
 $.plugin('datetimepickerWrapper', datetimepickerWrapper);
-
-// Usage:
-// With myObject, we could now essentially do this:
-// $.plugin('myobj', myObject);
-
-// and at this point we could do the following
-// $('#elem').myobj({name: "John"});
-// var inst = $('#elem').data('myobj');
-// inst.myMethod('I am a method');

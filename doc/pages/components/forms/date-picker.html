@@ -7,15 +7,52 @@ layout: nested-component.html
 </h1>
 
 <p class="docs--page-description">
-    ...
+    Uses <a href="https://eonasdan.github.io/bootstrap-datetimepicker/">bootstrap-datetimepicker</a><br />
+    Full list of options can be found <a href="https://eonasdan.github.io/bootstrap-datetimepicker/Options/">here</a> which can be set by the data-options attribute<br />
+    Locale and formatting uses <a href="http://momentjs.com">momentjs</a>, formatting details can be found <a href="http://momentjs.com/docs/#/displaying/format/">here</a><br />
+    <strong>NOTE: If data-toggle attribute isn't set, the component will default to date and time picker</strong>
 </p>
 
-<h2 class="docs--section-header">
-    Basic
-</h2>
 <form>
+    <!-- Date -->
+    <h2 class="docs--section-header">
+        Date picker
+    </h2>
+    <p class="docs--section-description">
+        Default format is: YYYY-MM
+    </p>
     <div class="form-group">
-        <div class="input-group date-picker" data-options="{locale: 'da'}">
+        <div class="input-group date-picker" data-toggle="date" data-options="{locale: 'da'}">
+            <input type="text" class="form-control" />
+            <span class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </span>
+        </div>
+    </div>
+    <!-- Time -->
+    <h2 class="docs--section-header">
+        Time picker
+    </h2>
+    <p class="docs--section-description">
+        Default format is: HH:mm
+    </p>
+    <div class="form-group">
+        <div class="input-group date-picker" data-toggle="time" data-options="{locale: 'da'}">
+            <input type="text" class="form-control" />
+            <span class="input-group-addon">
+                <i class="fa fa-clock-o"></i>
+            </span>
+        </div>
+    </div>
+    <!-- Date and time -->
+    <h2 class="docs--section-header">
+        Date and time picker
+    </h2>
+    <p class="docs--section-description">
+        Default format is: YYYY-MM HH:mm
+    </p>
+    <div class="form-group">
+        <div class="input-group date-picker" data-toggle="datetime" data-options="{locale: 'da'}">
             <input type="text" class="form-control" />
             <span class="input-group-addon">
                 <i class="fa fa-calendar"></i>
