@@ -56,7 +56,8 @@
         "revert",
         "custom"
       ],
-      "warnOnFail": true
+      "warnOnFail": false,
+      "maxSubjectLength": 100
     }
   }
 }
