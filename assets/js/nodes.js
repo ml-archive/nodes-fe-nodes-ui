@@ -1,4 +1,3 @@
-console.log('nodes.js');
 var Nodes = (function() {
 	return {
 		/**
@@ -398,10 +397,147 @@ var Nodes = (function() {
 				});
 			}
 
-		}
+		},
+
+		alerts: {
+			autoCloseDelay: 8000,
+			activeAlerts: [],
+			animateIn: function(element, staggerDelay) {
+
+				$(element).delay(staggerDelay || 0).queue(function() {
+					$(element).removeClass('to-be-animated-in').dequeue();
+				});
+
+				Nodes.alerts.activeAlerts.push($(element));
+			},
+			animateOut: function(element, staggerDelay) {
+				$(element).delay(staggerDelay || 0).queue(function() {
+					$(element).addClass('to-be-animated-out').dequeue();
+				});
+				$(element).one('transitionend webkitTransitionEnd oTransitionEnd', function() {
+					$(this).remove();
+				});
+			}
+		},
 	};
 })();
 jQuery(document).ready(function($) {
+
+	/**
+	 * Datetime picker
+	 */
+	$('.date-picker').datetimepickerWrapper();
+
+	/**
+	 * File picker
+	 */
+	$('.file-picker').filePicker();
+
+	$('[data-dropdown]').each(function(i, el) {
+		initDrop($(this));
+	});
+
+	function evalDataOptions(str) {
+		try {
+			return eval( '(' + str + ')' )
+		} catch(e) {
+			throw e;
+		}
+
+	}
+
+	function initDrop(el) {
+
+		var $el = $(el);
+
+		var $dropdownContent = $(el).parent().find('.dropdown-menu');
+
+		var opts = evalDataOptions($el.data('options'));
+
+		opts.target = $el[0];
+		opts.content = $dropdownContent[0];
+
+		new Drop(opts);
+
+	}
+
+	var BREAKPOINTS = {
+		xs: 480,
+		sm: 768,
+		md: 992,
+		lg: 1200,
+		xl: 1440,
+		xxl: 1920
+	};
+
+	$(window).smartresize(function() {
+		var winWidth = window.innerWidth;
+
+		if(winWidth > BREAKPOINTS.sm - 1) {
+			$('.core-layout').removeClass('core-layout--left-open');
+			$('.core-layout__sidebar-wrapper').removeAttr('style');
+			$('.core-layout__sidebar').removeAttr('style');
+		}
+
+	});
+	$('.core__left-sidebar-toggle').on('click', function() {
+
+		var LEFT_MENU_OPEN_CLASS = 'core-layout--left-open';
+
+		var $coreLayout = $('.core-layout');
+		var $sidebar = $('.core-layout__sidebar-wrapper');
+		var $content = $('.core-layout__sidebar');
+
+		var isSidebarVisible = $coreLayout.hasClass('core-layout--left-open');
+
+		isSidebarVisible ? _animateOut() : _animateIn();
+
+		function _animateIn() {
+			$sidebar.velocity({
+				opacity: 1
+			}, {
+				duration: 200,
+				display: 'block',
+				complete: function() {
+					$coreLayout.addClass(LEFT_MENU_OPEN_CLASS);
+					$sidebar.on('click', function(e) {
+						if(e.target.className !== 'core-layout__sidebar-wrapper') {
+							return;
+						}
+						_animateOut();
+					});
+				}
+			});
+
+			$content.velocity({
+				translateX: '0%'
+			}, {
+				duration: 200,
+				delay: 200
+			});
+		}
+
+		function _animateOut() {
+			$sidebar.velocity({
+				opacity: 0
+			}, {
+				duration: 200,
+				display: 'none',
+				complete: function() {
+					$coreLayout.removeClass(LEFT_MENU_OPEN_CLASS);
+				}
+			});
+
+			$content.velocity({
+				translateX: '-100%'
+			}, {
+				duration: 200,
+				delay: 100
+			});
+		}
+
+	});
+
 
 	// Configure Chart.js globals
 	Chart.defaults.global.responsive = true;
@@ -436,7 +572,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// Init equalheight plugin
-	rightHeight.init();
+	//rightHeight.init();
 
 	// Highlight selected radio-/checkboxes
 	$('.checkbox,.radio').each(function() {
@@ -588,4 +724,63 @@ jQuery(document).ready(function($) {
 	$('#capabilities-toggle-slug :checkbox').each(function() {
 		Nodes.capabilityToggleSlug($(this));
 	});
-})
+
+	/**
+	 * Session-based "Alerts" / "Toasts"
+	 *
+	 * These alerts are inserted into the DOM from Laravel, and not inserted by JS. Still deserves some animation love.
+	 * We animate them in, and fade them out again after Nodes.alerts.autoCloseDelay seconds...
+	 */
+	if($('.alert.to-be-animated-in').length > 0) {
+
+		$('.alert.to-be-animated-in').each(function(i) {
+
+
+			if(i > 0) {
+				Nodes.alerts.animateIn($(this), 100*i, true);
+			} else {
+				Nodes.alerts.animateIn($(this), 0, true);
+			}
+
+		});
+
+		setTimeout(function() {
+			$( $('.alert:not(.to-be-animated-in)').get().reverse() ).each(function(i) {
+
+				if(i > 0) {
+					Nodes.alerts.animateOut($(this), 100*i, true);
+				} else {
+					Nodes.alerts.animateOut($(this), 0, true);
+				}
+			})
+		}, Nodes.alerts.autoCloseDelay);
+	}
+});
+
+(function($,sr){
+
+	// debouncing function from John Hann
+	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+	var debounce = function (func, threshold, execAsap) {
+		var timeout;
+
+		return function debounced () {
+			var obj = this, args = arguments;
+			function delayed () {
+				if (!execAsap)
+					func.apply(obj, args);
+				timeout = null;
+			};
+
+			if (timeout)
+				clearTimeout(timeout);
+			else if (execAsap)
+				func.apply(obj, args);
+
+			timeout = setTimeout(delayed, threshold || 100);
+		};
+	}
+	// smartresize
+	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');

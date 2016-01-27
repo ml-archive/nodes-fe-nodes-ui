@@ -3,17 +3,16 @@
 <html class="no-js" lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Table Components | Foundation Docs</title>
+<title>Table Components | Foundation Docs</title>
 
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-        <link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="/favicon.ico">
 
-        <link href="../../assets/css/docs.css" rel="stylesheet" />
-        <link href="../../assets/css/nodes.css" rel="stylesheet" />
-
-        <script src="../../assets/js/modernizr.js"></script>
+<link href="../../assets/css/docs.css" rel="stylesheet" />
+<link href="../../assets/css/nodes.css" rel="stylesheet" />
     </head>
     <body class="fullbleed">
 
@@ -139,6 +138,12 @@
     <li class="docs--sidebar__item">
         <a href="../../components/forms/floating-labels.html" data-search="">Floating Labels</a>
     </li>
+    <li class="docs--sidebar__item">
+        <a href="../../components/forms/file-picker.html" data-search="">File Picker</a>
+    </li>
+    <li class="docs--sidebar__item">
+    <a href="../../components/forms/date-picker.html" data-search="">Date Picker</a>
+    </li>
 
     <!-- Buttons -->
     <li class="docs--sidebar__sub-heading">Buttons</li>
@@ -211,6 +216,11 @@
     <li class="docs--sidebar__has-subnav">
         <span>Layouts</span>
         <ul class="docs--sidebar__subnav">
+
+            <li class="docs--sidebar__item">
+                <a href="../../blade-templates/layouts/core-layout.html" data-search="">Core Layout Playground</a>
+            </li>
+
             <li class="docs--sidebar__item">
                 <a href="../../blade-templates/layouts/core-layout-wide.html" data-search="">Core Layout Wide</a>
             </li>
@@ -392,13 +402,145 @@
                 <button class="btn btn-sm btn-warning">Action</button>
                 <button class="btn btn-sm btn-danger"><i class="fa fa-bus"></i></button>
                 <button class="btn btn-sm btn-warning"><i class="fa fa-search"></i></button>
+                <div class="table-dropdown">
+                    <button class="btn btn-transparent" data-dropdown data-options="{position: 'bottom right'}">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-play-circle"></i>
+                                Restart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-trash-o"></i>
+                                Forget
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </td>
         </tr>
     </tbody>
 </table>
 
 <h2 class="docs--section-header">
-    Table Actions
+    Table Dropdowns
+</h2>
+
+<p class="docs--page-description">
+    Adding 500 buttons to a table-cell is horrible, so we also offer a dropdown specifically designed to be used with tables. The dropdown is not the default bootstrap dropdown, but instead a more advanced build by Hubspot.
+</p>
+<div class="text-info docs--panel docs--panel-info docs--panel-developers">
+    <p>
+        Dropdowns build with Drop from Hubspot can be configured by adding a <code>data-options</code> attribute with a object of options to the triggering button, ie.: <code>data-options=&quot;{position: &#39;bottom right&#39;}&quot;</code>.
+    </p>
+    <p>
+        Read all about Drop here: <a href="http://github.hubspot.com/drop/" target="_blank"><a href="http://github.hubspot.com/drop/">http://github.hubspot.com/drop/</a></a>
+    </p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                Last Name
+            </td>
+            <td>
+                Username
+            </td>
+            <td>
+                Email
+            </td>
+            <td>
+                Role
+            </td>
+            <td>
+                Birthday
+            </td>
+            <td>
+                Status
+            </td>
+            <td>
+                Actions
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                John
+            </td>
+            <td>
+                Doe
+            </td>
+            <td>
+                jd
+            </td>
+            <td>
+                john.doe@company.com
+            </td>
+            <td>
+                Administrator
+            </td>
+            <td>
+                21/05/1980
+            </td>
+            <td>
+                Active
+            </td>
+            <td class="table-actions">
+                <div class="table-dropdown">
+                    <button class="btn btn-transparent" data-dropdown data-options="{position: 'bottom right'}">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-play-circle"></i>
+                                Restart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-trash-o"></i>
+                                Forget
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Some other action
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">
+    Table Sorters
 </h2>
 
 <p class="docs--page-description">
@@ -440,10 +582,12 @@
 
         </div>
 
-        <script src="../../assets/js/vendor.js"></script>
+        <script src="/assets/js/vendor.js"></script>
 
-        <script src="../../../assets/js/docs.js"></script>
-        <script src="../../../assets/js/nodes.js"></script>
+<script src="../../../assets/js/modules/file-picker.js"></script>
+<script src="../../../assets/js/modules/date-time-picker.js"></script>
+<script src="../../../assets/js/docs.js"></script>
+<script src="../../../assets/js/nodes.js"></script>
     </body>
 
 </html>

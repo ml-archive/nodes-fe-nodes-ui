@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>User dropdown | Foundation Docs</title>
+<title>File Picker | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
@@ -127,22 +127,22 @@
     <!-- Forms -->
     <li class="docs--sidebar__sub-heading">Forms</li>
     <li class="docs--sidebar__item">
-        <a href="../forms/form-basics.html" data-search="">Form Basics</a>
+        <a href="form-basics.html" data-search="">Form Basics</a>
     </li>
     <li class="docs--sidebar__item">
-        <a href="../forms/input-basics.html" data-search="">Input Basics</a>
+        <a href="input-basics.html" data-search="">Input Basics</a>
     </li>
     <li class="docs--sidebar__item">
-        <a href="../forms/action-wrappers.html" data-search="">Action Wrappers</a>
+        <a href="action-wrappers.html" data-search="">Action Wrappers</a>
     </li>
     <li class="docs--sidebar__item">
-        <a href="../forms/floating-labels.html" data-search="">Floating Labels</a>
+        <a href="floating-labels.html" data-search="">Floating Labels</a>
+    </li>
+    <li class="docs--sidebar__item active">
+        <a href="file-picker.html" data-search="">File Picker</a>
     </li>
     <li class="docs--sidebar__item">
-        <a href="../forms/file-picker.html" data-search="">File Picker</a>
-    </li>
-    <li class="docs--sidebar__item">
-    <a href="../forms/date-picker.html" data-search="">Date Picker</a>
+    <a href="date-picker.html" data-search="">Date Picker</a>
     </li>
 
     <!-- Buttons -->
@@ -170,19 +170,19 @@
         <span>Dropdowns</span>
         <ul class="docs--sidebar__subnav">
             <li class="docs--sidebar__item">
-                <a href="basics-dropdown.html" data-search="">Dropdown Basics</a>
+                <a href="../dropdowns/basics-dropdown.html" data-search="">Dropdown Basics</a>
             </li>
             <li class="docs--sidebar__item">
-                <a href="content-dropdown.html" data-search="">Content-dropdowns</a>
+                <a href="../dropdowns/content-dropdown.html" data-search="">Content-dropdowns</a>
             </li>
             <li class="docs--sidebar__item">
-                <a href="features-dropdown.html" data-search="">Features dropdown</a>
-            </li>
-            <li class="docs--sidebar__item active">
-                <a href="user-dropdown.html" data-search="">User dropdown</a>
+                <a href="../dropdowns/features-dropdown.html" data-search="">Features dropdown</a>
             </li>
             <li class="docs--sidebar__item">
-                <a href="applications-dropdown.html" data-search="">Applications dropdown</a>
+                <a href="../dropdowns/user-dropdown.html" data-search="">User dropdown</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="../dropdowns/applications-dropdown.html" data-search="">Applications dropdown</a>
             </li>
         </ul>
     </li>
@@ -242,108 +242,172 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">
-                    <h1 class="docs--page-header">User dropdown</h1>
+                    <h1 class="docs--page-header">
+    File Picker
+</h1>
 
 <p class="docs--page-description">
-    This dropdown is designed specifically for the topbar. It can contain user information, company information and more.
+    Pretty input fields for files. Creates thumbnail previews for images, and shows common filetype icons for other files.
 </p>
 
-<div class="dropdown dropdown-user open">
-    <button class="btn btn-transparent" data-toggle="dropdown">
-        <i class="fa fa-user"></i>
-    </button>
-    <div class="dropdown-menu dropdown-inverse animate-expand align-right">
-        <div class="dropdown-content">
-            <p class="dropdown-content__title">
-                User
-            </p>
-            <div class="user">
-                <div class="user__profile">
-                    <img class="img-responsive" src="//placehold.it/300x300"/>
-                </div>
-                <div class="user__info">
-                    <span class="user__info-name" title="John Doe">
-                        John Doe
+<p><h2 class="docs--section-header">
+    Usage
+</h2></p>
+<p><p class="docs--page-description">
+    Add the class <code>file-picker</code> to a form-group to initialize this plugin without writing any Javascript.
+    Alternatively you can instantiate the plugin like this: <code>$(&#39;.some-element&#39;).filePicker();</code>.
+    Options can be defined as data-attributes, or as an object when instantiating in Javascript.
+</p></p>
+<p><h2 class="docs--section-header">
+    Options
+</h2></p>
+<table class="table docs--section-guide">
+    <tr>
+        <td>Option</td>
+        <td>default</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>disablePreview</td>
+        <td><code>false</code></td>
+        <td>Disables the image/file drag and drop zone.</td>
+    </tr>
+    <tr>
+        <td>filePatterns</td>
+        <td>
+<pre><code>
+...omited...
+&#39;CODE&#39;: {
+    icon: &#39;fa-file-code-o&#39;,
+    match: /.(php|js|css|html|json)$/i
+},
+...omited...
+</code></pre>
+        </td>
+        <td>
+            A list of file types and an associated regex test for the supported file extensions.
+        </td>
+    </tr>
+</table>
+<h2 class="docs--section-header">
+    Init with a predefined file
+</h2>
+<p class="docs--page-description">
+    To instantiate the file-picker with a predefined file, you need to use either of the following data-attributes (but not both :-) )
+</p>
+<table class="table docs--section-guide">
+    <tr>
+        <td>data-image</td>
+        <td>Will set the preview-image&#39;s src to the string defined in the data-attribute</td>
+    </tr>
+    <tr>
+        <td>data-file</td>
+        <td>Will set the preview-image&#39;s src to the string defined in the data-attribute</td>
+    </tr>
+</table>
+
+<form>
+    <div class="form-group input-group file-picker">
+        <label for="backendUserFormImage">As basic as it gets</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
                     </span>
-                    <span class="user__info-email" title="john.doe.doe.doe.doe.doe.doe.doe.doe@email.com">
-                        john.doe.doe.doe.doe.doe.doe.doe.doe@email.com
-                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
                 </div>
-            </div>
-            <div class="user-actions">
-                <button class="btn btn-sm btn-transparent user__sign-out">
-                    <i class="fa fa-sign-out"></i>
-                    Sign out
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Edit user"
-                        class="btn btn-sm btn-transparent user__settings">
-                    <i class="fa fa-pencil"></i>
-                </button>
-            </div>
-            <p class="dropdown-content__title">
-                Company
-            </p>
-            <div class="company">
-                <div class="company__profile">
-                    <img class="img-responsive" src="//placehold.it/300x300"/>
-                </div>
-                <div class="company__info">
-                    <span class="company__info-name">
-                        Nodes Agency
-                    </span>
-                </div>
-            </div>
-            <p class="dropdown-content__title company-list-title">
-                Switch company
-            </p>
-            <div class="company-list">
-                <ul>
-                    <li>
-                        <a href="#">
-                            eBoks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                        </a>
-                    </li>
-                    <li class="company-list__more">
-                        <a href="#">
-                            <i class="fa fa-plus"></i>
-                            more
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="company-actions">
-                <button class="btn btn-transparent company__invite">
-                    <i class="fa fa-user-plus"></i>
-                    Invite to company
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Edit company"
-                        class="button btn btn-transparent company__settings">
-                    <i class="fa fa-cog"></i>
-                </button>
             </div>
         </div>
     </div>
-</div>
+    <div class="form-group input-group file-picker" data-disable-preview="true">
+        <label for="backendUserFormImage">Without the preview area</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
+        <label for="backendUserFormImage">With a predefined image</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group input-group file-picker" data-file="my-video.mp4">
+        <label for="backendUserFormImage">With a predefined file</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
                 </div>
             </div>
