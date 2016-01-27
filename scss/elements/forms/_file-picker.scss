@@ -1,6 +1,9 @@
 .file-picker {
 
 }
+.file-picker:not(.file-picker--no-preview) .file-picker__input-group {
+	@include whitespace($side: left, $type: margin);
+}
 .file-picker__inner {
 	display: flex;
 	align-items: center;
@@ -64,9 +67,6 @@
 .file-picker__icon {
 	position: absolute;
 	z-index: 20;
-}
-.file-picker__zone + .file-picker__input-group {
-	@include whitespace($side: left, $type: margin);
 }
 .file-picker__input-group {
 	position: relative;
