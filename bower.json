@@ -26,7 +26,7 @@
     "zeroclipboard": "~2.2.0"
   },
   "main": [
-    "js/nodes.js",
+    "js/nodes.compiled.js",
     "js/scripts.js",
     "scss/nodes.scss"
   ],

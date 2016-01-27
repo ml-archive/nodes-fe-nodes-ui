@@ -7,19 +7,71 @@ layout: nested-component.html
 </h1>
 
 <p class="docs--page-description">
-    ...
+    Pretty input fields for files. Creates thumbnail previews for images, and shows common filetype icons for other files.
 </p>
 
 <h2 class="docs--section-header">
-    Basic
+    Usage
 </h2>
-<form>
-    <label for="backendUserFormImage">Image</label>
-    <div class="form-group input-group file-picker">
+<p class="docs--page-description">
+    Add the class <code>file-picker</code> to a form-group to initialize this plugin without writing any Javascript.
+    Alternatively you can instantiate the plugin like this: <code>$('.some-element').filePicker();</code>.
+    Options can be defined as data-attributes, or as an object when instantiating in Javascript.
+</p>
+<h2 class="docs--section-header">
+    Options
+</h2>
+<table class="table docs--section-guide">
+    <tr>
+        <td>Option</td>
+        <td>default</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td>disablePreview</td>
+        <td><code>false</code></td>
+        <td>Disables the image/file drag and drop zone.</td>
+    </tr>
+    <tr>
+        <td>filePatterns</td>
+        <td>
+<pre><code>
+...omited...
+'CODE': {
+    icon: 'fa-file-code-o',
+    match: /\.(php|js|css|html|json)$/i
+},
+...omited...
+</code></pre>
+        </td>
+        <td>
+            A list of file types and an associated regex test for the supported file extensions.
+        </td>
+    </tr>
+</table>
+<h2 class="docs--section-header">
+    Init with a predefined file
+</h2>
+<p class="docs--page-description">
+    To instantiate the file-picker with a predefined file, you need to use either of the following data-attributes (but not both :-) )
+</p>
+<table class="table docs--section-guide">
+    <tr>
+        <td>data-image</td>
+        <td>Will set the preview-image's src to the string defined in the data-attribute</td>
+    </tr>
+    <tr>
+        <td>data-file</td>
+        <td>Will set the preview-image's src to the string defined in the data-attribute</td>
+    </tr>
+</table>
 
+<form>
+    <div class="form-group input-group file-picker">
+        <label for="backendUserFormImage">As basic as it gets</label>
         <div class="file-picker__inner">
             <div class="file-picker__zone">
-                <!--<img src="http://placehold.it/500x500" class="file-picker__preview img-responsive img-thumb">-->
+                <img src="" class="file-picker__preview img-responsive img-thumb">
                 <i class="file-picker__icon fa"></i>
                 <span class="file-picker__drop-text">Drop your file here</span>
 
@@ -39,6 +91,80 @@ layout: nested-component.html
                 </div>
             </div>
         </div>
+    </div>
+    <div class="form-group input-group file-picker" data-disable-preview="true">
+        <label for="backendUserFormImage">Without the preview area</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
 
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
+        <label for="backendUserFormImage">With a predefined image</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group input-group file-picker" data-file="my-video.mp4">
+        <label for="backendUserFormImage">With a predefined file</label>
+        <div class="file-picker__inner">
+            <div class="file-picker__zone">
+                <img src="" class="file-picker__preview img-responsive img-thumb">
+                <i class="file-picker__icon fa"></i>
+                <span class="file-picker__drop-text">Drop your file here</span>
+
+                <button class="btn btn-transparent btn-sm file-picker__clear">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="file-picker__input-group">
+                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="file-input__choose btn btn-default">
+                            Browse
+                        </span>
+                    </span>
+                    <input type="text" class="form-control file-picker__file-name" readonly>
+                </div>
+            </div>
+        </div>
     </div>
 </form>

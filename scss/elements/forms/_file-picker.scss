@@ -1,6 +1,9 @@
 .file-picker {
 
 }
+.file-picker:not(.file-picker--no-preview) .file-picker__input-group {
+	@include whitespace($side: left, $type: margin);
+}
 .file-picker__inner {
 	display: flex;
 	align-items: center;
@@ -13,8 +16,12 @@
 	border-radius: $border-radius-base;
 	border: 2px dotted $gray;
 	overflow: hidden;
+	&.highlight {
+		border-color: $primary-color;
+	}
+
 	.file-picker__icon {
-		display: block;
+		display: none;
 		position: absolute;
 		top: 50%;
 		left: 0;
@@ -35,10 +42,14 @@
 		text-align: center;
 	}
 	.file-picker__clear.btn {
+		display: none;
 		position: absolute;
 		top: 5px;
 		right: 5px;
-		color: $danger-color;
+		color: $white;
+		z-index: 40;
+
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 }
 .file-picker__preview {
@@ -48,13 +59,16 @@
 	width: 100%;
 	height: 100%;
 	z-index: 30;
+	background-color: $white;
+	&[src=""] {
+		display: none;
+	}
 }
 .file-picker__icon {
 	position: absolute;
 	z-index: 20;
 }
 .file-picker__input-group {
-	@include whitespace($side: left, $type: margin);
 	position: relative;
 	width: 75%;
 
@@ -79,6 +93,14 @@
 		opacity: 0;
 		cursor: inherit;
 		display: block;
+		z-index: 10;
+		&:hover {
+			cursor: pointer;
+			+ .input-group .input-group-btn .btn {
+				border-color: $input-border;
+				background-color: darken($btn-default-bg, 10%);
+			}
+		}
 	}
 	input[readonly] {
 		margin-left: -1px;
