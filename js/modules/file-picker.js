@@ -53,6 +53,7 @@ var filePicker = {
 
 		if(this.$elem.data('disable-preview')) {
 			this.options.disablePreview = this.$elem.data('disable-preview');
+			this.$elem.addClass('file-picker--no-preview');
 		}
 
 		this.$fileInput = this.$elem.find('.file-picker__file-input');
@@ -62,12 +63,13 @@ var filePicker = {
 		this.$clearInputBtn = this.$elem.find('.file-picker__clear');
 		this.$dropZone = this.$elem.find('.file-picker__zone');
 
-		console.log(this.options.disablePreview);
-
 		if(this.options.disablePreview) {
 			this.$dropZone.hide();
 		}
 
+		/*
+			If the component is preconfigured
+		 */
 		if(this.$elem.data('image') && !this.$elem.data('file')) {
 			this.$previewImg.attr('src', this.$elem.data('image'));
 			this.$clearInputBtn.show();
@@ -138,19 +140,42 @@ var filePicker = {
 	options: {
 		disablePreview: false,
 		filePatterns: {
+			'PDF': {
+				icon: 'fa-file-pdf-o',
+				match: /\.(pdf)$/i
+			},
+			'VIDEO': {
+				icon: 'fa-file-video-o',
+				match: /\.(mp4|mov|avi)$/i
+			},
+			'PRESENTATION': {
+				icon: 'fa-file-powerpoint-o',
+				match: /\.(ppt|pptx|key)$/i
+			},
+			'AUDIO': {
+				icon: 'fa-file-audio-o',
+				match: /\.(wav|mp3|ogg|midi)$/i
+			},
+			'SPREADSHEET': {
+				icon: 'fa-file-excel-o',
+				match: /\.(xls|xlt)$/i
+			},
+			'RICHTEXT': {
+				icon: 'fa-file-word-o',
+				match: /\.(docx|rtf)$/i
+			},
+			'TEXT': {
+				icon: 'fa-file-text-o',
+				match: /\.(txt|md)$/i
+			},
+			'ARCHIVE': {
+				icon: 'fa-file-archive-o',
+				match: /\.(rar|zip)$/i
+			},
 			'IMG': {
 				icon: 'fa-file-image-o',
 				match: /\.(gif|jpg|jpeg|tiff|png)$/i
 			},
-			//'FALLBACK': 'file-o',
-			//'PDF': 'file-pdf-o',
-			//'VIDEO': 'file-video-o',
-			//'PRESENTATION': 'file-powerpoint-o',
-			//'AUDIO': 'file-audio-o',
-			//'SPREADSHEET': 'file-excel-o',
-			//'RICHTEXT': 'file-word-o',
-			//'TEXT': 'file-text-o',
-			//'ARCHIVE': 'file-archive-o',
 			'CODE': {
 				icon: 'fa-file-code-o',
 				match: /\.(php|js|css|html|json)$/i
@@ -300,12 +325,3 @@ $.plugin = function( name, object ) {
 
 // Register the plugin
 $.plugin('filePicker', filePicker);
-
-// Usage:
-// With myObject, we could now essentially do this:
-// $.plugin('myobj', myObject);
-
-// and at this point we could do the following
-// $('#elem').myobj({name: "John"});
-// var inst = $('#elem').data('myobj');
-// inst.myMethod('I am a method');
