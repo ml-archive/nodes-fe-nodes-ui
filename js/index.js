@@ -26,6 +26,8 @@ require('./modules/tooltips');
 require('./modules/links');
 require('./modules/slugify');
 require('./modules/roles');
+require('./modules/popovers');
+require('./modules/wysiwyg');
 require('./modules/capabilities');
 require('./modules/confirm');
 require('./modules/labels');
