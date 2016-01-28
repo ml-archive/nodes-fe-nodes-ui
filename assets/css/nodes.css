@@ -8957,6 +8957,9 @@ body.staging {
 .input-group.date .input-group-addon {
   cursor: pointer; }
 
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  width: 20em; }
+
 .logo {
   position: relative;
   width: 80px;

@@ -306,20 +306,23 @@
 <p><h2 class="docs--section-header">
     Usage
 </h2></p>
-<p><p class="docs--page-description">
+<p class="docs--page-description">
     Add the class <code>file-picker</code> to a form-group to initialize this plugin without writing any Javascript.
     Alternatively you can instantiate the plugin like this: <code>$(&#39;.some-element&#39;).filePicker();</code>.
     Options can be defined as data-attributes, or as an object when instantiating in Javascript.
-</p></p>
+</p>
+
 <p><h2 class="docs--section-header">
     Options
 </h2></p>
 <table class="table docs--section-guide">
-    <tr>
-        <td>Option</td>
-        <td>default</td>
-        <td>Description</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Option</th>
+            <th width="500">default</th>
+            <th>Description</th>
+        </tr>
+    </thead>
     <tr>
         <td>disablePreview</td>
         <td><code>false</code></td>
@@ -328,26 +331,25 @@
     <tr>
         <td>filePatterns</td>
         <td>
-<pre><code>
-...omited...
-&#39;CODE&#39;: {
+<pre><code>&#39;CODE&#39;: {
     icon: &#39;fa-file-code-o&#39;,
     match: /.(php|js|css|html|json)$/i
-},
-...omited...
+}
 </code></pre>
         </td>
         <td>
-            A list of file types and an associated regex test for the supported file extensions.
+            A list of file types and an associated regex test for the supported file extensions. You can see the default supported tests &amp; icons
+            <a href="https://github.com/nodes-frontend/nodes-ui/blob/master/js/modules/file-picker.js#L144" target="_blank">here</a>
         </td>
     </tr>
 </table>
-<h2 class="docs--section-header">
-    Init with a predefined file
-</h2>
-<p class="docs--page-description">
+
+<p><h2 class="docs--section-header">
+    Initialize with a predefined file
+</h2></p>
+<p><p class="docs--page-description">
     To instantiate the file-picker with a predefined file, you need to use either of the following data-attributes (but not both :-) )
-</p>
+</p></p>
 <table class="table docs--section-guide">
     <tr>
         <td>data-image</td>
@@ -355,112 +357,221 @@
     </tr>
     <tr>
         <td>data-file</td>
-        <td>Will set the preview-image&#39;s src to the string defined in the data-attribute</td>
+        <td>Will set the preview-icon to a an icon matching a regex in the <code>filePatterns</code> object, or a fallback icon</td>
     </tr>
 </table>
 
-<form>
-    <div class="form-group input-group file-picker">
-        <label for="backendUserFormImage">As basic as it gets</label>
-        <div class="file-picker__inner">
-            <div class="file-picker__zone">
-                <img src="" class="file-picker__preview img-responsive img-thumb">
-                <i class="file-picker__icon fa"></i>
-                <span class="file-picker__drop-text">Drop your file here</span>
+<p><h2 class="docs--section-header">
+    Basic Example
+</h2></p>
+<div class="docs--code-example">
+    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
 
-                <button class="btn btn-transparent btn-sm file-picker__clear">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="file-picker__input-group">
-                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <span class="file-input__choose btn btn-default">
-                            Browse
-                        </span>
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a href="#filepickerBasicHTML" data-toggle="tab">HTML</a>
+        </li>
+        <li>
+            <a href="#filepickerBasicBLADE" data-toggle="tab">Laravel</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="filepickerBasicHTML">
+            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker">
+    <label for="backendUserFormImage">Profile image</label>
+    <div class="file-picker__inner">
+        <div class="file-picker__zone">
+            <img src="" class="file-picker__preview img-responsive img-thumb">
+            <i class="file-picker__icon fa"></i>
+            <span class="file-picker__drop-text">Drop your file here</span>
+
+            <button class="btn btn-transparent btn-sm file-picker__clear">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="file-picker__input-group">
+            <input class="file-picker__file-input" type="file">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
                     </span>
-                    <input type="text" class="form-control file-picker__file-name" readonly>
-                </div>
+                </span>
+                <input type="text" class="form-control file-picker__file-name" readonly>
             </div>
         </div>
     </div>
-    <div class="form-group input-group file-picker" data-disable-preview="true">
-        <label for="backendUserFormImage">Without the preview area</label>
-        <div class="file-picker__inner">
-            <div class="file-picker__zone">
-                <img src="" class="file-picker__preview img-responsive img-thumb">
-                <i class="file-picker__icon fa"></i>
-                <span class="file-picker__drop-text">Drop your file here</span>
+</div></div>
+        </div>
+        <div class="tab-pane" id="filepickerBasicBLADE">
+<pre><code class="language-php">@include(&#39;nodes.backend::partials.components.file-picker&#39;, [
+    &#39;label&#39; =&gt; &#39;Profile image&#39;
+])
+</code></pre>
+        </div>
+    </div>
+</div>
 
-                <button class="btn btn-transparent btn-sm file-picker__clear">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="file-picker__input-group">
-                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <span class="file-input__choose btn btn-default">
-                            Browse
-                        </span>
+<p><h2 class="docs--section-header">
+    Without a preview / drop zone
+</h2></p>
+<div class="docs--code-example">
+    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a href="#filepickerNoPreviewHTML" data-toggle="tab">HTML</a>
+        </li>
+        <li>
+            <a href="#filepickerNoPreviewBLADE" data-toggle="tab">Laravel</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="filepickerNoPreviewHTML">
+            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-disable-preview="true">
+    <label for="backendUserFormImage">Profile image</label>
+    <div class="file-picker__inner">
+        <div class="file-picker__zone">
+            <img src="" class="file-picker__preview img-responsive img-thumb">
+            <i class="file-picker__icon fa"></i>
+            <span class="file-picker__drop-text">Drop your file here</span>
+
+            <button class="btn btn-transparent btn-sm file-picker__clear">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="file-picker__input-group">
+            <input class="file-picker__file-input" type="file">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
                     </span>
-                    <input type="text" class="form-control file-picker__file-name" readonly>
-                </div>
+                </span>
+                <input type="text" class="form-control file-picker__file-name" readonly>
             </div>
         </div>
     </div>
-    <div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
-        <label for="backendUserFormImage">With a predefined image</label>
-        <div class="file-picker__inner">
-            <div class="file-picker__zone">
-                <img src="" class="file-picker__preview img-responsive img-thumb">
-                <i class="file-picker__icon fa"></i>
-                <span class="file-picker__drop-text">Drop your file here</span>
+</div></div>
+        </div>
+        <div class="tab-pane" id="filepickerNoPreviewBLADE">
+<pre><code class="language-php">@include(&#39;nodes.backend::partials.components.file-picker&#39;, [
+    &#39;label&#39; =&gt; &#39;Profile image&#39;,
+    &#39;disablePreview&#39; =&gt; &#39;true&#39;
+])
+</code></pre>
+        </div>
+    </div>
+</div>
 
-                <button class="btn btn-transparent btn-sm file-picker__clear">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="file-picker__input-group">
-                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <span class="file-input__choose btn btn-default">
-                            Browse
-                        </span>
+<p><h2 class="docs--section-header">
+    With a predefined image
+</h2></p>
+<div class="docs--code-example">
+    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a href="#filepickerImageHTML" data-toggle="tab">HTML</a>
+        </li>
+        <li>
+            <a href="#filepickerImageBLADE" data-toggle="tab">Laravel</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="filepickerImageHTML">
+            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
+    <label for="backendUserFormImage">Profile image</label>
+    <div class="file-picker__inner">
+        <div class="file-picker__zone">
+            <img src="" class="file-picker__preview img-responsive img-thumb">
+            <i class="file-picker__icon fa"></i>
+            <span class="file-picker__drop-text">Drop your file here</span>
+
+            <button class="btn btn-transparent btn-sm file-picker__clear">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="file-picker__input-group">
+            <input class="file-picker__file-input" type="file">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
                     </span>
-                    <input type="text" class="form-control file-picker__file-name" readonly>
-                </div>
+                </span>
+                <input type="text" class="form-control file-picker__file-name" readonly>
             </div>
         </div>
     </div>
-    <div class="form-group input-group file-picker" data-file="my-video.mp4">
-        <label for="backendUserFormImage">With a predefined file</label>
-        <div class="file-picker__inner">
-            <div class="file-picker__zone">
-                <img src="" class="file-picker__preview img-responsive img-thumb">
-                <i class="file-picker__icon fa"></i>
-                <span class="file-picker__drop-text">Drop your file here</span>
+</div></div>
+        </div>
+        <div class="tab-pane" id="filepickerImageBLADE">
+<pre><code class="language-php">@include(&#39;nodes.backend::partials.components.file-picker&#39;, [
+    &#39;label&#39; =&gt; &#39;Profile image&#39;,
+    &#39;image&#39; =&gt; &#39;<a href="https://placehold.it/500x500">https://placehold.it/500x500</a>&#39;
+])
+</code></pre>
+        </div>
+    </div>
+</div>
 
-                <button class="btn btn-transparent btn-sm file-picker__clear">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="file-picker__input-group">
-                <input class="file-picker__file-input" type="file" id="backendUserFormImage">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <span class="file-input__choose btn btn-default">
-                            Browse
-                        </span>
+<p><h2 class="docs--section-header">
+    With a predefined file
+</h2></p>
+<div class="docs--code-example">
+    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a href="#filepickerFileHTML" data-toggle="tab">HTML</a>
+        </li>
+        <li>
+            <a href="#filepickerFileBLADE" data-toggle="tab">Laravel</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="filepickerFileHTML">
+            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-file="my-document.rtf">
+    <label for="backendUserFormImage">File</label>
+    <div class="file-picker__inner">
+        <div class="file-picker__zone">
+            <img src="" class="file-picker__preview img-responsive img-thumb">
+            <i class="file-picker__icon fa"></i>
+            <span class="file-picker__drop-text">Drop your file here</span>
+
+            <button class="btn btn-transparent btn-sm file-picker__clear">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="file-picker__input-group">
+            <input class="file-picker__file-input" type="file">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
                     </span>
-                    <input type="text" class="form-control file-picker__file-name" readonly>
-                </div>
+                </span>
+                <input type="text" class="form-control file-picker__file-name" readonly>
             </div>
         </div>
     </div>
-</form>
+</div></div>
+        </div>
+        <div class="tab-pane" id="filepickerFileBLADE">
+<pre><code class="language-php">@include(&#39;nodes.backend::partials.components.file-picker&#39;, [
+    &#39;label&#39; =&gt; &#39;File&#39;,
+    &#39;file&#39; =&gt; &#39;<a href="https://placehold.it/500x500">https://placehold.it/500x500</a>&#39;
+])
+</code></pre>
+        </div>
+    </div>
+</div>
+
 
                 </div>
             </div>
