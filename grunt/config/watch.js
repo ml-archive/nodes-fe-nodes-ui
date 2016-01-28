@@ -12,21 +12,21 @@ module.exports = {
 	},
 	js: {
 		files: ['<%= paths.js %>**/*.js', '<%= paths.doc %>assets/js/**/*.js'],
-		tasks: ['build'],
+		tasks: ['browserify', 'build'],
 		options: {
 			livereload: true
 		}
 	},
 	assemble_all: {
 		files: ['<%= paths.doc %>{includes,layouts}/**/*.html'],
-		tasks: ['build'],
+		tasks: ['browserify', 'build'],
 		options: {
 			livereload: true
 		}
 	},
 	assemble_pages: {
 		files: ['<%= paths.doc %>pages/**/*.html'],
-		tasks: ['build'],
+		tasks: ['browserify', 'build'],
 		options: {
 			livereload: true
 		}
@@ -38,5 +38,5 @@ module.exports = {
 		},
 		files: ['**/*', '!{scss,js}/**/*'],
 		tasks: ['copy']
-	},
+	}
 };

@@ -40,6 +40,17 @@ module.exports = {
 			dest: '<%= paths.dist %>assets/js/modules'
 		}]
 	},
+	browserify: {
+		files: [{
+			expand: true,
+			dot: true,
+			cwd: '.tmp/browserify',
+			src: [
+				'*.js'
+			],
+			dest: '<%= paths.dist %>assets/js'
+		}]
+	},
 	zeroclipboard: {
 		files: [{
 			src: ['<%= paths.vendor %>zeroclipboard/dist/ZeroClipboard.swf'],

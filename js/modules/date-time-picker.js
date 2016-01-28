@@ -15,6 +15,10 @@
  * ...
  * Author: Alexander Hafstad <alhl@nodes.dk>
  */
+$(function() {
+	$('.date-picker').datetimepickerWrapper();
+});
+
 var datetimepickerWrapper = {
 	init: function( options, elem ) {
 		// Save the element reference, both as a jQuery

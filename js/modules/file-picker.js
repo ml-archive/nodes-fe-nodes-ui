@@ -32,6 +32,9 @@
  * ...
  * Author: Dennis Haulund Nielsen
  */
+$(function() {
+	$('.file-picker').filePicker();
+});
 
 // myObject - an object representing a concept that you want
 // to model (e.g. a car)
