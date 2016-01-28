@@ -16,7 +16,7 @@ module.exports = {
 	dist: {
 		options: {
 			flatten: false,
-			assets: '<%= paths.dist %>nodes-ui/assets',
+			assets: '<%= paths.dist %>/assets',
 			data: ['<%= paths.doc %>data/*.json'],
 			helpers: ['<%= paths.doc %>helpers/*.js'],
 			partials: ['<%= paths.doc %>includes/**/*.{html,scss}'],
