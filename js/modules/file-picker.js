@@ -40,7 +40,6 @@
 	// to model (e.g. a car)
 	var filePicker = {
 		init: function( options, elem ) {
-			console.log('den nye filepicker');
 
 			var self = this;
 
@@ -55,8 +54,7 @@
 			this.options = $.extend( {}, this.options, options );
 
 			if(this.$elem.data('disable-preview')) {
-				this.options.disablePreview = this.$elem.data('disable-preview');
-				this.$elem.addClass('file-picker--no-preview');
+				this.options.disablePreview = (this.$elem.data('disable-preview') == 'true') ? true : false;
 			}
 
 			this.$fileInput = this.$elem.find('.file-picker__file-input');
@@ -67,6 +65,7 @@
 			this.$dropZone = this.$elem.find('.file-picker__zone');
 
 			if(this.options.disablePreview) {
+				this.$elem.addClass('file-picker--no-preview');
 				this.$dropZone.hide();
 			}
 
