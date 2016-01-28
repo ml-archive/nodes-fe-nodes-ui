@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
 	html: '<%= paths.doc %>includes/footer.html',
 	options: {
