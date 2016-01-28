@@ -22,7 +22,6 @@
     "eonasdan-bootstrap-datetimepicker": "~4.17.37"
   },
   "devDependencies": {
-    "prism": "~1.0.1",
     "zeroclipboard": "~2.2.0"
   },
   "main": [
