@@ -24,26 +24,28 @@
 
             <div class="layout horizontal docs--layout-page">
                 <div class="flex-1 scroll docs--layout-sidebar">
-                    <div class="docs--search">
-    <input type="text" class="docs--search__input" placeholder="search">
-    <ul class="docs--search__results"></ul>
-</div>
-<ul class="docs--sidebar">
+                    <ul class="docs--sidebar">
 
     <!-- Setup / Readme / Etc -->
-    <li class="docs--sidebar__heading">Setup</li>
-    <li class="docs--sidebar__item">
-        <a href="../../index.html" data-search="">Getting Started</a>
+    <li data-toggle="collapse"
+        data-target="#setupCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Setup
     </li>
+    <ul id="setupCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Getting Started -->
+        <li class="docs--sidebar__item">
+            <a href="../../index.html" >Getting Started</a>
+        </li>
+    </ul>
 
     <!-- Base Styles -->
     <li data-toggle="collapse"
         data-target="#baseCollapse"
-        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        class="docs--sidebar__heading docs--collapser">
         Base
     </li>
-
-    <ul id="baseCollapse" class="docs--sidebar__collapse collapse in">
+    <ul id="baseCollapse" class="docs--sidebar__collapse collapse">
         <!-- Layout -->
         <li data-toggle="collapse"
             data-target="#layoutCollapse"
@@ -51,39 +53,42 @@
             Layout
         </li>
         <ul id="layoutCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Layout Helpers -->
             <li class="docs--sidebar__item">
-                <a href="../../base/layout-helpers.html" data-search="">Layout Helpers</a>
+                <a href="../../base/layout-helpers.html" >Layout Helpers</a>
             </li>
+            <!-- Flex-layout -->
             <li class="docs--sidebar__item">
-                <a href="../../base/flex-layout.html" data-search="">Flex-layout</a>
+                <a href="../../base/flex-layout.html" >Flex-layout</a>
             </li>
+            <!-- Block-layout -->
             <li class="docs--sidebar__item">
-                <a href="../../base/block-layout.html" data-search="">Block-layout</a>
+                <a href="../../base/block-layout.html" >Block-layout</a>
             </li>
+            <!-- Whitespace -->
             <li class="docs--sidebar__item">
-                <a href="../../base/whitespace.html" data-search="">Whitespace</a>
+                <a href="../../base/whitespace.html" >Whitespace</a>
             </li>
         </ul>
 
         <!-- Colors -->
         <li class="docs--sidebar__item">
-            <a href="../../base/colors.html" data-search="">Colors</a>
+            <a href="../../base/colors.html" >Colors</a>
         </li>
 
         <!-- Typography -->
         <li class="docs--sidebar__item">
-            <a href="../../base/typography.html" data-search="">Typography</a>
+            <a href="../../base/typography.html" >Typography</a>
         </li>
     </ul>
 
     <!-- Elements -->
     <li data-toggle="collapse"
         data-target="#elementsCollapse"
-        class="docs--sidebar__heading docs--collapser docs--collapser--open">
+        class="docs--sidebar__heading docs--collapser">
         Elements
     </li>
-
-    <ul id="elementsCollapse" class="docs--sidebar__collapse collapse in">
+    <ul id="elementsCollapse" class="docs--sidebar__collapse collapse">
         <!-- Tables -->
         <li data-toggle="collapse"
             data-target="#tablesCollapse"
@@ -91,154 +96,202 @@
             Tables
         </li>
         <ul id="tablesCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Table types -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-types.html" data-search="">Table Types</a>
+                <a href="../../elements/tables/table-types.html" >Table Types</a>
             </li>
+            <!-- Table colors -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-colors.html" data-search="">Table Colors</a>
+                <a href="../../elements/tables/table-colors.html" >Table Colors</a>
             </li>
+            <!-- Table components -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-components.html" data-search="">Table Components</a>
+                <a href="../../elements/tables/table-components.html" >Table Components</a>
             </li>
+            <!-- Table sizing -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-sizing.html" data-search="">Table Sizing</a>
+                <a href="../../elements/tables/table-sizing.html" >Table Sizing</a>
             </li>
+            <!-- Responsive tables -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-responsive.html" data-search="">Responsive Tables</a>
+                <a href="../../elements/tables/table-responsive.html" >Responsive Tables</a>
             </li>
+            <!-- Building Tables -->
             <li class="docs--sidebar__item">
-                <a href="../../elements/tables/table-building.html" data-search="">Building Tables</a>
+                <a href="../../elements/tables/table-building.html" >Building Tables</a>
             </li>
         </ul>
 
         <!-- Forms -->
+        <li data-toggle="collapse"
+            data-target="#formsCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Forms
+        </li>
+        <ul id="formsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Form Basics -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/form-basics.html" >Form Basics</a>
+            </li>
+            <!-- Input Basics -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/input-basics.html" >Input Basics</a>
+            </li>
+            <!-- Action Wrappers -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/action-wrappers.html" >Action Wrappers</a>
+            </li>
+            <!-- Floating Labels -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/floating-labels.html" >Floating Labels</a>
+            </li>
+            <!-- File picker -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/file-picker.html" >File Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+            </li>
+            <!-- Date picker -->
+            <li class="docs--sidebar__item">
+                <a href="../forms/date-picker.html" >Date Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+            </li>
+        </ul>
+
+        <!-- Buttons -->
+        <li class="docs--sidebar__item">
+            <a href="../../elements/buttons.html" >Buttons</a>
+        </li>
+
+        <!-- Indicators (or LEDs, dunno yet) -->
+        <li class="docs--sidebar__item">
+            <a href="../../elements/indicators.html" >Indicators</a>
+        </li>
     </ul>
 
-
-
-
-
-    <li class="docs--sidebar__heading">Elements</li>
-
-    <!-- Tables -->
-    <li class="docs--sidebar__sub-heading">Tables</li>
-
-
-    <!-- Forms -->
-    <li class="docs--sidebar__sub-heading">Forms</li>
-    <li class="docs--sidebar__item">
-        <a href="../forms/form-basics.html" data-search="">Form Basics</a>
+    <!-- Components -->
+    <li data-toggle="collapse"
+        data-target="#componentsCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Components
     </li>
-    <li class="docs--sidebar__item">
-        <a href="../forms/input-basics.html" data-search="">Input Basics</a>
-    </li>
-    <li class="docs--sidebar__item">
-        <a href="../forms/action-wrappers.html" data-search="">Action Wrappers</a>
-    </li>
-    <li class="docs--sidebar__item">
-        <a href="../forms/floating-labels.html" data-search="">Floating Labels</a>
-    </li>
-    <li class="docs--sidebar__item">
-        <a href="../forms/file-picker.html" data-search="">File Picker</a>
-    </li>
-    <li class="docs--sidebar__item">
-    <a href="../forms/date-picker.html" data-search="">Date Picker</a>
-    </li>
+    <ul id="componentsCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Breadcrumbs -->
+        <li class="docs--sidebar__item">
+            <a href="../breadcrumbs.html" >Breadcrumbs</a>
+        </li>
+        <!-- Page-Header (SKAL NED TIL "CORE COMPONENTS") -->
+        <li class="docs--sidebar__item">
+            <a href="../page-header.html" >Page-header</a>
+        </li>
+        <!-- App-tiles -->
+        <li class="docs--sidebar__item">
+            <a href="../app-tiles.html" >App-tiles</a>
+        </li>
 
-    <!-- Buttons -->
-    <li class="docs--sidebar__sub-heading">Buttons</li>
-    <li class="docs--sidebar__item">
-        <a href="../../elements/buttons.html" data-search="">Buttons</a>
-    </li>
-
-    <li class="docs--sidebar__item">
-        <a href="../../elements/indicators.html" data-search="">Indicators</a>
-    </li>
-
-    <li class="docs--sidebar__heading">Components</li>
-    <li class="docs--sidebar__item">
-        <a href="../breadcrumbs.html" data-search="">Breadcrumbs</a>
-    </li>
-    <li class="docs--sidebar__item">
-        <a href="../page-header.html" data-search="">Page-header</a>
-    </li>
-    <li class="docs--sidebar__item">
-    <a href="../app-tiles.html" data-search="">App-tiles</a>
-    </li>
-
-    <li class="docs--sidebar__has-subnav">
-        <span>Dropdowns</span>
-        <ul class="docs--sidebar__subnav">
+        <!-- Dropdowns -->
+        <li data-toggle="collapse"
+            data-target="#dropdownsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Dropdowns
+        </li>
+        <ul id="dropdownsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Dropdown Basics -->
             <li class="docs--sidebar__item">
-                <a href="basics-dropdown.html" data-search="">Dropdown Basics</a>
+                <a href="basics-dropdown.html" >Dropdown Basics</a>
             </li>
+            <!-- Content-dropdowns -->
             <li class="docs--sidebar__item">
-                <a href="content-dropdown.html" data-search="">Content-dropdowns</a>
+                <a href="content-dropdown.html" >Content-dropdowns</a>
             </li>
+            <!-- Features Dropdown (FJERN FRA NODES-UI...) -->
             <li class="docs--sidebar__item">
-                <a href="features-dropdown.html" data-search="">Features dropdown</a>
+                <a href="features-dropdown.html" >Features dropdown</a>
             </li>
+            <!-- User Dropdown (FJERN FRA NODES-UI...) -->
             <li class="docs--sidebar__item active">
-                <a href="user-dropdown.html" data-search="">User dropdown</a>
+                <a href="user-dropdown.html" >User dropdown</a>
             </li>
+            <!-- Applications Dropdown (FJERN FRA NODES-UI...) -->
             <li class="docs--sidebar__item">
-                <a href="applications-dropdown.html" data-search="">Applications dropdown</a>
+                <a href="applications-dropdown.html" >Applications dropdown</a>
             </li>
         </ul>
-    </li>
 
-    <li class="docs--sidebar__has-subnav">
-        <span>Sidebar</span>
-        <ul class="docs--sidebar__subnav">
+        <!-- List Groups -->
+        <li data-toggle="collapse"
+            data-target="#listGroupCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            List-groups
+        </li>
+        <ul id="listGroupCollapse" class="docs--sidebar__collapse collapse">
+            <!-- List Group Basics -->
             <li class="docs--sidebar__item">
-                <a href="../sidebar/basic-sidebar.html" data-search="">Sidebar Basics</a>
-            </li>
-            <li class="docs--sidebar__item">
-                <a href="../sidebar/sidebar-components.html" data-search="">Sidebar Components</a>
+                <a href="../list-group/list-group.html" >List Group</a>
             </li>
         </ul>
-    </li>
 
-    <li class="docs--sidebar__has-subnav">
-        <span>Panels</span>
-        <ul class="docs--sidebar__subnav">
+        <!-- Sidebars -->
+        <li data-toggle="collapse"
+            data-target="#sidebarsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Sidebars
+        </li>
+        <ul id="sidebarsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Sidebar Basics -->
             <li class="docs--sidebar__item">
-            <a href="../panels/panel-basics.html" data-search="">Panel Basics</a>
+                <a href="../sidebar/basic-sidebar.html" >Sidebar Basics</a>
+            </li>
+            <!-- Sidebar Components -->
+            <li class="docs--sidebar__item">
+                <a href="../sidebar/sidebar-components.html" >Sidebar Components</a>
             </li>
         </ul>
-    </li>
 
-    <li class="docs--sidebar__item">
-      <a href="../side-navigation.html" data-search="">Side-navigation</a>
-    </li>
-
-    <li class="docs--sidebar__heading">Blade Templates</li>
-    <li class="docs--sidebar__has-subnav">
-        <span>Layouts</span>
-        <ul class="docs--sidebar__subnav">
-
+        <!-- Panels -->
+        <li data-toggle="collapse"
+            data-target="#panelsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Panels
+        </li>
+        <ul id="panelsCollapse" class="docs--sidebar__collapse collapse">
             <li class="docs--sidebar__item">
-                <a href="../../blade-templates/layouts/core-layout.html" data-search="">Core Layout Playground</a>
-            </li>
-
-            <li class="docs--sidebar__item">
-                <a href="../../blade-templates/layouts/core-layout-wide.html" data-search="">Core Layout Wide</a>
-            </li>
-            <li class="docs--sidebar__item">
-                <a href="../../blade-templates/layouts/core-layout-toggle-sidebar.html" data-search="">Core Layout Toggle Sidebar</a>
-            </li>
-            <li class="docs--sidebar__item">
-                <a href="../../blade-templates/layouts/core-layout-dashboard.html" data-search="">Core Layout Dashboard</a>
-            </li>
-    </li>
-    <li class="docs--sidebar__has-subnav">
-        Pages
-        <ul class="docs--sidebar__subnav">
-            <li class="docs--sidebar__item">
-                <a href="../../blade-templates/pages/app-install.html" data-search="">App Install</a>
+                <a href="../panels/panel-basics.html" >Panel Basics</a>
             </li>
         </ul>
+    </ul>
+
+    <!-- Laravel  -->
+    <li data-toggle="collapse"
+        data-target="#laravelCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Laravel
     </li>
+    <ul id="laravelCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Layout Scaffold -->
+        <li class="docs--sidebar__item">
+            <a href="../../laravel/layout/layout-scaffold.html" >Layout Scaffold</a>
+        </li>
+        <!-- Scaffold Components -->
+        <li data-toggle="collapse"
+            data-target="#scaffoldComponentsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Scaffold Components
+        </li>
+        <ul id="scaffoldComponentsCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="../side-navigation.html" >Side-navigation</a>
+            </li>
+        </ul>
+        <!-- Specialty Pages -->
+        <li data-toggle="collapse"
+            data-target="#specialyPagesCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Specialty Pages
+        </li>
+        <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="../../blade-templates/pages/app-install.html" >App Install</a>
+            </li>
+        </ul>
+    </ul>
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">

@@ -4237,7 +4237,7 @@ a.label:hover, a.label:focus {
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
-  background-color: #E8EEF0;
+  background-color: #c4d2d8;
   border-radius: 10px; }
   .badge:empty {
     display: none; }
@@ -10502,12 +10502,6 @@ td.sorting_desc:after {
 .btn-icon-transparent {
   background-color: transparent; }
 
-.badge {
-  min-width: 3.0rem;
-  font-size: 1.1rem;
-  padding: 0.5rem 0.6rem;
-  background-color: #c4d2d8; }
-
 a.nodes-link {
   padding: 0 0.2rem;
   outline: none;
@@ -11684,7 +11678,16 @@ a.nodes-link {
   border-radius: 0; }
 
 .list-group:not(.list-group-bordered) .list-group-item {
-  border: none; }
+  border-top: none;
+  border-bottom: none;
+  border-right: none; }
+
+.list-group-bordered .list-group-item {
+  border-left: 1px solid #ddd; }
+
+.list-group-bordered .list-group-heading {
+  border: 1px solid #ddd;
+  border-bottom: none; }
 
 .list-group-item {
   padding: 0;
@@ -11703,15 +11706,32 @@ a.nodes-link {
           flex-wrap: nowrap;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  border-left: 6px solid transparent; }
   .list-group-item .fa {
     margin-right: 10px; }
+  .list-group-item .fa + .fa,
+  .list-group-item .fa.pull-right {
+    margin-left: auto; }
   .list-group-item .btn-group {
     margin-left: auto;
     opacity: 0;
     transition: opacity 200ms ease; }
-  .list-group-item:hover .btn-group, .list-group-item.hover .btn-group, .list-group-item:focus .btn-group, .list-group-item.focus .btn-group, .list-group-item:active .btn-group, .list-group-item.active .btn-group {
-    opacity: 1; }
+  .list-group-item .badge {
+    margin-left: auto; }
+  .list-group-item:hover, .list-group-item.hover, .list-group-item:focus, .list-group-item.focus, .list-group-item:active, .list-group-item.active {
+    background-color: transparent; }
+    .list-group-item:hover .btn-group, .list-group-item.hover .btn-group, .list-group-item:focus .btn-group, .list-group-item.focus .btn-group, .list-group-item:active .btn-group, .list-group-item.active .btn-group {
+      opacity: 1; }
+  .list-group-item:active, .list-group-item.active {
+    color: #000;
+    border-left-color: #37EF81; }
+  .list-group-item.active:hover {
+    color: #000;
+    background-color: transparent; }
+  .list-group-item.active .badge {
+    color: #fff;
+    background-color: #c4d2d8; }
 
 .list-group.list-group-inverse .list-group-item {
   background-color: #12222F;
@@ -11730,9 +11750,45 @@ a.nodes-link {
     border-color: #2B4454; }
     .list-group.list-group-inverse .list-group-item .btn-group .btn:hover, .list-group.list-group-inverse .list-group-item .btn-group .btn.hover, .list-group.list-group-inverse .list-group-item .btn-group .btn:focus, .list-group.list-group-inverse .list-group-item .btn-group .btn.focus, .list-group.list-group-inverse .list-group-item .btn-group .btn:active, .list-group.list-group-inverse .list-group-item .btn-group .btn.active {
       color: #e6e6e6; }
+  .list-group.list-group-inverse .list-group-item .badge {
+    background-color: #638796; }
+
+.list-group-bordered .list-group-item.active {
+  color: #37EF81;
+  border: 1px solid #ddd; }
+  .list-group-bordered .list-group-item.active .fa {
+    color: #000; }
+
+.list-group-bordered .list-group-item.active:hover {
+  background-color: #f5f5f5; }
 
 .list-group.list-group-transparent .list-group-item {
   background-color: transparent; }
+
+.list-group-heading {
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  border-left: 6px solid transparent; }
+
+.list-group.list-group-inverse .list-group-heading {
+  background-color: #12222F;
+  color: #638796; }
 
 .panel-body.panel-body-collapse {
   padding: 0; }
