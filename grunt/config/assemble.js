@@ -15,7 +15,7 @@ module.exports = {
 	},
 	dist: {
 		options: {
-			flatten: false,
+			flatten: true,
 			assets: '<%= paths.dist %>/assets',
 			data: ['<%= paths.doc %>data/*.json'],
 			helpers: ['<%= paths.doc %>helpers/*.js'],
@@ -27,6 +27,7 @@ module.exports = {
 			}
 		},
 		expand: true,
+		flatten: true,
 		cwd: '<%= paths.doc %>pages',
 		src: '**/*.{html,md}',
 		dest: '<%= paths.dist %>'

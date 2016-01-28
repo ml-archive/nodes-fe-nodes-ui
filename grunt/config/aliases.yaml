@@ -17,6 +17,7 @@ styles:
   - 'postcss'
 # Just the scripts
 scripts:
+  - 'clean'
   - 'assemble'
   - 'useminPrepare'
   - 'copy'
