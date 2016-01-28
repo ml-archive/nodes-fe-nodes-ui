@@ -36,7 +36,7 @@ var datetimepickerWrapper = {
 
 		// Mix in the data-options with the options
 		this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
-		
+
 		// Initialize datetimepicker plugin
 		this.$elem.datetimepicker(this.options);
 
