@@ -1,93 +1,100 @@
-/*
- Settings (data-*):
- - options
- - toggle
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+;(function ( $, window, document, undefined ) {
+	"use strict";
 
- On init:
- - Configure and initialize datetimepicker plugin <https://eonasdan.github.io/bootstrap-datetimepicker>
+	/*
+	 Settings (data-*):
+	 - options
+	 - toggle
 
- Helper Methods (Private):
- - Eval data-options
+	 On init:
+	 - Configure and initialize datetimepicker plugin <https://eonasdan.github.io/bootstrap-datetimepicker>
 
- */
+	 Helper Methods (Private):
+	 - Eval data-options
 
-/*!
- * ...
- * Author: Alexander Hafstad <alhl@nodes.dk>
- */
-var datetimepickerWrapper = {
-	init: function( options, elem ) {
-		// Save the element reference, both as a jQuery
-		// reference and a normal reference
-		this.elem  = elem;
-		this.$elem = $(elem);
+	 */
 
-		// Mix in the passed-in options with the default options
-		this.options = $.extend( {}, this.options, options );
+	/*!
+	 * ...
+	 * Author: Alexander Hafstad <alhl@nodes.dk>
+	 */
+	var datetimepickerWrapper = {
+		init: function( options, elem ) {
+			// Save the element reference, both as a jQuery
+			// reference and a normal reference
+			this.elem  = elem;
+			this.$elem = $(elem);
 
-		// Set format depending on data-toggle
-		this.toggle = this.$elem.data('toggle');
+			// Mix in the passed-in options with the default options
+			this.options = $.extend( {}, this.options, options );
 
-		if(this.toggle === 'date') {
-			this.options.format = 'YYYY-MM-DD';
-		} else if(this.toggle === 'time') {
-			this.options.format = 'HH:mm';
-		}
+			// Set format depending on data-toggle
+			this.toggle = this.$elem.data('toggle');
 
-		// Mix in the data-options with the options
-		this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
-
-		// Initialize datetimepicker plugin
-		this.$elem.datetimepicker(this.options);
-
-		// return this so that we can chain and use the bridge with less code.
-		return this;
-	},
-	options: {
-		format: 'YYYY-MM-DD HH:mm',
-		allowInputToggle: true,
-		icons: {
-			time: 'fa fa-clock-o',
-			date: 'fa fa-calendar',
-			up: 'fa fa-arrow-up',
-			down: 'fa fa-arrow-down',
-			previous: 'fa fa-arrow-left',
-			next: 'fa fa-arrow-right',
-			today: 'fa fa-calendar-times-o',
-			clear: 'fa fa-trash',
-			close: 'fa fa-times'
-		}
-	}
-};
-
-/*
- Helper Methods
- */
-function _evalDataOptions(options) {
-	options = eval('(' + options + ')');
-	return options;
-}
-
-// Object.create support test, and fallback for browsers without it
-if ( typeof Object.create !== "function" ) {
-	Object.create = function (o) {
-		function F() {}
-		F.prototype = o;
-		return new F();
-	};
-}
-
-// Create a plugin based on a defined object
-$.plugin = function( name, object ) {
-	$.fn[name] = function( options ) {
-		return this.each(function() {
-			if ( ! $.data( this, name ) ) {
-				$.data( this, name, Object.create(object).init(
-					options, this ) );
+			if(this.toggle === 'date') {
+				this.options.format = 'YYYY-MM-DD';
+			} else if(this.toggle === 'time') {
+				this.options.format = 'HH:mm';
 			}
-		});
-	};
-};
 
-// Register the plugin
-$.plugin('datetimepickerWrapper', datetimepickerWrapper);
+			// Mix in the data-options with the options
+			this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
+
+			// Initialize datetimepicker plugin
+			this.$elem.datetimepicker(this.options);
+
+			// return this so that we can chain and use the bridge with less code.
+			return this;
+		},
+		options: {
+			format: 'YYYY-MM-DD HH:mm',
+			allowInputToggle: true,
+			icons: {
+				time: 'fa fa-clock-o',
+				date: 'fa fa-calendar',
+				up: 'fa fa-arrow-up',
+				down: 'fa fa-arrow-down',
+				previous: 'fa fa-arrow-left',
+				next: 'fa fa-arrow-right',
+				today: 'fa fa-calendar-times-o',
+				clear: 'fa fa-trash',
+				close: 'fa fa-times'
+			}
+		}
+	};
+
+	/*
+	 Helper Methods
+	 */
+	function _evalDataOptions(options) {
+		options = eval('(' + options + ')');
+		return options;
+	}
+
+	// Object.create support test, and fallback for browsers without it
+	if ( typeof Object.create !== "function" ) {
+		Object.create = function (o) {
+			function F() {}
+			F.prototype = o;
+			return new F();
+		};
+	}
+
+	// Create a plugin based on a defined object
+	$.plugin = function( name, object ) {
+		$.fn[name] = function( options ) {
+			return this.each(function() {
+				if ( ! $.data( this, name ) ) {
+					$.data( this, name, Object.create(object).init(
+						options, this ) );
+				}
+			});
+		};
+	};
+
+	// Register the plugin
+	$.plugin('datetimepickerWrapper', datetimepickerWrapper);
+
+})( jQuery, window, document );
