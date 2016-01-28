@@ -36,7 +36,7 @@ var datetimepickerWrapper = {
 
 		// Mix in the data-options with the options
 		this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
-
+		
 		// Initialize datetimepicker plugin
 		this.$elem.datetimepicker(this.options);
 
@@ -45,7 +45,6 @@ var datetimepickerWrapper = {
 	},
 	options: {
 		format: 'YYYY-MM-DD HH:mm',
-		calendarWeeks: false,
 		allowInputToggle: true,
 		icons: {
 			time: 'fa fa-clock-o',

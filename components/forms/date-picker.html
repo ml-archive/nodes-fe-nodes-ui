@@ -301,57 +301,593 @@
 
 <p class="docs--page-description">
     Uses <a href="https://eonasdan.github.io/bootstrap-datetimepicker/">bootstrap-datetimepicker</a><br />
-    Full list of options can be found <a href="https://eonasdan.github.io/bootstrap-datetimepicker/Options/">here</a> which can be set by the data-options attribute<br />
-    Locale and formatting uses <a href="http://momentjs.com">momentjs</a>, formatting details can be found <a href="http://momentjs.com/docs/#/displaying/format/">here</a><br />
-    <strong>NOTE: If data-toggle attribute isn&#39;t set, the component will default to date and time picker</strong>
+    Full list of options can be found <a href="https://eonasdan.github.io/bootstrap-datetimepicker/Options/">here</a> which can be set by the data-options attribute.<br />
+    The date picker component is initialized by .date-picker classname.<br />
+    <strong>NOTE: If data-toggle attribute isn&#39;t set, the component will default to date and time picker.</strong>
 </p>
+
+<ul>
+    <li>
+        <a href="#datepicker">
+            Date picker
+        </a>
+    </li>
+    <li>
+        <a href="#timepicker">
+            Time picker
+        </a>
+    </li>
+    <li>
+        <a href="#datetimepicker">
+            Date and time picker
+        </a>
+    </li>
+    <li>
+        <a href="#locale">
+            Using locales
+        </a>
+    </li>
+    <li>
+        <a href="#format">
+            Custom formats
+        </a>
+    </li>
+    <li>
+        <a href="#calendarWeeks">
+            Calendar weeks
+        </a>
+    </li>
+    <li>
+        <a href="#minDate">
+            Min date
+        </a>
+    </li>
+    <li>
+        <a href="#maxDate">
+            Max date
+        </a>
+    </li>
+    <li>
+        <a href="#keepOpen">
+            Keep Open
+        </a>
+    </li>
+    <li>
+        <a href="#tooltips">
+            Tooltips
+        </a>
+    </li>
+    <li>
+        <a href="#inline">
+            Inline
+        </a>
+    </li>
+    <li>
+        <a href="#sideBySide">
+            Side by side
+        </a>
+    </li>
+    <li>
+        <a href="#noIcon">
+            No icon (input field only)
+        </a>
+    </li>
+    <li>
+        <a href="#icons">
+            Custom icons
+        </a>
+    </li>
+    <li>
+        <a href="#defaultDate">
+            Default date
+        </a>
+    </li>
+    <li>
+        <a href="#disabledDates">
+            Disabled dates
+        </a>
+    </li>
+    <li>
+        <a href="#disabledDaysOfTheWeek">
+            Disabled days of the week
+        </a>
+    </li>
+    <li>
+        <a href="#viewMode">
+            View mode
+        </a>
+    </li>
+</ul>
+
 
 <form>
     <!-- Date -->
-    <h2 class="docs--section-header">
+    <h2 id="datepicker" class="docs--section-header">
         Date picker
     </h2>
-    <p class="docs--section-description">
-        Default format is: YYYY-MM
-    </p>
-    <div class="form-group">
-        <div class="input-group date-picker" data-toggle="date" data-options="{locale: 'da'}">
-            <input type="text" class="form-control" />
-            <span class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </span>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="date">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </div>
+
     <!-- Time -->
-    <h2 class="docs--section-header">
+    <h2 id="timepicker" class="docs--section-header">
         Time picker
     </h2>
-    <p class="docs--section-description">
-        Default format is: HH:mm
-    </p>
-    <div class="form-group">
-        <div class="input-group date-picker" data-toggle="time" data-options="{locale: 'da'}">
-            <input type="text" class="form-control" />
-            <span class="input-group-addon">
-                <i class="fa fa-clock-o"></i>
-            </span>
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="time">
+                    <input type="text" class="form-control" placeholder="HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </div>
+
     <!-- Date and time -->
-    <h2 class="docs--section-header">
+    <h2 id="datetimepicker" class="docs--section-header">
         Date and time picker
     </h2>
-    <p class="docs--section-description">
-        Default format is: YYYY-MM HH:mm
-    </p>
-    <div class="form-group">
-        <div class="input-group date-picker" data-toggle="datetime" data-options="{locale: 'da'}">
-            <input type="text" class="form-control" />
-            <span class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </span>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
         </div>
     </div>
+
+
+    <!-- Inline -->
+    <h2 id="inline" class="docs--section-header">
+        Inline
+    </h2>
+
+    <p class="docs--page-description">
+        Will display the picker inline without the need of a input field. This will also hide borders and shadows.
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="date-picker" data-options="{inline: true, sideBySide: true}"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Side by side -->
+    <h2 id="sideBySide" class="docs--section-header">
+        Side by side
+    </h2>
+
+    <p class="docs--section-header">
+    <pre>Default: false</pre>
+    Shows the picker side by side when using the time and date together.
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{sideBySide: true}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Using locales -->
+    <h2 id="locale" class="docs--section-header">
+        Using locales
+    </h2>
+
+    <p class="docs--page-description">
+        See <a href="https://github.com/moment/moment/tree/develop/locale">momentjs</a> for valid locales.
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{locale: 'da'}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Custom formats -->
+    <h2 id="format" class="docs--section-header">
+        Custom formats
+    </h2>
+
+    <p class="docs--page-description">
+        See <a href="http://momentjs.com/docs/#/displaying/format/">momentjs&#39; docs</a>
+        for valid formats. Format also dictates what components are shown, e.g.<code>MM/dd/YYYY</code>
+        will not display the time picker.
+    </p>
+
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{format: 'DD/MM/YYYY HH:mm'}">
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Calendar weeks -->
+    <h2 id="calendarWeeks" class="docs--section-header">
+        Calendar weeks
+    </h2>
+
+    <p class="docs--section-header">
+        <pre>Default: false</pre>
+        Shows the week of the year to the left of first day of the week.
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{calendarWeeks: true}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Min date -->
+    <h2 id="minDate" class="docs--section-header">
+        Min date
+    </h2>
+
+    <p class="docs--section-header">
+    <pre>Default: false</pre>
+    Prevents date/time selections before this date.<br />
+    <strong><code>minDate</code> will override <code>defaultDate</code> and <code>useCurrent</code> if either of these settings are
+        the same day since both options are invalid according to the rules you&#39;ve selected.</strong>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{minDate: '2016-02-22'}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Max date -->
+    <h2 id="maxDate" class="docs--section-header">
+        Max date
+    </h2>
+
+    <p class="docs--section-header">
+    <pre>Default: false</pre>
+    Prevents date/time selections before this date.<br />
+    <strong><code>maxDate</code> will override <code>defaultDate</code> and <code>useCurrent</code> if either of these settings are
+        the same day since both options are invalid according to the rules you&#39;ve selected.</strong>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{maxDate: '2016-02-22'}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Keep open -->
+    <h2 id="keepOpen" class="docs--section-header">
+        Keep open
+    </h2>
+
+    <p class="docs--section-header">
+    <pre>Default: false</pre>
+    Will cause the date picker to stay open after selecting a date if no time components are being used.
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{keepOpen: true}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Tooltips -->
+    <h2 id="tooltips" class="docs--section-header">
+        Tooltips
+    </h2>
+
+    <p class="docs--section-header">
+        <pre>
+        defaults: {
+            today: &#39;Go to today&#39;,
+            clear: &#39;Clear selection&#39;,
+            close: &#39;Close the picker&#39;,
+            selectMonth: &#39;Select Month&#39;,
+            prevMonth: &#39;Previous Month&#39;,
+            nextMonth: &#39;Next Month&#39;,
+            selectYear: &#39;Select Year&#39;,
+            prevYear: &#39;Previous Year&#39;,
+            nextYear: &#39;Next Year&#39;,
+            selectDecade: &#39;Select Decade&#39;,
+            prevDecade: &#39;Previous Decade&#39;,
+            nextDecade: &#39;Next Decade&#39;,
+            prevCentury: &#39;Previous Century&#39;,
+            nextCentury: &#39;Next Century&#39;
+        }</pre>
+    This will change the <code>tooltips</code> over each icon to a custom string
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{tooltips: {nextMonth: 'Næste måned'}}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- No icon (input field only) -->
+    <h2 id="noIcon" class="docs--section-header">
+        No icon (input fields only)
+    </h2>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <label for="exampleInputName">Date and Time:</label>
+                <input type="text" class="form-control date-picker" id="exampleInputName" placeholder="YYYY-MM-DD HH:mm">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Disabled dates -->
+    <h2 id="disabledDates" class="docs--section-header">
+        Disabled dates
+    </h2>
+
+    <p class="docs--section-header">
+        <pre>
+        Default: false
+        Accepts: array of dates [string]</pre>
+        Disables selection of dates in the array, e.g. holidays
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{disabledDates: ['2016-01-01']}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Disabled days of the week -->
+    <h2 id="disabledDaysOfTheWeek" class="docs--section-header">
+        Disabled days of the week
+    </h2>
+
+    <p class="docs--section-header">
+        <pre>
+        Default: []
+        Accepts: array of numbers from 0-6</pre>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-options="{daysOfWeekDisabled: [0,6]}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Custom icons -->
+    <h2 id="icons" class="docs--section-header">
+        Custom icons
+    </h2>
+    <p class="docs--page-description">
+        You can configure following icons, and available icons can be found
+        <a href="https://fortawesome.github.io/Font-Awesome/icons/">here</a>
+        <pre>
+        Defaults: {
+            time: &#39;fa fa-clock-o&#39;,
+            date: &#39;fa fa-calendar&#39;,
+            up: &#39;fa fa-arrow-up&#39;,
+            down: &#39;fa fa-arrow-down&#39;,
+            previous: &#39;fa fa-arrow-left&#39;,
+            next: &#39;fa fa-arrow-right&#39;,
+            today: &#39;fa fa-calendar-times-o&#39;,
+            clear: &#39;fa fa-trash&#39;,
+            close: &#39;fa fa-times&#39;
+        }
+        </pre>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{icons: {time: 'fa fa-clock-o'}}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Default date -->
+    <h2 id="defaultDate" class="docs--section-header">
+        Default date
+    </h2>
+
+    <p class="docs--section-header">
+        Sets the picker default date/time. Overrides <code>useCurrent</code>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="date" data-options="{defaultDate: '2016-02-22'}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- View mode -->
+    <h2 id="viewMode" class="docs--section-header">
+        View mode
+    </h2>
+
+    <p class="docs--section-header">
+        <pre>
+    Default: &#39;days&#39;
+    Accepts: &#39;decades&#39;,&#39;years&#39;,&#39;months&#39;,&#39;days&#39;</pre>
+        The default view to display when the picker is shown.<br />
+        <strong>Note</strong>: To limit the picker to selecting, for instance the year and month, use <code>format: MM/YYYY</code>
+    </p>
+
+    <div class="docs--code-example">
+        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+        <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{viewMode: 'years'}">
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
 </form>
 
                 </div>
@@ -361,10 +897,10 @@
 
         <script src="/assets/js/vendor.js"></script>
 
-<script src="../../../assets/js/modules/file-picker.js"></script>
-<script src="../../../assets/js/modules/date-time-picker.js"></script>
-<script src="../../../assets/js/docs.js"></script>
-<script src="../../../assets/js/nodes.js"></script>
+<script src="/../../assets/js/modules/file-picker.js"></script>
+<script src="/../../assets/js/modules/date-time-picker.js"></script>
+<script src="/../../assets/js/docs.js"></script>
+<script src="/../../assets/js/nodes.js"></script>
     </body>
 
 </html>
