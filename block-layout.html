@@ -1,0 +1,384 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Block-layout | Foundation Docs</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link href="assets/css/docs.css" rel="stylesheet" />
+<link href="assets/css/nodes.css" rel="stylesheet" />
+    </head>
+    <body class="fullbleed">
+
+        <div class="layout vertical fit docs--layout-container">
+
+            <div class="flex-1 docs--layout-topbar">
+                Nodes UI Framework
+            </div>
+
+            <div class="layout horizontal docs--layout-page">
+                <div class="flex-1 scroll docs--layout-sidebar">
+                    <ul class="docs--sidebar">
+
+    <!-- Setup / Readme / Etc -->
+    <li data-toggle="collapse"
+        data-target="#setupCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Setup
+    </li>
+    <ul id="setupCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Getting Started -->
+        <li class="docs--sidebar__item">
+            <a href="index.html" >Getting Started</a>
+        </li>
+    </ul>
+
+    <!-- Base Styles -->
+    <li data-toggle="collapse"
+        data-target="#baseCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Base
+    </li>
+    <ul id="baseCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Layout -->
+        <li data-toggle="collapse"
+            data-target="#layoutCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Layout
+        </li>
+        <ul id="layoutCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Layout Helpers -->
+            <li class="docs--sidebar__item">
+                <a href="base/layout-helpers.html" >Layout Helpers</a>
+            </li>
+            <!-- Flex-layout -->
+            <li class="docs--sidebar__item">
+                <a href="base/flex-layout.html" >Flex-layout</a>
+            </li>
+            <!-- Block-layout -->
+            <li class="docs--sidebar__item active">
+                <a href="base/block-layout.html" >Block-layout</a>
+            </li>
+            <!-- Whitespace -->
+            <li class="docs--sidebar__item">
+                <a href="base/whitespace.html" >Whitespace</a>
+            </li>
+        </ul>
+
+        <!-- Colors -->
+        <li class="docs--sidebar__item">
+            <a href="base/colors.html" >Colors</a>
+        </li>
+
+        <!-- Typography -->
+        <li class="docs--sidebar__item">
+            <a href="base/typography.html" >Typography</a>
+        </li>
+    </ul>
+
+    <!-- Elements -->
+    <li data-toggle="collapse"
+        data-target="#elementsCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Elements
+    </li>
+    <ul id="elementsCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Tables -->
+        <li data-toggle="collapse"
+            data-target="#tablesCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Tables
+        </li>
+        <ul id="tablesCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Table types -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-types.html" >Table Types</a>
+            </li>
+            <!-- Table colors -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-colors.html" >Table Colors</a>
+            </li>
+            <!-- Table components -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-components.html" >Table Components</a>
+            </li>
+            <!-- Table sizing -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-sizing.html" >Table Sizing</a>
+            </li>
+            <!-- Responsive tables -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-responsive.html" >Responsive Tables</a>
+            </li>
+            <!-- Building Tables -->
+            <li class="docs--sidebar__item">
+                <a href="elements/tables/table-building.html" >Building Tables</a>
+            </li>
+        </ul>
+
+        <!-- Forms -->
+        <li data-toggle="collapse"
+            data-target="#formsCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Forms
+        </li>
+        <ul id="formsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Form Basics -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/form-basics.html" >Form Basics</a>
+            </li>
+            <!-- Input Basics -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/input-basics.html" >Input Basics</a>
+            </li>
+            <!-- Action Wrappers -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/action-wrappers.html" >Action Wrappers</a>
+            </li>
+            <!-- Floating Labels -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/floating-labels.html" >Floating Labels</a>
+            </li>
+            <!-- File picker -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/file-picker.html" >File Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+            </li>
+            <!-- Date picker -->
+            <li class="docs--sidebar__item">
+                <a href="components/forms/date-picker.html" >Date Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+            </li>
+        </ul>
+
+        <!-- Buttons -->
+        <li class="docs--sidebar__item">
+            <a href="elements/buttons.html" >Buttons</a>
+        </li>
+
+        <!-- Indicators (or LEDs, dunno yet) -->
+        <li class="docs--sidebar__item">
+            <a href="elements/indicators.html" >Indicators</a>
+        </li>
+    </ul>
+
+    <!-- Components -->
+    <li data-toggle="collapse"
+        data-target="#componentsCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Components
+    </li>
+    <ul id="componentsCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Breadcrumbs -->
+        <li class="docs--sidebar__item">
+            <a href="components/breadcrumbs.html" >Breadcrumbs</a>
+        </li>
+        <!-- Page-Header (SKAL NED TIL "CORE COMPONENTS") -->
+        <li class="docs--sidebar__item">
+            <a href="components/page-header.html" >Page-header</a>
+        </li>
+        <!-- App-tiles -->
+        <li class="docs--sidebar__item">
+            <a href="components/app-tiles.html" >App-tiles</a>
+        </li>
+
+        <!-- Dropdowns -->
+        <li data-toggle="collapse"
+            data-target="#dropdownsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Dropdowns
+        </li>
+        <ul id="dropdownsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Dropdown Basics -->
+            <li class="docs--sidebar__item">
+                <a href="components/dropdowns/basics-dropdown.html" >Dropdown Basics</a>
+            </li>
+            <!-- Content-dropdowns -->
+            <li class="docs--sidebar__item">
+                <a href="components/dropdowns/content-dropdown.html" >Content-dropdowns</a>
+            </li>
+            <!-- Features Dropdown (FJERN FRA NODES-UI...) -->
+            <li class="docs--sidebar__item">
+                <a href="components/dropdowns/features-dropdown.html" >Features dropdown</a>
+            </li>
+            <!-- User Dropdown (FJERN FRA NODES-UI...) -->
+            <li class="docs--sidebar__item">
+                <a href="components/dropdowns/user-dropdown.html" >User dropdown</a>
+            </li>
+            <!-- Applications Dropdown (FJERN FRA NODES-UI...) -->
+            <li class="docs--sidebar__item">
+                <a href="components/dropdowns/applications-dropdown.html" >Applications dropdown</a>
+            </li>
+        </ul>
+
+        <!-- List Groups -->
+        <li data-toggle="collapse"
+            data-target="#listGroupCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            List-groups
+        </li>
+        <ul id="listGroupCollapse" class="docs--sidebar__collapse collapse">
+            <!-- List Group Basics -->
+            <li class="docs--sidebar__item">
+                <a href="components/list-group/list-group.html" >List Group</a>
+            </li>
+        </ul>
+
+        <!-- Sidebars -->
+        <li data-toggle="collapse"
+            data-target="#sidebarsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Sidebars
+        </li>
+        <ul id="sidebarsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Sidebar Basics -->
+            <li class="docs--sidebar__item">
+                <a href="components/sidebar/basic-sidebar.html" >Sidebar Basics</a>
+            </li>
+            <!-- Sidebar Components -->
+            <li class="docs--sidebar__item">
+                <a href="components/sidebar/sidebar-components.html" >Sidebar Components</a>
+            </li>
+        </ul>
+
+        <!-- Panels -->
+        <li data-toggle="collapse"
+            data-target="#panelsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Panels
+        </li>
+        <ul id="panelsCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="components/panels/panel-basics.html" >Panel Basics</a>
+            </li>
+        </ul>
+    </ul>
+
+    <!-- Laravel  -->
+    <li data-toggle="collapse"
+        data-target="#laravelCollapse"
+        class="docs--sidebar__heading docs--collapser">
+        Laravel
+    </li>
+    <ul id="laravelCollapse" class="docs--sidebar__collapse collapse">
+        <!-- Layout Scaffold -->
+        <li class="docs--sidebar__item">
+            <a href="laravel/layout/layout-scaffold.html" >Layout Scaffold</a>
+        </li>
+        <!-- Scaffold Components -->
+        <li data-toggle="collapse"
+            data-target="#scaffoldComponentsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Scaffold Components
+        </li>
+        <ul id="scaffoldComponentsCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="components/side-navigation.html" >Side-navigation</a>
+            </li>
+        </ul>
+        <!-- Specialty Pages -->
+        <li data-toggle="collapse"
+            data-target="#specialyPagesCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Specialty Pages
+        </li>
+        <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="blade-templates/pages/app-install.html" >App Install</a>
+            </li>
+        </ul>
+    </ul>
+</ul>
+                </div>
+                <div class="flex-2 scroll docs--layout-content">
+                    <p><style>
+    .demo ul li span {
+        display: block;
+        height: 40px;
+        background-color: #eee;
+        text-align: center;
+    }
+</style></p>
+<h1 class="docs--page-header">Block-layout</h1>
+
+<p class="docs--page-description">
+    Block layouts give you a way to evenly split contents of a list within the grid. If you wanted to create a row of five images or paragraphs that need to stay evenly spaced no matter the screen size, the block layout is for you.
+</p>
+
+<h2 class="docs--section-header">Items per rows</h2>
+
+<p class="docs--section-description">
+    You can change the ammount of items shown in a row on different viewport widths.
+</p>
+
+<p class="docs--section-description">
+    Note: If you want to maintain some padding between the list-items, make sure to wrap your content in some block-level element.
+</p>
+
+<table class="docs--section-guide table">
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.small-block-layout-[1-12]</code></td>
+            <td>for screens &lt;767px</td>
+        </tr>
+        <tr>
+            <td><code>.medium-block-layout-[1-12]</code></td>
+            <td>for screens &gt;768px &amp; &lt;991px</td>
+        </tr>
+        <tr>
+            <td><code>.large-block-layout-[1-12]</code></td>
+            <td>for screens &gt;992px &amp; &lt;1199px</td>
+        </tr>
+        <tr>
+            <td><code>.x-large-block-layout-[1-12]</code></td>
+            <td>for screens &gt;1200px</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+    <div class="docs--example-container demo docs--prism" data-xrayhtml><ul class="small-block-layout-3 medium-block-layout-4 large-block-layout-6 x-large-block-layout-7">
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+    <li><span>Block</span></li>
+</ul></div>
+</div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <script src="assets/js/vendor.js"></script>
+
+<script src="assets/js/modules/file-picker.js"></script>
+<script src="assets/js/modules/date-time-picker.js"></script>
+<script src="assets/js/docs.js"></script>
+<script src="assets/js/nodes.js"></script>
+
+    </body>
+
+</html>
