@@ -2,12 +2,16 @@ var config 			= require('../config/alerts'),
 	activeAlerts 	= [];
 
 $(function() {
-	/**
-	 * Session-based "Alerts" / "Toasts"
-	 *
-	 * These alerts are inserted into the DOM from Laravel, and not inserted by JS. Still deserves some animation love.
-	 * We animate them in, and fade them out again after Nodes.alerts.autoCloseDelay seconds...
-	 */
+	init();
+});
+
+/**
+ * Session-based "Alerts" / "Toasts"
+ *
+ * These alerts are inserted into the DOM from Laravel, and not inserted by JS. Still deserves some animation love.
+ * We animate them in, and fade them out again after config.autoCloseDelay seconds...
+ */
+function init() {
 	$('.alert.to-be-animated-in').each(function(i) {
 
 		if(i > 0) {
@@ -26,8 +30,8 @@ $(function() {
 				animateOut($(this), 0, true);
 			}
 		})
-	}, Nodes.alerts.autoCloseDelay);
-});
+	}, config.autoCloseDelay);
+}
 
 function animateIn(element, staggerDelay) {
 

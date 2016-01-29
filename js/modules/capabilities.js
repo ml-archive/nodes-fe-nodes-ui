@@ -1,3 +1,5 @@
+var _getSlug = require('../utils/slug');
+
 $(function() {
 	//----------------------------------------------------------------
 	// Capabilities
@@ -11,7 +13,7 @@ $(function() {
 		// Create re-usable callback
 		var updateCapabilitySlug = function(value) {
 			// Slugify capability name
-			var capabilityName = Nodes.slugify(value);
+			var capabilityName = _getSlug(value);
 
 			// Prepend selected group slug (if one is selected)
 			var groupSlug = group.find('option:selected').data('slug');

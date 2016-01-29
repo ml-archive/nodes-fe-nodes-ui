@@ -2,7 +2,8 @@
  * ...
  * Author: Alexander Hafstad <alhl@nodes.dk>
  */
-var _evalDataOptions = require('../utils/eval-data-options');
+var _evalDataOptions = require('../utils/eval-data-options'),
+	_getSlug		 = require('../utils/slug');
 
 $(function() {
 	var selectors = [
@@ -44,7 +45,7 @@ var slugify = {
 	},
 	setSlug: function() {
 		// Get slug
-		this.slug = getSlug( this.$elem.val() );
+		this.slug = _getSlug( this.$elem.val() );
 
 		// Update preview and value with slug
 		if(this.slug) {
@@ -59,18 +60,6 @@ var slugify = {
 	},
 	options: {}
 };
-
-/*
- Helper Methods
- */
-function getSlug(text) {
-	return text.toString().toLowerCase()
-		.replace(/\s+/g, '-')       // Replace spaces with -
-		.replace(/[^\w\-]+/g, '')   // Remove all non-word chars
-		.replace(/\-\-+/g, '-')     // Replace multiple - with single -
-		.replace(/^-+/, '')         // Trim - from start of text
-		.replace(/-+$/, '');        // Trim - from end of text
-}
 
 // Object.create support test, and fallback for browsers without it
 if ( typeof Object.create !== "function" ) {
