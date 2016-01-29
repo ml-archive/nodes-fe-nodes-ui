@@ -29,17 +29,6 @@ module.exports = {
 			dest: '<%= paths.dist %>assets/'
 		}]
 	},
-	jsModules: {
-		files: [{
-			expand: true,
-			dot: true,
-			cwd: '<%= paths.js %>/modules',
-			src: [
-				'*.js'
-			],
-			dest: '<%= paths.dist %>assets/js/modules'
-		}]
-	},
 	browserify: {
 		files: [{
 			expand: true,
