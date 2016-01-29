@@ -1,21 +1,27 @@
 $(function() {
-	// Highlight selected radio-/checkboxes
-	$('.checkbox,.radio').each(function() {
-		$(this).find(':radio,:checkbox').click(function() {
-			if ($(this).is(':checked')) {
-				if ($(this).attr('type') == 'radio') {
-					$(this).parents('.radio').find('label').addClass('selected')
-				} else {
-					$(this).parents('.checkbox').find('label').addClass('selected');
-				}
+
+	/**
+	 * Toggles .selected class for label of [type="radio"] and [type="checkbox"]
+	 */
+	$(this).find(':radio,:checkbox').each(function() {
+		"use strict";
+
+		var $elm	= $(this),
+			type 	= $elm.attr('type'),
+			label   = $elm.parents('.' + type).find('label');
+
+		toggleSelectedClassOnLabel();
+
+		$elm.on('click', toggleSelectedClassOnLabel);
+
+		function toggleSelectedClassOnLabel() {
+
+			if( $elm.is(':checked') ) {
+				label.addClass('selected');
 			} else {
-				if ($(this).attr('type') == 'radio') {
-					$(this).parents('.radio').find('label').removeClass('selected')
-				} else {
-					$(this).parents('.checkbox').find('label').removeClass('selected');
-				}
+				label.removeClass('selected');
 			}
-		})
+		}
 	});
 
 	// Select all checkbox/radio buttons
