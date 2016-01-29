@@ -1,0 +1,29 @@
+---
+title: Slugify
+layout: nested-component.html
+---
+<h1 class="docs--page-header">
+    Slugify
+</h1>
+
+<p class="docs--page-description">
+    Slugifies input fields and textareas. <br />
+    Specify preview target with <code>data-options="{target: 'SELECTOR'}"</code><br /><br />
+    <strong>NOTE: preview target should include: <br />
+    A hidden input with a <code>.slugify-value</code> class and an element with <code>.slugify-preview</code> class.</strong>
+</p>
+<div class="docs--code-example">
+    <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
+    <div class="docs--example-container demo docs--prism" data-xrayhtml>
+
+        <div class="form-group">
+            <label for="example" class="control-label">Slug it: </label>
+            <input type="text" id="example" class="form-control" name="name" data-toggle="slugify" data-options="{target: '#slug-container'}" />
+
+            <div id="slug-container">
+                <label for="slug" class="control-label">Slug: </label>
+                <input type="hidden" id="slug" class="slugify-value" />
+                <span class="slugify-preview">N/A</span>
+            </div>
+        </div></div>
+</div>

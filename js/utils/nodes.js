@@ -255,35 +255,6 @@ module.exports = {
 		}
 	},
 
-	slugifyElement: function(element) {
-		// Slugify target "window"
-		var target = $(element).data('slugify');
-		if (!target) {
-			return;
-		}
-
-		// Slugify value of element
-		var slug = this.slugify($(element).val());
-
-		// Update preview and value with slug
-		if (slug) {
-			$(target).find('.slugify-value').val(slug).end()
-				.find('.slugify-preview').text(slug);
-		} else {
-			$(target).find('.slugify.value').val('').end()
-				.find('.slugify-preview').text('N/A');
-		}
-	},
-
-	slugify: function(text) {
-		return text.toString().toLowerCase()
-			.replace(/\s+/g, '-')       // Replace spaces with -
-			.replace(/[^\w\-]+/g, '')   // Remove all non-word chars
-			.replace(/\-\-+/g, '-')     // Replace multiple - with single -
-			.replace(/^-+/, '')         // Trim - from start of text
-			.replace(/-+$/, '');        // Trim - from end of text
-	},
-
 	capabilityToggleSlug: function(element) {
 		element.click(function(e) {
 			// Get all capabilities list
