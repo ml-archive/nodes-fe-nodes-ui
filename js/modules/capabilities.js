@@ -50,6 +50,34 @@ $(function() {
 	});
 
 	$('#capabilities-toggle-slug :checkbox').each(function() {
-		Nodes.capabilityToggleSlug($(this));
+		capabilityToggleSlug($(this));
 	});
 });
+
+function capabilityToggleSlug(element) {
+	element.click(function(e) {
+		// Get all capabilities list
+		var capabilities = $('.capabilities-list').find('.checkbox');
+
+		// Determine action depending on state of checkbox
+		if ($(this).is(':checked')) {
+			capabilities.each(function() {
+				// Update capability text
+				var capabilitySlug = $(this).data('capability-slug');
+				$(this).find('label').text(capabilitySlug);
+
+				// Add selected state
+				$(element).parent().find('label').addClass('selected');
+			});
+		} else {
+			capabilities.each(function() {
+				// Update capability text
+				var capabilityTitle = $(this).data('capability-title');
+				$(this).find('label').text(capabilityTitle);
+
+				// Remove selected state
+				$(element).parent().find('label').removeClass('selected');
+			});
+		}
+	});
+}

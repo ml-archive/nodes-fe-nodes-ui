@@ -4,9 +4,6 @@
 require('./utils/smarter-resize');
 require('./utils/eval-data-options');
 
-// Assign Nodes to window, so legacy code wont break
-window.Nodes = require('./utils/nodes');
-
 /**
  * Components
  */

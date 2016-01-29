@@ -1,3 +1,6 @@
+var config 			= require('../config/alerts'),
+	activeAlerts 	= [];
+
 $(function() {
 	/**
 	 * Session-based "Alerts" / "Toasts"
@@ -8,9 +11,9 @@ $(function() {
 	$('.alert.to-be-animated-in').each(function(i) {
 
 		if(i > 0) {
-			Nodes.alerts.animateIn($(this), 100*i, true);
+			animateIn($(this), 100*i, true);
 		} else {
-			Nodes.alerts.animateIn($(this), 0, true);
+			animateIn($(this), 0, true);
 		}
 	});
 
@@ -18,10 +21,28 @@ $(function() {
 		$( $('.alert:not(.to-be-animated-in)').get().reverse() ).each(function(i) {
 
 			if(i > 0) {
-				Nodes.alerts.animateOut($(this), 100*i, true);
+				animateOut($(this), 100*i, true);
 			} else {
-				Nodes.alerts.animateOut($(this), 0, true);
+				animateOut($(this), 0, true);
 			}
 		})
 	}, Nodes.alerts.autoCloseDelay);
 });
+
+function animateIn(element, staggerDelay) {
+
+	$(element).delay(staggerDelay || 0).queue(function() {
+		$(element).removeClass('to-be-animated-in').dequeue();
+	});
+
+	activeAlerts.push($(element));
+}
+
+function animateOut(element, staggerDelay) {
+	$(element).delay(staggerDelay || 0).queue(function() {
+		$(element).addClass('to-be-animated-out').dequeue();
+	});
+	$(element).one('transitionend webkitTransitionEnd oTransitionEnd', function() {
+		$(this).remove();
+	});
+}
