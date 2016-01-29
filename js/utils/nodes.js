@@ -23,17 +23,6 @@ module.exports = {
 	},
 
 	/**
-	 * Add "roll effect" to links on hover
-	 * @author  Morten Rugaard
-	 * @param   element
-	 * @returns void
-	 */
-	linkEffect: function(element) {
-		var linkText = element.text();
-		element.html($('<span/>').data('hover', linkText).html(element.html()));
-	},
-
-	/**
 	 * Select all checkboxes/radios
 	 * @author  Morten Rugaard
 	 * @param   element
