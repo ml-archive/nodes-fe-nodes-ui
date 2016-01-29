@@ -3,6 +3,7 @@
 # Build everything
 build:
   - 'clean'
+  - 'browserify'
   - 'newer:assemble'
   - 'useminPrepare'
   - 'sass'
@@ -17,6 +18,8 @@ styles:
   - 'postcss'
 # Just the scripts
 scripts:
+  - 'clean'
+  - 'browserify'
   - 'assemble'
   - 'useminPrepare'
   - 'copy'

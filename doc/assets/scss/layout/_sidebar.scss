@@ -10,55 +10,81 @@
 	list-style: none;
 }
 
-.docs--sidebar__item a {
-	@include whitespace($type: padding, $side: vertical, $size: sm);
-	@include whitespace($type: padding, $side: horizontal);
-}
-.docs--sidebar__has-subnav {
-	padding-bottom: 0;
-	> span {
-		@include whitespace($type: padding, $side: vertical, $size: sm);
-		@include whitespace($type: padding, $side: horizontal);
-		display: block;
+.docs--sidebar {
+
+	li, a {
+		color: $gray-darker;
 	}
-}
-.docs--sidebar__subnav li a {
-	@include whitespace($type: padding, $side: left, $size: xl);
-}
 
-.docs--sidebar__heading {
-	@include whitespace($type: padding, $side: vertical, $size: sm);
-	@include whitespace($type: padding, $side: right, $size: sm);
-	@include whitespace($type: padding, $side: left, $size: xs);
-	@include background-color($gray);
-	font-weight: 500;
-}
-.docs--sidebar__sub-heading {
-	@include whitespace($type: padding, $side: vertical, $size: xs);
-	@include whitespace($type: padding, $side: right, $size: sm);
-	@include whitespace($type: padding, $side: left, $size: xs);
-	@include background-color($gray-light);
-}
+	li.docs--collapser,
+	li a {
+		@include whitespace($type: padding, $side: vertical, $size: sm);
+		display: flex;
+		align-items: center;
+	}
 
-.docs--sidebar__item {
 	a {
-		@include font-color($secondary-color-light);
-
-		display: block;
 		&:hover {
-			@include background-color($gray-light);
-			@include font-color($secondary-color-dark);
 			text-decoration: none;
 		}
 	}
 
-	&.active a {
-		@include background-color($gray-dark);
-		@include font-color($secondary-color);
+	li {
+		&:hover {
+			color: $link-hover-color;
+		}
 	}
-}
 
-.docs--sidebar__divider {
-	@include background-color($gray-light);
-	height: 2px;
+	li.active {
+		background-color: $gray;
+		color: $gray-lighter;
+	}
+
+	> ul {
+		background-color: $gray-light;
+	}
+
+	/*
+		Indentation of list-items
+	*/
+	// >
+	> li.docs--collapser,
+	> li a {
+		@include whitespace($type: padding, $side: horizontal, $size: sm);
+	}
+	// >>
+	> ul > li.docs--collapser,
+	> ul > li a {
+		@include whitespace($type: padding, $side: horizontal);
+	}
+	// >>>
+	> ul > ul > li.docs--collapser,
+	> ul > ul > li a {
+		@include whitespace($type: padding, $side: horizontal, $size: lg);
+	}
+
+
+	.docs--sidebar__badge {
+		margin-left: 10px;
+
+		display: inline-block;
+		min-width: 10px;
+		padding: 3px 7px;
+
+		font-size: 10px;
+		vertical-align: middle;
+		white-space: nowrap;
+		text-align: center;
+		color: $black;
+
+		background-color: $badge-bg;
+
+		border-radius: $badge-border-radius;
+		&.docs--sidebar__badge--js {
+			background-color: #f0db4f;
+		}
+		&.docs--sidebar__badge--js:after {
+			content: "JS";
+		}
+	}
 }

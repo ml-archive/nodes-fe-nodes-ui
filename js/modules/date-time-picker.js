@@ -49,7 +49,6 @@ var datetimepickerWrapper = {
 	},
 	options: {
 		format: 'YYYY-MM-DD HH:mm',
-		calendarWeeks: false,
 		allowInputToggle: true,
 		icons: {
 			time: 'fa fa-clock-o',

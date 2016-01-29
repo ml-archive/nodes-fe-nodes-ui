@@ -105,7 +105,7 @@ $padding-xs-horizontal:     		$whitespace-root; // 5px
 $line-height-large:         		1.3333333; // extra decimals for Win 8.1 Chrome
 $line-height-small:         		1.5;
 
-$border-radius-base:        		4px;
+$border-radius-base:        		4px !default;
 $border-radius-large:       		6px;
 $border-radius-small:       		4px;
 
@@ -782,7 +782,7 @@ $well-border:                 darken($well-bg, 7%);
 $badge-color:                 #fff;
 //** Linked badge text color on hover
 $badge-link-hover-color:      #fff;
-$badge-bg:                    $gray-light;
+$badge-bg:                    $gray;
 
 //** Badge text color in active nav link
 $badge-active-color:          $link-color;
