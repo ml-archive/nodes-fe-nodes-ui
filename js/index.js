@@ -1,9 +1,4 @@
 /**
- * Config
- */
-require('./config/chart');
-
-/**
  * Utils
  */
 require('./utils/smarter-resize');
@@ -18,6 +13,7 @@ window.Nodes = require('./utils/nodes');
 require('./modules/file-picker');
 require('./modules/date-time-picker');
 require('./modules/dropdown-menu');
+require('./modules/chart');
 
 require('./modules/layout');
 require('./modules/sidebar');
