@@ -54,7 +54,7 @@ var filePicker = {
 		this.options = $.extend( {}, this.options, options );
 
 		if(this.$elem.data('disable-preview')) {
-			this.options.disablePreview = (this.$elem.data('disable-preview') == 'true') ? true : false;
+			this.options.disablePreview = this.$elem.data('disable-preview');
 		}
 
 		this.$fileInput = this.$elem.find('.file-picker__file-input');
