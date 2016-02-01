@@ -10,18 +10,13 @@ jQuery(document).ready(function($) {
 	 */
 	$('.file-picker').filePicker();
 
+	/**
+	 * Init dropdown-menu
+	 * @param el
+	 */
 	$('[data-dropdown]').each(function(i, el) {
 		initDrop($(this));
 	});
-
-	function evalDataOptions(str) {
-		try {
-			return eval( '(' + str + ')' )
-		} catch(e) {
-			throw e;
-		}
-
-	}
 
 	function initDrop(el) {
 
@@ -37,90 +32,19 @@ jQuery(document).ready(function($) {
 		new Drop(opts);
 
 	}
-
-	var BREAKPOINTS = {
-		xs: 480,
-		sm: 768,
-		md: 992,
-		lg: 1200,
-		xl: 1440,
-		xxl: 1920
-	};
-
+	
+	/**
+	 * Layout
+	 */
 	$(window).smartresize(function() {
-		var winWidth = window.innerWidth;
-
-		if(winWidth > BREAKPOINTS.sm - 1) {
-			$('.core-layout').removeClass('core-layout--left-open');
-			$('.core-layout__sidebar-wrapper').removeAttr('style');
-			$('.core-layout__sidebar').removeAttr('style');
-		}
-
-	});
-	$('.core__left-sidebar-toggle').on('click', function() {
-
-		var LEFT_MENU_OPEN_CLASS = 'core-layout--left-open';
-
-		var $coreLayout = $('.core-layout');
-		var $sidebar = $('.core-layout__sidebar-wrapper');
-		var $content = $('.core-layout__sidebar');
-
-		var isSidebarVisible = $coreLayout.hasClass('core-layout--left-open');
-
-		isSidebarVisible ? _animateOut() : _animateIn();
-
-		function _animateIn() {
-			$sidebar.velocity('fadeIn');
-			//$sidebar.velocity({
-			//	opacity: 1
-			//}, {
-			//	duration: 200,
-			//	display: 'block',
-			//	complete: function() {
-			//		console.log('done');
-			//	//	$coreLayout.addClass(LEFT_MENU_OPEN_CLASS);
-			//	//	$sidebar.on('click', function(e) {
-			//	//		if(e.target.className !== 'core-layout__sidebar-wrapper') {
-			//	//			return;
-			//	//		}
-			//	//		_animateOut();
-			//	//	});
-			//	}
-			//});
-
-			//$content.velocity({
-			//	translateX: '0%'
-			//}, {
-			//	duration: 200,
-			//	delay: 200
-			//});
-		}
-
-		function _animateOut() {
-			$sidebar.velocity({
-				opacity: 0
-			}, {
-				duration: 200,
-				display: 'none',
-				complete: function() {
-					$coreLayout.removeClass(LEFT_MENU_OPEN_CLASS);
-				}
-			});
-
-			$content.velocity({
-				translateX: '-100%'
-			}, {
-				duration: 200,
-				delay: 100
-			});
-		}
-
+		removeLayoutStyles();
 	});
 
+	$('.core__left-sidebar-toggle').on('click', leftSidebarToggleClick);
 
 	// Configure Chart.js globals
-	Chart.defaults.global.responsive = true;
-	Chart.defaults.global.maintainAspectRatio = false;
+	Chart.defaults.global.responsive 			= true;
+	Chart.defaults.global.maintainAspectRatio 	= false;
 
 	// Initialize Floating Labels on forms
 	Nodes.floatingLabels();
@@ -153,21 +77,22 @@ jQuery(document).ready(function($) {
 	// Init equalheight plugin
 	//rightHeight.init();
 
-	// Highlight selected radio-/checkboxes
+	/**
+	 * Toggles .selected class for label of [type="radio"] and [type="checkbox"]
+	 */
 	$('.checkbox,.radio').each(function() {
+
 		$(this).find(':radio,:checkbox').click(function() {
-			if ($(this).is(':checked')) {
-				if ($(this).attr('type') == 'radio') {
-					$(this).parents('.radio').find('label').addClass('selected')
-				} else {
-					$(this).parents('.checkbox').find('label').addClass('selected');
-				}
+
+			var $elm	= $(this),
+				checked = $elm.is(':checked'),
+				type 	= $elm.attr('type'),
+				label   = $elm.parents('.' + type).find('label');
+
+			if(checked) {
+				label.addClass('selected');
 			} else {
-				if ($(this).attr('type') == 'radio') {
-					$(this).parents('.radio').find('label').removeClass('selected')
-				} else {
-					$(this).parents('.checkbox').find('label').removeClass('selected');
-				}
+				label.removeClass('selected');
 			}
 		})
 	});
@@ -175,7 +100,7 @@ jQuery(document).ready(function($) {
 	// Select all checkbox/radio buttons
 	$('.nodes-select-all[data-target]').each(function() {
 		Nodes.selectAll($(this));
-	})
+	});
 
 	// Confirm dialog
 	$('[data-confirm="true"]').each(function() {
@@ -335,31 +260,3 @@ jQuery(document).ready(function($) {
 		}, Nodes.alerts.autoCloseDelay);
 	}
 });
-
-(function($,sr){
-
-	// debouncing function from John Hann
-	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-	var debounce = function (func, threshold, execAsap) {
-		var timeout;
-
-		return function debounced () {
-			var obj = this, args = arguments;
-			function delayed () {
-				if (!execAsap)
-					func.apply(obj, args);
-				timeout = null;
-			};
-
-			if (timeout)
-				clearTimeout(timeout);
-			else if (execAsap)
-				func.apply(obj, args);
-
-			timeout = setTimeout(delayed, threshold || 100);
-		};
-	}
-	// smartresize
-	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-})(jQuery,'smartresize');
