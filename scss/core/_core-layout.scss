@@ -45,8 +45,12 @@ body.staging {
 		flex-basis: 0;
 		align-items: center;
 		justify-content: space-between;
+		.top-bar__actions-left,
+		.top-bar__actions-right {
+			align-items: center;
+		}
 		.top-bar__actions-left {
-			display: block;
+			display: none;
 		}
 		.top-bar__actions-right {
 			display: none;
@@ -54,7 +58,8 @@ body.staging {
 		@media (min-width: $screen-sm) {
 			width: 100%;
 			flex-basis: auto;
-			.top-bar__actions-right {
+			.top-bar__actions-right,
+			.top-bar__actions-left {
 				display: flex;
 			}
 		}
@@ -113,25 +118,27 @@ body.staging {
 	.sidebar__navigation {
 		display: flex;
 		flex-direction: column;
+		flex: 1 0 auto;
 		@media (min-width: $screen-sm) {
-			height: calc(100% - #{$core-topbar-height});
-			max-height: 100%;
-			flex-basis: 100%;
+
 		}
 
 		.sidebar__navigation-top:not(:empty) {
-			@include whitespace($side: vertical, $type: margin);
+			@include whitespace($side: vertical, $type: margin, $size: sm);
+
 		}
 		.sidebar__navigation-middle {
-			@include whitespace($side: vertical, $type: margin);
+			@include whitespace($side: vertical, $type: margin, $size: sm);
+			flex: 1 0 auto;
 			-webkit-overflow-scrolling: touch;
 			@media (min-width: $screen-sm) {
-				flex-basis: 100%;
+
 				overflow-y: auto;
 			}
 		}
 		.sidebar__navigation-bottom:not(:empty) {
-			@include whitespace($side: vertical, $type: margin);
+			@include whitespace($side: vertical, $type: margin, $size: sm);
+
 		}
 	}
 }

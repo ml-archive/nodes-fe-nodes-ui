@@ -70,28 +70,30 @@ jQuery(document).ready(function($) {
 		isSidebarVisible ? _animateOut() : _animateIn();
 
 		function _animateIn() {
-			$sidebar.velocity({
-				opacity: 1
-			}, {
-				duration: 200,
-				display: 'block',
-				complete: function() {
-					$coreLayout.addClass(LEFT_MENU_OPEN_CLASS);
-					$sidebar.on('click', function(e) {
-						if(e.target.className !== 'core-layout__sidebar-wrapper') {
-							return;
-						}
-						_animateOut();
-					});
-				}
-			});
+			$sidebar.velocity('fadeIn');
+			//$sidebar.velocity({
+			//	opacity: 1
+			//}, {
+			//	duration: 200,
+			//	display: 'block',
+			//	complete: function() {
+			//		console.log('done');
+			//	//	$coreLayout.addClass(LEFT_MENU_OPEN_CLASS);
+			//	//	$sidebar.on('click', function(e) {
+			//	//		if(e.target.className !== 'core-layout__sidebar-wrapper') {
+			//	//			return;
+			//	//		}
+			//	//		_animateOut();
+			//	//	});
+			//	}
+			//});
 
-			$content.velocity({
-				translateX: '0%'
-			}, {
-				duration: 200,
-				delay: 200
-			});
+			//$content.velocity({
+			//	translateX: '0%'
+			//}, {
+			//	duration: 200,
+			//	delay: 200
+			//});
 		}
 
 		function _animateOut() {
