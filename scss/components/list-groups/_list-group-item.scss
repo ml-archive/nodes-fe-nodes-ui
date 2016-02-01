@@ -55,15 +55,30 @@
 	@include background-color($secondary-color-dark);
 	color: $white;
 	border-left: 6px solid $secondary-color-dark;
+
+	a {
+		display: block;
+		width: 100%;
+		color: $white;
+	}
+
 	&:hover, &.hover,
 	&:focus, &.focus,
 	&:active, &.active {
+		cursor: pointer;
 		@include background-color($secondary-color-dark);
+		a {
+			@include background-color($secondary-color-dark);
+			text-decoration: none;
+		}
 	}
 
 	&:hover, &.hover {
 		&:not(.active) {
 			@include font-color($primary-color);
+			a {
+				@include font-color($primary-color);
+			}
 		}
 		[class*="btn"] {
 			color: $white;

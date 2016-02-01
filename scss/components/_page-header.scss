@@ -1,37 +1,41 @@
 .page-header {
-	@include layout($direction: vertical);
-
-	@include whitespace();
+	//@include layout($direction: vertical);
 	@include background-color($gray-lighter);
 
 	margin: 0;
+	padding: 0;
 	border: none;
 }
 .core-layout__content > .page-header {
 
 }
 
+.page-header__toolbar-section,
 .page-header__top-section,
 .page-header__bottom-section {
-	@include clearfix;
-	@include flex();
-	@include layout();
-
-	:nth-child(2) {
-		margin-left: auto;
-	}
+	@include whitespace($side: horizontal);
+	@include layout($wrap: false);
+	justify-content: space-between;
+	align-items: center;
 }
+.page-header__toolbar-section {
+	@include whitespace($side: vertical, $size: sm);
+}
+.page-header__top-section,
+.page-header__bottom-section {
+	@include whitespace($side: vertical);
+}
+
 .page-header__top-section {
 	:first-child,
 	:last-child {
-		align-self: flex-start;
+
 	}
 }
 .page-header__bottom-section {
-	@include whitespace($type: margin, $side: top, $size: sm);
 	:first-child,
 	:last-child {
-		align-self: flex-end;
+
 	}
 }
 

@@ -98,8 +98,8 @@
 .btn.btn-transparent {
 	@include button-ghost(
 			$secondary-color-light,
-			$secondary-color,
-			$secondary-color-dark
+			darken($secondary-color-light, 5%),
+			darken($secondary-color-light, 8%)
 	);
 }
 
@@ -107,6 +107,6 @@
 	@include button-ghost(
 			$secondary-color-light,
 			$secondary-color,
-			$secondary-color-dark
+			$secondary-color
 	);
 }

@@ -1,6 +1,10 @@
 .list-group {
 	margin-bottom: 0;
 }
+nav.list-group ul {
+	padding: 0;
+	margin: 0;
+}
 
 .list-group:not(.list-group-radius) .list-group-item {
 	&:first-child,
