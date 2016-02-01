@@ -4,14 +4,14 @@ hljs.LANGUAGES['scss'] = require('../../lib/scss.js')(hljs);
 
 module.exports = {
 	options: {
-		marked: {
-			highlight: function(code, lang) {
-				if (lang === undefined) lang = 'bash';
-				if (lang === 'html') lang = 'xml';
-				if (lang === 'js') lang = 'javascript';
-				return '<div class="code-container">' + hljs.highlight(lang, code).value + '</div>';
-			}
-		}
+		//marked: {
+		//	highlight: function(code, lang) {
+		//		if (lang === undefined) lang = 'bash';
+		//		if (lang === 'html') lang = 'xml';
+		//		if (lang === 'js') lang = 'javascript';
+		//		return '<div class="code-container">' + hljs.highlight(lang, code).value + '</div>';
+		//	}
+		//}
 	},
 	dist: {
 		options: {

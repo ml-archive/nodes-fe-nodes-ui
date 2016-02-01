@@ -22,7 +22,8 @@
     "eonasdan-bootstrap-datetimepicker": "~4.17.37"
   },
   "devDependencies": {
-    "zeroclipboard": "~2.2.0"
+    "zeroclipboard": "~2.2.0",
+    "clipboard": "~1.5.5"
   },
   "main": [
     "js/nodes.compiled.js",
