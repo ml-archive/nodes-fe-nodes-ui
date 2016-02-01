@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Page-header | Foundation Docs</title>
+<title>DHNI&#x27;s legeplads | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
@@ -178,7 +178,7 @@
             <a href="breadcrumbs.html" >Breadcrumbs</a>
         </li>
         <!-- Page-Header (SKAL NED TIL "CORE COMPONENTS") -->
-        <li class="docs--sidebar__item active">
+        <li class="docs--sidebar__item">
             <a href="page-header.html" >Page-header</a>
         </li>
         <!-- App-tiles -->
@@ -293,108 +293,64 @@
         </ul>
     </ul>
 
-    <li class="docs--sidebar__item">
+    <li class="docs--sidebar__item active">
         <a href="dhni-sandbox.html" >dhni-sandbox</a>
     </li>
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">
-                    <h1 class="docs--page-header">Page-header</h1>
-<h1>DENNIS SKAL FÅ FLERE KOMBINATIONER TIL AT VIRKE</h1>
+                    <pre><code>function previewImg($img, file) {
 
-<p class="docs--page-description">
-    A core component in the nStack views, the page-header is designed to contain breadcrumbs and page actions aswell
-    as the title of the page ofcourse.
-</p>
+    if(!file) {
+        return $img.attr('src');
+    }
 
-<p><p class="docs--section-description">
-    The page-header is designed to hold up to four sub-components:
-</p></p>
-<ul class="docs--section-list">
-    <li><code>.breadcrumbs</code></li>
-    <li><code>.search-form</code></li>
-    <li><code>&lt;h1&gt;</code></li>
-    <li><code>...buttongroup</code></li>
-</ul>
+    var reader = new FileReader();
 
-<section class="page-header">
+    reader.onload = function(e) {
+        $img.attr('src', e.target.result);
+    };
 
-    <div class="page-header__top-section">
+    return reader.readAsDataURL(file);
+}
+</code></pre>
 
-        <ol class="breadcrumb hidden-xs">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="#">Translate</a></li>
-        </ol>
+<pre><code class="lang-scss">@mixin layout($direction: horizontal, $inline: false, $reverse: false, $wrap: true, $wrap-reverse: false) {
+    @if $inline == false {
+        display: flex;
+    } @else if $inline == true {
+        display: inline-flex;
+    }
 
-        <form class="form-inline search-form">
-            <div class="form-group action-wrapper">
-                <button class="btn btn-icon-transparent action-wrap-action action-wrap-left">
-                    <i class="fa fa-search"></i>
-                </button>
-                <input type="text" placeholder="Search" class="form-control action-wrap-item action-wrap-left transparent" id="searchInput"/>
-            </div>
-        </form>
+    @if $direction == horizontal and $reverse == false {
+        flex-direction: row;
+    } @else if $direction == horizontal and $reverse == true {
+        flex-direction: row-reverse;
+    } @else if $direction == vertical and $reverse == false {
+        flex-direction: column;
+    } @else if $direction == vertical and $reverse == true {
+        flex-direction: column-reverse;
+    }
 
-    </div>
+    @if $wrap == true and $wrap-reverse == false {
+        flex-wrap: wrap;
+    } @else if $wrap == true and $wrap-reverse == true {
+        flex-wrap: wrap-reverse;
+    } @else if $wrap == false {
+        flex-wrap: nowrap;
+    }
+}
 
-    <div class="page-header__bottom-section">
+@mixin flex($flex-grow: 1, $flex-shrink: 0, $flex-basis: auto) {
+    flex: #{$flex-grow} #{$flex-shrink} #{$flex-basis};
+}
+</code></pre>
 
-        <h1>Web</h1>
-
-        <button class="btn btn-info">API Spec</button>
-
-    </div>
-
-</section>
-
-<p><br/></p>
-<section class="page-header">
-
-    <div class="page-header__top-section">
-
-        <ol class="breadcrumb hidden-xs">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="#">Translate</a></li>
-        </ol>
-
-    </div>
-
-    <div class="page-header__bottom-section">
-
-        <h1>Web</h1>
-
-        <button class="btn btn-info">API Spec</button>
-
-    </div>
-
-</section>
-
-<p><br/></p>
-<section class="page-header">
-
-    <div class="page-header__top-section">
-
-        <ol class="breadcrumb hidden-xs">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="#">Translate</a></li>
-        </ol>
-
-        <form class="form-inline search-form">
-            <div class="form-group action-wrapper">
-                <button class="btn btn-icon-transparent action-wrap-action action-wrap-left">
-                    <i class="fa fa-search"></i>
-                </button>
-                <input type="text" placeholder="Search" class="form-control action-wrap-item action-wrap-left transparent" id="searchInput"/>
-            </div>
-        </form>
-
-    </div>
-
-
-</section>
-
-
-
+<pre><code class="lang-php">@include('nodes.backend::partials.somewhere', [
+    'lol' => 'jeps',
+    'hah' => true
+])
+</code></pre>
 
                 </div>
             </div>
@@ -407,7 +363,6 @@
 <script src="assets/js/modules/date-time-picker.js"></script>
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/nodes.js"></script>
-
     </body>
 
 </html>

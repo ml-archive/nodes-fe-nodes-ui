@@ -1,0 +1,399 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Core layout Toggle-sidebar | Foundation Docs</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link href="assets/css/docs.css" rel="stylesheet" />
+<link href="assets/css/nodes.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        
+
+<div class="layout vertical core-layout">
+
+    <div class="core-layout__topbar">
+        <div class="top-bar">
+            <div class="top-bar__left">
+                <button href="#" class="btn btn-transparent core__left-sidebar-toggle"><i class="fa fa-bars"></i></button>
+
+                <div class="application-brand">
+                    <a class="logo" href="#">
+                        <img src="../../assets/img/n-stack-logo.svg" class="logo logo-small"/>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="top-bar__right">
+                <div class="top-bar__actions-left">
+                    <div class="dropdown">
+                        <button class="btn btn-transparent dropdown-toggle" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown trigger
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            ...
+                        </ul>
+                    </div>
+                    <p class="text-white">top-bar-actions-left</p>
+                </div>
+                <div class="top-bar__actions-right">
+                    <p class="text-white">top-bar-actions-right</p>
+
+                    <div class="dropdown dropdown-user">
+                        <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-inverse animate-expand align-right">
+                            <div class="dropdown-content">
+                                <p class="dropdown-content__title">
+                                    User
+                                </p>
+                                <div class="user">
+                                    <div class="user__profile">
+                                        <img class="img-responsive" src="//placehold.it/300x300"/>
+                                    </div>
+                                    <div class="user__info">
+                                <span class="user__info-name" title="John Doe">
+                                    John Doe
+                                </span>
+                                <span class="user__info-email" title="john.doe.doe.doe.doe.doe.doe.doe.doe@email.com">
+                                    john.doe.doe.doe.doe.doe.doe.doe.doe@email.com
+                                </span>
+                                    </div>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn btn-sm btn-transparent user__sign-out">
+                                        <i class="fa fa-sign-out"></i>
+                                        Sign out
+                                    </button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Edit user"
+                                            class="btn btn-sm btn-transparent user__settings">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                                <p class="dropdown-content__title">
+                                    Company
+                                </p>
+                                <div class="company">
+                                    <div class="company__profile">
+                                        <img class="img-responsive" src="//placehold.it/300x300"/>
+                                    </div>
+                                    <div class="company__info">
+                                <span class="company__info-name">
+                                    Nodes Agency
+                                </span>
+                                    </div>
+                                </div>
+                                <p class="dropdown-content__title company-list-title">
+                                    Switch company
+                                </p>
+                                <div class="company-list">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                eBoks
+                                            </a>
+                                        </li>
+                                        <li class="company-list__more">
+                                            <a href="#">
+                                                <i class="fa fa-plus"></i>
+                                                more
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="company-actions">
+                                    <button class="btn btn-transparent company__invite">
+                                        <i class="fa fa-user-plus"></i>
+                                        Invite to company
+                                    </button>
+                                    <button data-toggle="tooltip" data-placement="left" title="Edit company"
+                                            class="button btn btn-transparent company__settings">
+                                        <i class="fa fa-cog"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown dropdown-admin">
+                        <button class="btn btn-transparent dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-inverse animate-fade align-right">
+                            <li>
+                                <a href="#">
+                                    nStack Documentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    nStack Styleguide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Some other admin action
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    All your base...
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="core-layout__page">
+        <div class="core-layout__sidebar-wrapper">
+            <div class="core-layout__sidebar">
+
+                <div class="core-layout__sidebar-mobile-navigation">
+                    <div class="core-layout__sidebar-mobile-navigation-toolbar">
+                        <p>Menu</p>
+                        <button href="#" class="btn btn-transparent core__left-sidebar-toggle"><i class="fa fa-times"></i></button>
+                    </div>
+
+                    <!-- User -->
+                    <div class="sidebar__collapse">
+                        <button class="btn btn-transparent collapse-toggle" data-toggle="collapse" data-target="#userCollapse">
+                            <img class="img-responsive" src="//placehold.it/300x300"/>
+                            <span class="user__info-name" title="John Doe">
+                                John Doe
+                            </span>
+                        </button>
+                        <div id="userCollapse" class="collapse">
+                            <div class="list-group list-group-inverse">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-pencil"></i>
+                                    Edit Profile
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-sign-out"></i>
+                                    Sign out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin -->
+                    <div class="sidebar__collapse">
+                        <button class="btn btn-transparent collapse-toggle" data-toggle="collapse" data-target="#adminCollapse">
+                            Admin Actions
+                        </button>
+                        <div id="adminCollapse" class="collapse">
+                            <div class="list-group list-group-inverse">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-pencil"></i>
+                                    Something
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-plus"></i>
+                                    Something else
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shortcuts -->
+                    <div class="sidebar__collapse">
+                        <button class="btn btn-transparent collapse-toggle" data-toggle="collapse" data-target="#shortcutCollapse">
+                            Shortcuts
+                        </button>
+                        <div id="shortcutCollapse" class="collapse">
+                            <div class="list-group list-group-inverse">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-pencil"></i>
+                                    Something
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-plus"></i>
+                                    Something else
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sidebar sidebar__navigation">
+                    <div class="sidebar__navigation-top">
+                        <p class="text-white">sidebar-navigation-top</p>
+                    </div>
+                    <div class="sidebar__navigation-middle">
+                        <nav class="list-group list-group-inverse">
+                            <ul>
+                                <li class="list-group-item active">
+                                    <a href="https://riide.like.st/admin">
+                                        <i class="fa fa-dashboard"></i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="list-group-heading">
+                                    Developer
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/failed-jobs">
+                                        <i class="fa fa-cogs"></i>
+                                        Failed jobs
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/backend-users/roles">
+                                        <i class="fa fa-graduation-cap"></i>
+                                        Roles
+                                    </a>
+                                </li>
+                                <li class="list-group-heading">
+                                    Super admin
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/nstack" target="_blank">
+                                        <i class="fa fa-nodes logo">
+                                            <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                                <defs>
+                                                    <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="logoIconGradient">
+                                                        <stop class="logo-icon-gradient__0" offset="0%"></stop>
+                                                        <stop class="logo-icon-gradient__100" stop-color="#37EF81" offset="100%"></stop>
+                                                    </linearGradient>
+                                                </defs>
+                                                <g id="00_Guides-/-00.00_Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                                    <g id="00_Guides/00.00_Mobile/00.00_Mobile_Start" sketch:type="MSArtboardGroup" transform="translate(-136.000000, -48.000000)" fill="url(#logoIconGradient)">
+                                                        <g id="NStack_Logo" sketch:type="MSLayerGroup" transform="translate(136.000000, 48.000000)">
+                                                            <path d="M32,35.7206969 L40,31.1024111 L16,17.2464111 L20,14.9366969 L16,12.6269826 L8,17.2464111 L32,31.1024111 L28,33.4121254 L32,35.7206969 Z M36,0.829268293 L28,5.44755401 L32,7.75726829 L36,5.44755401 L44,10.0669826 L44,37.7789826 L36,42.3984111 L16,30.8509826 L20,28.5412683 L16,26.2326969 L8,30.8509826 L36,47.0166969 L48,40.0886969 L48,7.75726829 L36,0.829268293 Z M12,42.6486969 L4,38.0304111 L4,10.3172683 L12,5.69898258 L32,17.2464111 L28,19.5549826 L32,21.8646969 L40,17.2464111 L12,1.07955401 L0,8.00869686 L0,40.3401254 L12,47.2681254 L20,42.6486969 L16,40.3401254 L12,42.6486969 Z" id="Clip-8" sketch:type="MSShapeGroup"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </i>
+                                        NStack
+                                    </a>
+                                </li>
+                                <li class="list-group-heading">
+                                    Admin
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/companies?page=1">
+                                        <i class="fa fa-building"></i>
+                                        Companies
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/users?page=1">
+                                        <i class="fa fa-users"></i>
+                                        Users
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/backend-users?page=1">
+                                        <i class="fa fa-street-view"></i>
+                                        Backend users
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="https://riide.like.st/admin/rewards?page=1">
+                                        <i class="fa fa-medkit"></i>
+                                        Rewards
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="sidebar__navigation-bottom">
+                        <p class="text-white">sidebar-navigation-bottom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="core-layout__content">
+
+            <div class="page-header">
+                <div class="page-header__toolbar-section">
+                    <ol class="breadcrumb">
+                        <li><a href="#">some link 1</a></li>
+                        <li><a href="#">some link 2</a></li>
+                        <li><a href="#">some link 3</a></li>
+                        <li><a href="#">some link 4</a></li>
+                        <li><a href="#">some link 5</a></li>
+                        <li><a href="#">some link 6</a></li>
+                        <li><a href="#">some link 7</a></li>
+                        <li><a href="#">some link 8</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li><a href="#">some link 9</a></li>
+                        <li class="active"><a href="#">some link 10</a></li>
+                    </ol>
+                </div>
+                <div class="page-header__top-section">
+                    <h1>Page title</h1>
+                    <p>page-header-top-section</p>
+                    <p>page-header-top-section</p>
+                </div>
+                <div class="page-header__bottom-section">
+                    <p>page-header-bottom-section</p>
+                    <p>page-header-bottom-section</p>
+                    <p>page-header-bottom-section</p>
+                </div>
+            </div>
+
+            <div class="page-content">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+        <script src="assets/js/vendor.js"></script>
+
+<script src="assets/js/modules/file-picker.js"></script>
+<script src="assets/js/modules/date-time-picker.js"></script>
+<script src="assets/js/docs.js"></script>
+<script src="assets/js/nodes.js"></script>
+    </body>
+
+</html>
