@@ -5,21 +5,163 @@ title: Toasts
 
 <p class="docs--page-description">
     Toasts are a special version of the <a href="#">alerts</a> in Nodes UI. Toasts are used to give
-    users short feedback messages. The toasts will be visisble as an overlay on your application and will dismiss
-    themselfes after a configured amount of time.
+    users short feedback messages.
 </p>
+<p class="docs--panel-warning">A div with the alert class is only considered a Toast when it is placed in the page-toasts container.</p>
+<p class="docs--section-description">
+    Toasts comes with special rules:
+</p>
+<ul>
+    <li>
+        They are always dismissable by the user
+    </li>
+    <li>
+        They are only visible for a short period (default is <code>8000ms</code>)
+    </li>
+    <li>
+        They must not contain links or actions
+    </li>
+</ul>
+<p class="docs--section-description">
+    Give it a whirl:
+    <button class="btn btn-default" id="createDemoToast">Create a new alert!</button>
+</p>
+<p class="docs--section-description">
+    Toasts are specifically designed to be used only to give short feedback messages to the user.
+    Here are some good and bad examples:
+</p>
+<div class="row">
+    <div class="col-sm-12 col-md-6">
+        <p class="text-success">Good <i class="fa fa-check"></i></p>
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Heads up!</strong> The thing you tried to do was unsuccesfull.
+        </div>
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            As a side effect this happened.
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+        <p class="text-danger">Bad <i class="fa fa-times"></i></p>
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <p><strong>Heads up!</strong> The following actions failed</p>
+            <ul>
+                <li>validation-message 1</li>
+                <li>validation-message 2</li>
+                <li>validation-message 3</li>
+                <li>validation-message 4</li>
+                <li>validation-message 5</li>
+                <li>validation-message 6</li>
+                <li>validation-message 7</li>
+                <li>validation-message 8</li>
+                <li>validation-message 9</li>
+                <li>validation-message 10</li>
+                <li>validation-message 11</li>
+                <li>validation-message 12</li>
+                <li>validation-message 13</li>
+                <li>validation-message 14</li>
+                <li>validation-message 15</li>
+                <li>validation-message 16</li>
+                <li>validation-message 17</li>
+                <li>validation-message 18</li>
+                <li>validation-message 19</li>
+                <li>validation-message 20</li>
+                <li>validation-message 21</li>
+                <li>validation-message 22</li>
+                <li>validation-message 23</li>
+                <li>validation-message 24</li>
+                <li>validation-message 25</li>
+                <li>validation-message 26</li>
+                <li>validation-message 27</li>
+                <li>validation-message 28</li>
+                <li>validation-message 29</li>
+                <li>validation-message 30</li>
+            </ul>
+            <p>Please unplug your computer, wait 30 days and try again.</p>
+            <p><small>This message was sponsored by Company&copy;</small></p>
+        </div>
+    </div>
+</div>
 
-<div class="page-alerts">
+<div class="page-toasts">
     <div class="alert alert-success alert-dismissible to-be-animated-in">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Well Done!</strong> You successfully did something.
     </div>
     <div class="alert alert-danger alert-dismissible to-be-animated-in">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Uh oh!</strong> You did something horribly wrong amigo :-/.
     </div>
 </div>
 
+<p class="docs--section-description">
+    This component is still missing vital documentation. Please consult <a href="https://github.com/nodes-frontend/nodes-ui/blob/master/js/nodes.js#L402" target="_blank">nodes.js</a> to see the Javascript configuration and methods.
+</p>
+
+<p class="docs--section-description">
+    Configure the toasts with scss variables:
+</p>
+<table class="table table-bordered docs--section-guide">
+    <thead>
+        <tr>
+            <th>variable</th>
+            <th>default</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>$toast-max-width</code></td>
+            <td><code>400px</code></td>
+            <td>The maximum width of the toasts-container (and therefore the maximum width of the toasts)</td>
+        </tr>
+        <tr>
+            <td><code>$toast-affix-top</code></td>
+            <td><code>$core-topbar-height + 20px</code></td>
+            <td>The distance from the top of the screen, default is the height of the topbar + and additional 20px</td>
+        </tr>
+        <tr>
+            <td><code>$toast-affix-toright</code></td>
+            <td><code>40px</code></td>
+            <td>The distance from the right of the screen</td>
+        </tr>
+    </tbody>
+</table>
+
 <script>
     $(document).ready(function() {
         console.log(Nodes);
+
+        var alertTemplate = ['<div class="alert alert-dismissible to-be-animated-in">',
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>',
+                '<strong>Draw the users attention</strong> Tell them what happened',
+                '</div>'].join('');
+
+        var alertTypes = ['alert-success', 'alert-info', 'alert-warning', 'alert-danger'];
+
+        $('#createDemoToast').on('click', function(e) {
+
+            var el = $(alertTemplate);
+            var cls = alertTypes[Math.floor(Math.random() * alertTypes.length)];
+            el.addClass(cls);
+            $('.page-toasts').append(el);
+
+            Nodes.alerts.animateIn(el);
+
+            setTimeout(function() {
+                $( $('.alert:not(.to-be-animated-in)').get().reverse() ).each(function(i) {
+
+                    if(i > 0) {
+                        Nodes.alerts.animateOut($(this), 100*i, true);
+                    } else {
+                        Nodes.alerts.animateOut($(this), 0, true);
+                    }
+                })
+            }, Nodes.alerts.autoCloseDelay);
+
+        });
+
     });
 </script>
