@@ -278,6 +278,9 @@
             Specialty Pages
         </li>
         <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item{{#is basename "login"}} active{{/is}}">
+                <a href="{{rel 'login.html'}}" >Login</a>
+            </li>
             <li class="docs--sidebar__item{{#is basename "app-install"}} active{{/is}}">
                 <a href="{{rel 'app-install.html'}}" >App Install</a>
             </li>
