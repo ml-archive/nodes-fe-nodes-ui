@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Table Sizing | Foundation Docs</title>
+<title>Alerts | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
@@ -13,6 +13,7 @@
 
 <link href="assets/css/docs.css" rel="stylesheet" />
 <link href="assets/css/nodes.css" rel="stylesheet" />
+
         <script src="assets/js/vendor.js"></script>
 
 <script src="assets/js/modules/file-picker.js"></script>
@@ -115,7 +116,7 @@
                 <a href="table-components.html" >Table Components</a>
             </li>
             <!-- Table sizing -->
-            <li class="docs--sidebar__item active">
+            <li class="docs--sidebar__item">
                 <a href="table-sizing.html" >Table Sizing</a>
             </li>
             <!-- Responsive tables -->
@@ -242,7 +243,7 @@
         </li>
         <ul id="alertsCollapse" class="docs--sidebar__collapse collapse">
             <!-- Sidebar Basics -->
-            <li class="docs--sidebar__item">
+            <li class="docs--sidebar__item active">
                 <a href="alerts.html" >Alerts</a>
             </li>
             <!-- Sidebar Components -->
@@ -322,8 +323,64 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">
-                    <h1 class="docs--page-header">Table Sizing</h1>
+                    <h1 class="docs--page-header">Alerts</h1>
 
+<p class="docs--page-description">
+    Alerts are used to convey detailed and important information to users. This can be form validation messages, or
+    breaking product updates.
+</p>
+<p class="docs--section-description">
+    Alerts comes with special rules:
+</p>
+<ul>
+    <li>
+        They are optionally dismissable by the user
+    </li>
+    <li>
+        They will never dissapear unless the user explicityly dismisses them
+    </li>
+    <li>
+        They can contain links and actions the users can respond to
+    </li>
+</ul>
+<p class="docs--panel-info">Alerts don&#39;t have default classes, only base and modifier classes. A default gray alert doesn&#39;t make too much sense, so you&#39;re required to specify a type via contextual class. Choose from success, info, warning, or danger.</p>
+<div class="alert alert-success" role="alert"> <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>. </div>
+<div class="alert alert-info" role="alert"> <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it&#39;s not super important. </div>
+<div class="alert alert-warning" role="alert"> <strong>Warning!</strong> Better check yourself, you&#39;re <a href="#" class="alert-link">not looking too good</a>. </div>
+<div class="alert alert-danger" role="alert"> <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again. </div>
+
+<h2 class="docs--section-description">Content in alerts</h2>
+<p class="docs--section-description">
+    You can put as much content in alerts as you please (although we recommend not to):
+</p>
+<div class="alert alert-danger" role="alert">
+    <strong>Oh snap!</strong>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, veritatis?</p>
+    <ul>
+        <li>this-happened-1</li>
+        <li>this-happened-2</li>
+        <li>this-happened-3</li>
+        <li>this-happened-4</li>
+        <li>this-happened-5</li>
+        <li>this-happened-6</li>
+    </ul>
+    <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+</div>
+
+<h2 class="docs--section-description">Dismissable Alerts</h2>
+<p class="docs--section-description">
+    Make alerts and toasts dismissible by adding the <code>.alert-dismissible</code> class and a close button.
+</p>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Warning!</strong> Better check yourself, you&#39;re not looking too good.
+</div>
+
+<h2 class="docs--section-description">Alerts &amp; Toasts in Nodes Backends</h2>
+<p class="docs--section-description">
+    Our default layout in our Laravel Backends has two predefined areas, one for alerts and one for toasts.
+    Placing an alert/toast in any of these containers will add some additional styling, but you are free to use alerts where ever you please.
+</p>
 
                 </div>
             </div>
