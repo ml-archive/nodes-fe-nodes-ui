@@ -202,6 +202,23 @@
             </li>
         </ul>
 
+        <!-- Alerts -->
+        <li data-toggle="collapse"
+            data-target="#alertsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Alerts
+        </li>
+        <ul id="alertsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Sidebar Basics -->
+            <li class="docs--sidebar__item{{#is basename "alerts"}} active{{/is}}">
+                <a href="{{rel 'alerts.html'}}" >Alerts</a>
+            </li>
+            <!-- Sidebar Components -->
+            <li class="docs--sidebar__item{{#is basename "toasts"}} active{{/is}}">
+                <a href="{{rel 'toasts.html'}}" >Toasts</a>
+            </li>
+        </ul>
+
         <!-- Sidebars -->
         <li data-toggle="collapse"
             data-target="#sidebarsCollapse"
