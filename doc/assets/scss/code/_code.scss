@@ -1,8 +1,10 @@
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
+.docs--code-block pre {
+	word-break: normal;
+	word-wrap: normal;
+}
+pre code.hljs {
+	white-space: pre;
+}
 
 //pre code {
 //  display: block;

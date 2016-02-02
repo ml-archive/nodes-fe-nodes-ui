@@ -27,7 +27,6 @@
   },
   "main": [
     "js/nodes.compiled.js",
-    "js/scripts.js",
     "scss/nodes.scss"
   ],
   "private": false
