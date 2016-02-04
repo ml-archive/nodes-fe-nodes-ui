@@ -1,12 +1,23 @@
-.page-alerts {
+.alert {
+	border-radius: 0;
+}
+
+.page-header__alerts {
+	.alert {
+		border: 0;
+		margin-bottom: 0;
+	}
+}
+
+.page-toasts {
 	position: fixed;
-	top: $core-topbar-height + 20px;
-	right: 40px;
-	width: $core-sidebar-width;
+	top: $toast-affix-top;
+	right: $toast-affix-right;
+	width: $toast-max-width;
 	z-index: 1000;
 }
 
-.page-alerts {
+.page-toasts {
 	.alert {
 		@include whitespace();
 

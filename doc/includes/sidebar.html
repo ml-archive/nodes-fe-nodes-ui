@@ -202,6 +202,23 @@
             </li>
         </ul>
 
+        <!-- Alerts -->
+        <li data-toggle="collapse"
+            data-target="#alertsCollapse"
+            class="docs--sidebar__heading docs--collapser">
+            Alerts
+        </li>
+        <ul id="alertsCollapse" class="docs--sidebar__collapse collapse">
+            <!-- Sidebar Basics -->
+            <li class="docs--sidebar__item{{#is basename "alerts"}} active{{/is}}">
+                <a href="{{rel 'alerts.html'}}" >Alerts</a>
+            </li>
+            <!-- Sidebar Components -->
+            <li class="docs--sidebar__item{{#is basename "toasts"}} active{{/is}}">
+                <a href="{{rel 'toasts.html'}}" >Toasts</a>
+            </li>
+        </ul>
+
         <!-- Sidebars -->
         <li data-toggle="collapse"
             data-target="#sidebarsCollapse"
@@ -261,6 +278,9 @@
             Specialty Pages
         </li>
         <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item{{#is basename "login"}} active{{/is}}">
+                <a href="{{rel 'login.html'}}" >Login</a>
+            </li>
             <li class="docs--sidebar__item{{#is basename "app-install"}} active{{/is}}">
                 <a href="{{rel 'app-install.html'}}" >App Install</a>
             </li>
