@@ -9,6 +9,8 @@
 @import "../../../scss/nodes";
 @import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "variables/variables";
+
 @import "layout/core-layout";
 @import "layout/blade-templates";
 @import "layout/topbar";

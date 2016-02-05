@@ -1,18 +1,78 @@
-//.docs--code-example {
-//	position: relative;
-//
-//	.docs--copy-code-btn {
-//		position: absolute;
-//		right: 0;
-//		top: 0;
-//
-//		border-top-left-radius: 0;
-//		border-bottom-right-radius: 0;
-//
-//		z-index: 200;
-//	}
-//
-//	.docs--example-container {
-//		padding-top: 50px;
-//	}
-//}
+.docs--code-example {
+	@include whitespace($side: horizontal);
+	opacity: 0.2;
+	transition: .1s;
+	&.docs--code-example--loaded {
+		opacity: 1;
+		.docs--code-example__loader {
+			opacity: 0;
+		}
+	}
+}
+.docs--code-example__output {
+	position: relative;
+	padding-top: 4rem;
+	padding-bottom: 2rem;
+	&:after {
+		content: 'Example';
+		display: block;
+		position: absolute;
+		top: 1rem;
+		left: 0;
+		color: $docs-gray;
+	}
+}
+.docs--code-example__code-blocks-navigation {
+	.btn {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+.docs--code-example__code-block pre {
+	word-break: normal;
+	word-wrap: normal;
+
+	margin-bottom: 0;
+	border-radius: 0;
+	background-color: $docs-gray-lightest;
+	border-color: $btn-default-border;
+	border-top: none;
+	border-bottom: none;
+	code {
+		background-color: $docs-gray-lightest;
+	}
+}
+.docs--code-example__copy-code.btn {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	&.active, &:active, &:focus {
+		outline: none;
+		border-color: $btn-default-border;
+	}
+}
+// Bootstraps adds nasty outlines to btn-group divs...
+.docs--code-example__code-blocks-navigation .btn-group {
+	&:focus {
+		outline: none;
+	}
+	.btn:focus {
+		outline: none;
+	}
+	.btn.active:focus {
+		outline: none;
+	}
+}
+
+.docs--code-example__code {
+	position: relative;
+}
+.docs--code-example__loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	&.docs--code-block__loader--loaded {
+		opacity: 0;
+	}
+}

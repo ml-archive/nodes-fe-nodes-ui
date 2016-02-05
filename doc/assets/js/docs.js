@@ -16,19 +16,20 @@ $(document).ready(function() {
 	$('.docs--code-example').each(function() {
 
 		var $root = $(this);
-		var $loader = $root.find('.docs--code-block__loader');
-		var $copyToClipboardBtn = $root.find('.docs--copy-code-to-clipboard');
+		var $loader = $root.find('.docs--code-example__loader');
+		var $copyToClipboardBtn = $root.find('.docs--code-example__copy-code');
+		var $tabButtons = $root.find('.docs--code-example__code-blocks-navigation button');
 
 		var exampleInput = $root.find('.docs--code-example__output')[0].innerHTML;
-		var $exampleOutput = $root.find('.docs--code-block[data-lang="markup"] code');
+		var $exampleOutput = $root.find('.docs--code-example__code-block[data-lang="markup"] code');
 
-		var $existingOutput = $root.find('.docs--code-block:not([data-lang="markup"]) code');
-
-		console.log($existingOutput);
+		var $existingOutput = $root.find('.docs--code-example__code-block:not([data-lang="markup"]) code');
 
 		if(exampleInput.length > 0 && $exampleOutput.length > 0) {
 
 			$exampleOutput.text(exampleInput);
+			$exampleOutput.prettyPre();
+
 			hljs.highlightBlock($exampleOutput[0]);
 
 		}
@@ -37,18 +38,20 @@ $(document).ready(function() {
 			hljs.highlightBlock($(this)[0]);
 		});
 
+		$tabButtons.each(function() {
+			$(this).on('click', function() {
+				$(this).addClass('active');
+				$tabButtons.not($(this)).removeClass('active');
+			})
+		});
+
 		var cp = new Clipboard($copyToClipboardBtn[0], {
 			text: function() {
-				return $root.find('.tab-pane.active code').text();
+				return $root.find('.docs--code-example__code-block.active code').text();
 			}
 		});
 
-		var y = document.querySelectorAll("pre code");
-		for(var i = 0; i < y.length; i++) {
-			y[i].innerHTML = y[i].innerHTML.replace("\n", "");
-		}
-
-		$loader.addClass('docs--code-block__loader--loaded');
+		$root.addClass('docs--code-example--loaded');
 
 	});
 

@@ -1,0 +1,60 @@
+---
+title: Creating Code Examples
+---
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker">
+            <label for="filePicker">Profile image</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file" id="filePicker">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="file-input__choose btn btn-default">
+                                Browse
+                            </span>
+                        </span>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="scss" role="tab" data-toggle="tab" data-target="#outputSCSS">SCSS</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">@include('nodes.backend::partials.components.file-picker', [
+    'label' => 'Profile image',
+    'disablePreview' => 'true'
+])
+</code></pre>
+            </div>
+            <div  role="tabpanel" data-lang="scss" class="docs--code-example__code-block tab-pane" id="outputSCSS">
+<pre><code class="lang-scss">$primary-color: tomato;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>

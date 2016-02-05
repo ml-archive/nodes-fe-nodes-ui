@@ -11,6 +11,26 @@
         <li class="docs--sidebar__item{{#is basename "index"}} active{{/is}}">
             <a href="{{rel 'index.html'}}" >Getting Started</a>
         </li>
+
+        <li data-toggle="collapse"
+            data-target="#documentationCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Writing Documentation
+        </li>
+        <ul id="documentationCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item{{#is basename "installing-documentation"}} active{{/is}}">
+                <a href="{{rel 'installing-documentation.html'}}" >Installation</a>
+            </li>
+            <li class="docs--sidebar__item{{#is basename "writing-documentation"}} active{{/is}}">
+                <a href="{{rel 'writing-documentation.html'}}" >Writing Documentation Pages</a>
+            </li>
+            <li class="docs--sidebar__item{{#is basename "example-documentation"}} active{{/is}}">
+                <a href="{{rel 'example-documentation.html'}}" >Creating Code Examples</a>
+            </li>
+            <li class="docs--sidebar__item{{#is basename "documentation-components"}} active{{/is}}">
+                <a href="{{rel 'documentation-components.html'}}" >Components & Styling</a>
+            </li>
+        </ul>
     </ul>
 
     <!-- Base Styles -->
