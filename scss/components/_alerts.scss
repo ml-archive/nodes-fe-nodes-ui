@@ -4,6 +4,7 @@
 
 .page-header__alerts {
 	.alert {
+		@include whitespace($side: left);
 		border: 0;
 		margin-bottom: 0;
 	}

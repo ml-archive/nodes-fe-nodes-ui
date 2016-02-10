@@ -1,5 +1,4 @@
 .page-header {
-	//@include layout($direction: vertical);
 	@include background-color($gray-lighter);
 
 	margin: 0;
@@ -10,20 +9,22 @@
 
 }
 
-.page-header__toolbar-section,
+.page-header__breadcrumbs,
 .page-header__top-section,
 .page-header__bottom-section {
+	@include whitespace($side: vertical, $size: sm);
 	@include whitespace($side: horizontal);
+}
+.page-header__actions {
+
+}
+
+.page-header__actions,
+.page-header__top-section,
+.page-header__bottom-section {
 	@include layout($wrap: false);
 	justify-content: space-between;
 	align-items: center;
-}
-.page-header__toolbar-section {
-	@include whitespace($side: vertical, $size: sm);
-}
-.page-header__top-section,
-.page-header__bottom-section {
-	@include whitespace($side: vertical);
 }
 
 .page-header__top-section {
