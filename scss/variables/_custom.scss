@@ -252,4 +252,12 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 //
 $toast-max-width: 400px !default;
 $toast-affix-top: $core-topbar-height + 20px !default;
-$toast-affix-right: 40px !default;;
+$toast-affix-right: 40px !default;
+
+//
+// Color-picker
+//
+$color-picker-default-size: 100px;
+$color-picker-large-size: 200px;
+$color-picker-slider-default-size: 15px;
+$color-picker-slider-large-size: 30px;

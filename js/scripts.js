@@ -11,6 +11,11 @@ jQuery(document).ready(function($) {
 	$('.file-picker').filePicker();
 
 	/**
+	 * Color picker
+	 */
+	$('.color-picker').colorpickerWrapper();
+
+	/**
 	 * Init dropdown-menu
 	 * @param el
 	 */

@@ -1,0 +1,34 @@
+.docs--badge {
+	margin-left: 10px;
+
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+
+	font-size: 10px;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-align: center;
+	color: $black;
+
+	background-color: $badge-bg;
+
+	border-radius: $badge-border-radius;
+
+	// Javascript
+	&.docs--badge__js {
+		background-color: $docs-js-color;
+	}
+	&.docs--badge__js::after {
+		content: "JS";
+	}
+
+	// Beta
+	&.docs--badge__beta {
+		background-color: $docs-beta-color;
+		color: $docs-white;
+	}
+	&.docs--badge__beta::after {
+		content: "BETA";
+	}
+}

@@ -1,0 +1,184 @@
+---
+title: Color Picker
+layout: nested-component.html
+---
+<h1 class="docs--page-header">
+    Color Picker
+</h1>
+
+<p class="docs--page-description">
+    Uses <a href="https://mjolnic.com/bootstrap-colorpicker/" target="_blank">bootstrap-colorpicker</a><br/>
+    Full list of options can be found at the plugin webpage. As with our other javascript components, options can be configured using the <code>data-options</code> attribute.<br/>
+    The color picker can be configured to be larger by setting <code>data-size="large"</code> on the element.
+</p>
+
+<ul class="docs--page-navigation">
+    <li>
+        <a href="#defaultColorPicker">Default color-picker</a>
+    </li>
+    <li>
+        <a href="#largeColorPicker">Large color-picker</a>
+    </li>
+    <li>
+        <a href="#hexColorPicker">Hex colors only</a>
+    </li>
+</ul>
+
+<h2 class="docs--section-header">SCSS Variables</h2>
+<p class="docs--section-description">
+    The color pickers container inherits from the bootstrap dropdown variables, the sizing of the picker and the sliders can be configured with the following variables
+</p>
+<table class="docs--configuration-options">
+    <thead>
+        <tr>
+            <th>
+                Variable
+            </th>
+            <th>
+                Default
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>$color-picker-default-size</code>
+            </td>
+            <td>
+                <code>100px</code>
+            </td>
+            <td>
+                This defines the size of the color-spectrum. The color-picker naturally expands to fit this + the sliders
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>$color-picker-large-size</code>
+            </td>
+            <td>
+                <code>200px</code>
+            </td>
+            <td>
+                For use with the <code>data-size="large"</code> option
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>$color-picker-slider-default-size</code>
+            </td>
+            <td>
+                <code>15px</code>
+            </td>
+            <td>
+                The static size of the sliders. If a slider is horizontal, the variable will define the height, if vertical it will define the width
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>$color-picker-slider-large-size</code>
+            </td>
+            <td>
+                <code>30px</code>
+            </td>
+            <td>
+                For use with the <code>data-size="large"</code> option
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="defaultColorPicker" class="docs--section-header">Default color-picker</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <div class="input-group color-picker">
+                <input type="text" value="" class="form-control" />
+                <span class="input-group-addon"><i class="color-picker__color"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="largeColorPicker" class="docs--section-header">Large color-picker</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <div class="input-group color-picker" data-size="large">
+                <input type="text" value="" class="form-control" />
+                <span class="input-group-addon"><i class="color-picker__color"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="hexColorPicker" class="docs--section-header">Hex colors only</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <div class="input-group color-picker" data-options="{format: 'hex'}">
+                <input type="text" value="" class="form-control" />
+                <span class="input-group-addon"><i class="color-picker__color"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
