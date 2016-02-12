@@ -17,6 +17,7 @@
 
 <script src="assets/js/modules/file-picker.js"></script>
 <script src="assets/js/modules/date-time-picker.js"></script>
+<script src="assets/js/modules/color-picker.js"></script>
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/nodes.js"></script>
     </head>
@@ -43,6 +44,26 @@
         <li class="docs--sidebar__item">
             <a href="index.html" >Getting Started</a>
         </li>
+
+        <li data-toggle="collapse"
+            data-target="#documentationCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Writing Documentation
+        </li>
+        <ul id="documentationCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="installing-documentation.html" >Installation</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="writing-documentation.html" >Writing Documentation Pages</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="example-documentation.html" >Creating Code Examples</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="documentation-components.html" >Components & Styling</a>
+            </li>
+        </ul>
     </ul>
 
     <!-- Base Styles -->
@@ -153,11 +174,15 @@
             </li>
             <!-- File picker -->
             <li class="docs--sidebar__item">
-                <a href="file-picker.html" >File Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+                <a href="file-picker.html" >File Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
             <!-- Date picker -->
             <li class="docs--sidebar__item">
-                <a href="date-picker.html" >Date Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+                <a href="date-picker.html" >Date Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
+            </li>
+            <!-- Color picker -->
+            <li class="docs--sidebar__item">
+                <a href="color-picker.html" >Color Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
         </ul>
 
@@ -311,6 +336,9 @@
         </li>
         <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
             <li class="docs--sidebar__item">
+                <a href="login.html" >Login</a>
+            </li>
+            <li class="docs--sidebar__item">
                 <a href="app-install.html" >App Install</a>
             </li>
         </ul>
@@ -357,143 +385,143 @@
                 <div class="panel-footer">Panel footer</div>
             </div>
 
-<pre><code><div class="code-container">    &lt;/div&gt;
+<pre><code>    &lt;/div&gt;
 
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
                 The most basic panel
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-body panel-body-collapse"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-body panel-body-collapse&quot;&gt;
                 Panel with collapsed panel-body
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;Panel heading without title&lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel content&lt;/div&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;Panel heading without title&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel content&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;Panel Title&lt;/h3&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;Panel Title&lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel content&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel content&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel content&lt;/div&gt;
-            &lt;div class=<span class="string">"panel-footer"</span>&gt;Panel footer&lt;/div&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel content&lt;/div&gt;
+            &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;Panel Title&lt;/h3&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;Panel Title&lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel content&lt;/div&gt;
-            &lt;div class=<span class="string">"panel-footer"</span>&gt;Panel footer&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel content&lt;/div&gt;
+            &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;Panel Title&lt;/h3&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;Panel Title&lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
                 &lt;article&gt;
                     &lt;h4&gt;Panel with article&lt;/h4&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                 &lt;/article&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-footer"</span>&gt;Panel footer&lt;/div&gt;
+            &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;
                     Panel Title
                     &lt;small&gt;Panel description inline&lt;/small&gt;
                 &lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
                 &lt;article&gt;
                     &lt;h4&gt;Panel with article&lt;/h4&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                 &lt;/article&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-footer"</span>&gt;Panel footer&lt;/div&gt;
+            &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;
                     Panel Title
                 &lt;/h3&gt;
-                &lt;span class=<span class="string">"panel-description"</span>&gt;Panel description newline&lt;/span&gt;
+                &lt;span class=&quot;panel-description&quot;&gt;Panel description newline&lt;/span&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
                 &lt;article&gt;
                     &lt;h4&gt;Panel with article&lt;/h4&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis corporis labore molestiae nobis numquam possimus, quasi ut? Id, ipsa.&lt;/p&gt;
                 &lt;/article&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-footer"</span>&gt;Panel footer&lt;/div&gt;
+            &lt;div class=&quot;panel-footer&quot;&gt;Panel footer&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;
                     Panel Title
-                    &lt;span class=<span class="string">"label label-info"</span>&gt;New&lt;/span&gt;
+                    &lt;span class=&quot;label label-info&quot;&gt;New&lt;/span&gt;
                 &lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel with label&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel with label&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;
-                    &lt;i class=<span class="string">"fa fa-user"</span>&gt;&lt;/i&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;
+                    &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;
                     Panel Title
                 &lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel with icon&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel with icon&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=<span class="string">"col-xs-6"</span>&gt;
-        &lt;div class=<span class="string">"panel panel-default"</span>&gt;
-            &lt;div class=<span class="string">"panel-heading"</span>&gt;
-                &lt;ul class=<span class="string">"panel-actions"</span>&gt;
+    &lt;div class=&quot;col-xs-6&quot;&gt;
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;ul class=&quot;panel-actions&quot;&gt;
                     &lt;li&gt;
-                        &lt;a href=<span class="string">"#"</span>&gt;Link&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;
                     &lt;/li&gt;
                     &lt;li&gt;
-                        &lt;a href=<span class="string">"#"</span>&gt;Link&lt;/a&gt;
+                        &lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;
                     &lt;/li&gt;
                 &lt;/ul&gt;
-                &lt;h3 class=<span class="string">"panel-title"</span>&gt;
+                &lt;h3 class=&quot;panel-title&quot;&gt;
                     Panel Title
                 &lt;/h3&gt;
             &lt;/div&gt;
-            &lt;div class=<span class="string">"panel-body"</span>&gt;Panel with actions&lt;/div&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;Panel with actions&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;</div></code></pre>
+&lt;/div&gt;</code></pre>
 <p></div></p>
 
                 </div>

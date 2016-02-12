@@ -17,6 +17,7 @@
 
 <script src="assets/js/modules/file-picker.js"></script>
 <script src="assets/js/modules/date-time-picker.js"></script>
+<script src="assets/js/modules/color-picker.js"></script>
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/nodes.js"></script>
     </head>
@@ -43,6 +44,26 @@
         <li class="docs--sidebar__item">
             <a href="index.html" >Getting Started</a>
         </li>
+
+        <li data-toggle="collapse"
+            data-target="#documentationCollapse"
+            class="docs--sidebar__sub-heading docs--collapser">
+            Writing Documentation
+        </li>
+        <ul id="documentationCollapse" class="docs--sidebar__collapse collapse">
+            <li class="docs--sidebar__item">
+                <a href="installing-documentation.html" >Installation</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="writing-documentation.html" >Writing Documentation Pages</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="example-documentation.html" >Creating Code Examples</a>
+            </li>
+            <li class="docs--sidebar__item">
+                <a href="documentation-components.html" >Components & Styling</a>
+            </li>
+        </ul>
     </ul>
 
     <!-- Base Styles -->
@@ -153,11 +174,15 @@
             </li>
             <!-- File picker -->
             <li class="docs--sidebar__item">
-                <a href="file-picker.html" >File Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+                <a href="file-picker.html" >File Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
             <!-- Date picker -->
             <li class="docs--sidebar__item active">
-                <a href="date-picker.html" >Date Picker <span class="docs--sidebar__badge docs--sidebar__badge--js"></span></a>
+                <a href="date-picker.html" >Date Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
+            </li>
+            <!-- Color picker -->
+            <li class="docs--sidebar__item">
+                <a href="color-picker.html" >Color Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
         </ul>
 
@@ -311,6 +336,9 @@
         </li>
         <ul id="specialyPagesCollapse" class="docs--sidebar__collapse collapse">
             <li class="docs--sidebar__item">
+                <a href="login.html" >Login</a>
+            </li>
+            <li class="docs--sidebar__item">
                 <a href="app-install.html" >App Install</a>
             </li>
         </ul>
@@ -327,13 +355,13 @@
 </h1>
 
 <p class="docs--page-description">
-    Uses <a href="https://eonasdan.github.io/bootstrap-datetimepicker/">bootstrap-datetimepicker</a><br />
+    Uses <a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">bootstrap-datetimepicker</a><br />
     Full list of options can be found <a href="https://eonasdan.github.io/bootstrap-datetimepicker/Options/">here</a> which can be set by the data-options attribute.<br />
     The date picker component is initialized by .date-picker classname.<br />
     <strong>NOTE: If data-toggle attribute isn&#39;t set, the component will default to date and time picker.</strong>
 </p>
 
-<ul>
+<ul class="docs--page-navigation">
     <li>
         <a href="#datepicker">
             Date picker
@@ -434,9 +462,7 @@
     </h2>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="date">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD" />
@@ -445,7 +471,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -454,9 +498,7 @@
         Time picker
     </h2>
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="time">
                     <input type="text" class="form-control" placeholder="HH:mm" />
@@ -465,7 +507,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -473,11 +533,8 @@
     <h2 id="datetimepicker" class="docs--section-header">
         Date and time picker
     </h2>
-
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="datetime">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -486,7 +543,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -501,9 +576,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-8">
@@ -511,7 +584,25 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -526,9 +617,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{sideBySide: true}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -537,7 +626,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -552,9 +659,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="datetime" data-options="{locale: 'da'}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -563,7 +668,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -578,11 +701,8 @@
         will not display the time picker.
     </p>
 
-
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="datetime" data-options="{format: 'DD/MM/YYYY HH:mm'}">
                     <input type="text" class="form-control" placeholder="DD/MM/YYYY HH:mm"/>
@@ -591,7 +711,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -606,9 +744,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{calendarWeeks: true}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -617,7 +753,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -634,9 +788,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{minDate: '2016-02-22'}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -645,7 +797,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -662,9 +832,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{maxDate: '2016-02-22'}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -673,7 +841,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -688,9 +874,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{keepOpen: true}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -699,7 +883,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -730,9 +932,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{tooltips: {nextMonth: 'Næste måned'}}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -741,11 +941,27 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
-
-
 
     <!-- No icon (input field only) -->
     <h2 id="noIcon" class="docs--section-header">
@@ -753,14 +969,30 @@
     </h2>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <label for="exampleInputName">Date and Time:</label>
                 <input type="text" class="form-control date-picker" id="exampleInputName" placeholder="YYYY-MM-DD HH:mm">
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -777,9 +1009,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{disabledDates: ['2016-01-01']}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -788,10 +1018,27 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
-
 
     <!-- Disabled days of the week -->
     <h2 id="disabledDaysOfTheWeek" class="docs--section-header">
@@ -805,9 +1052,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-options="{daysOfWeekDisabled: [0,6]}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -816,10 +1061,27 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
-
 
     <!-- Custom icons -->
     <h2 id="icons" class="docs--section-header">
@@ -844,9 +1106,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="datetime" data-options="{icons: {time: 'fa fa-clock-o'}}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -855,7 +1115,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -869,9 +1147,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="date" data-options="{defaultDate: '2016-02-22'}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm" />
@@ -880,7 +1156,25 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
 
@@ -898,9 +1192,7 @@
     </p>
 
     <div class="docs--code-example">
-        <button class="btn btn-default docs--copy-code-btn">Copy to clipboard</button>
-        <div class="docs--example-container demo docs--prism" data-xrayhtml>
-
+        <div class="docs--code-example__output">
             <div class="form-group">
                 <div class="input-group date-picker" data-toggle="datetime" data-options="{viewMode: 'years'}">
                     <input type="text" class="form-control" placeholder="YYYY-MM-DD HH:mm"/>
@@ -909,12 +1201,27 @@
                     </span>
                 </div>
             </div>
-
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
         </div>
     </div>
-
-
-
 </form>
 
                 </div>
