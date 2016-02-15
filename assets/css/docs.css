@@ -18606,6 +18606,10 @@ button.close {
   padding-left: 20px;
   padding-right: 20px; }
 
+.docs--layout-toc {
+  position: relative;
+  max-width: 200px; }
+
 #docs--get-me-out-of-here {
   position: fixed;
   top: 5px;
@@ -18973,6 +18977,47 @@ pre code.hljs {
 .docs--whitespace-green .snippet [class*=padding] div {
   background: green; }
 
+p:not([class]) {
+  margin: 0 !important; }
+
+.docs--page-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6; }
+
+.docs--page-description {
+  padding-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 300; }
+
+.docs--section-header {
+  margin-top: 30px;
+  margin-bottom: 20px; }
+
+.docs--section-description {
+  margin-bottom: 20px; }
+
+.docs--configuration-options,
+.table.docs--configuration-options {
+  margin-bottom: 20px; }
+
+.docs--third-party-link {
+  font-size: 12px; }
+  .docs--third-party-link::before {
+    content: '\f08e';
+    font-family: 'FontAwesome';
+    margin-right: 5px; }
+
 .docs--visual-example:before, .docs--visual-example:after {
   content: " ";
   display: table; }
@@ -19047,4 +19092,16 @@ pre code.hljs {
     color: #fff; }
   .docs--badge.docs--badge__beta::after {
     content: "BETA"; }
+
+.docs--toc__item.active a {
+  font-weight: bold; }
+
+.docs--toc__github a::before {
+  content: '\f09b';
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+
+.docs--toc__divider {
+  height: 1px;
+  background-color: #cacaca; }
 /*# sourceMappingURL=docs.css.map */
