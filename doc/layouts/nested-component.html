@@ -17,10 +17,13 @@
                 <div class="flex-1 scroll docs--layout-sidebar">
                     {{> sidebar}}
                 </div>
-                <div class="flex-2 scroll docs--layout-content">
+                <div class="flex-2 scroll docs--layout-content" data-spy="scroll" data-target="#toc" data-offset="60">
                     {{#markdown}}
                     {{> body }}
                     {{/markdown}}
+                </div>
+                <div class="flex-1 scroll docs--layout-toc">
+                    <div id="toc"></div>
                 </div>
             </div>
 

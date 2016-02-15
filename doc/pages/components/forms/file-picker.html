@@ -13,7 +13,7 @@ layout: nested-component.html
 <h2 class="docs--section-header">
     Usage
 </h2>
-<p class="docs--page-description">
+<p class="docs--section-description">
     Add the class <code>file-picker</code> to a form-group to initialize this plugin without writing any Javascript.
     Alternatively you can instantiate the plugin like this: <code>$('.some-element').filePicker();</code>.
     Options can be defined as data-attributes, or as an object when instantiating in Javascript.
@@ -22,12 +22,12 @@ layout: nested-component.html
 <h2 class="docs--section-header">
     Options
 </h2>
-<table class="table docs--section-guide">
+<table class="table table-bordered table-striped docs--configuration-options">
     <thead>
         <tr>
-            <th>Option</th>
-            <th width="500">default</th>
-            <th>Description</th>
+            <th class="col-sm-2">Option</th>
+            <th class="col-sm-6">Default</th>
+            <th class="col-sm-4">Description</th>
         </tr>
     </thead>
     <tr>
@@ -38,7 +38,7 @@ layout: nested-component.html
     <tr>
         <td>filePatterns</td>
         <td>
-<pre><code>'CODE': {
+<pre class="docs--syntax-highlight"><code>'CODE': {
     icon: 'fa-file-code-o',
     match: /\.(php|js|css|html|json)$/i
 }
@@ -54,69 +54,77 @@ layout: nested-component.html
 <h2 class="docs--section-header">
     Initialize with a predefined file
 </h2>
-<p class="docs--page-description">
+<p class="docs--section-description">
     To instantiate the file-picker with a predefined file, you need to use either of the following data-attributes (but not both :-) )
 </p>
-<table class="table docs--section-guide">
-    <tr>
-        <td>data-image</td>
-        <td>Will set the preview-image's src to the string defined in the data-attribute</td>
-    </tr>
-    <tr>
-        <td>data-file</td>
-        <td>Will set the preview-icon to a an icon matching a regex in the <code>filePatterns</code> object, or a fallback icon</td>
-    </tr>
+<table class="table table-bordered table-striped docs--configuration-options">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>data-image</td>
+            <td>Will set the preview-image's src to the string defined in the data-attribute</td>
+        </tr>
+        <tr>
+            <td>data-file</td>
+            <td>Will set the preview-icon to a an icon matching a regex in the <code>filePatterns</code> object, or a fallback icon</td>
+        </tr>
+    </tbody>
 </table>
 
 <h2 class="docs--section-header">
     Basic Example
 </h2>
 <div class="docs--code-example">
-    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker">
+            <label for="backendUserFormImage">Profile image</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
 
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="#filepickerBasicHTML" data-toggle="tab">HTML</a>
-        </li>
-        <li>
-            <a href="#filepickerBasicBLADE" data-toggle="tab">Laravel</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="filepickerBasicHTML">
-            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker">
-    <label for="backendUserFormImage">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file">
-            <div class="input-group">
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file">
+                    <div class="input-group">
                 <span class="input-group-btn">
                     <span class="file-input__choose btn btn-default">
                         Browse
                     </span>
                 </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div></div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
         </div>
-        <div class="tab-pane" id="filepickerBasicBLADE">
-<pre><code class="language-php">@include('nodes.backend::partials.components.file-picker', [
-    'label' => 'Profile image'
-])
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
 </code></pre>
+            </div>
         </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>
 
@@ -124,52 +132,51 @@ layout: nested-component.html
     Without a preview / drop zone
 </h2>
 <div class="docs--code-example">
-    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker" data-disable-preview="true">
+            <label for="backendUserFormImage">Profile image</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
 
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="#filepickerNoPreviewHTML" data-toggle="tab">HTML</a>
-        </li>
-        <li>
-            <a href="#filepickerNoPreviewBLADE" data-toggle="tab">Laravel</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="filepickerNoPreviewHTML">
-            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-disable-preview="true">
-    <label for="backendUserFormImage">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file">
-            <div class="input-group">
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file">
+                    <div class="input-group">
                 <span class="input-group-btn">
                     <span class="file-input__choose btn btn-default">
                         Browse
                     </span>
                 </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div></div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
         </div>
-        <div class="tab-pane" id="filepickerNoPreviewBLADE">
-<pre><code class="language-php">@include('nodes.backend::partials.components.file-picker', [
-    'label' => 'Profile image',
-    'disablePreview' => 'true'
-])
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
 </code></pre>
+            </div>
         </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>
 
@@ -177,52 +184,51 @@ layout: nested-component.html
     With a predefined image
 </h2>
 <div class="docs--code-example">
-    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
+            <label for="backendUserFormImage">Profile image</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
 
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="#filepickerImageHTML" data-toggle="tab">HTML</a>
-        </li>
-        <li>
-            <a href="#filepickerImageBLADE" data-toggle="tab">Laravel</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="filepickerImageHTML">
-            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-image="https://placehold.it/500x500">
-    <label for="backendUserFormImage">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file">
-            <div class="input-group">
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file">
+                    <div class="input-group">
                 <span class="input-group-btn">
                     <span class="file-input__choose btn btn-default">
                         Browse
                     </span>
                 </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div></div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
         </div>
-        <div class="tab-pane" id="filepickerImageBLADE">
-<pre><code class="language-php">@include('nodes.backend::partials.components.file-picker', [
-    'label' => 'Profile image',
-    'image' => 'https://placehold.it/500x500'
-])
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
 </code></pre>
+            </div>
         </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>
 
@@ -230,51 +236,50 @@ layout: nested-component.html
     With a predefined file
 </h2>
 <div class="docs--code-example">
-    <!--<button class="btn btn-default docs&#45;&#45;copy-code-btn">Copy to clipboard</button>-->
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker" data-file="my-document.rtf">
+            <label for="backendUserFormImage">Profile image</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
 
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="#filepickerFileHTML" data-toggle="tab">HTML</a>
-        </li>
-        <li>
-            <a href="#filepickerFileBLADE" data-toggle="tab">Laravel</a>
-        </li>
-    </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="filepickerFileHTML">
-            <div class="docs--example-container demo docs--prism" data-xrayhtml><div class="form-group input-group file-picker" data-file="my-document.rtf">
-    <label for="backendUserFormImage">File</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file">
-            <div class="input-group">
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file">
+                    <div class="input-group">
                 <span class="input-group-btn">
                     <span class="file-input__choose btn btn-default">
                         Browse
                     </span>
                 </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div></div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
         </div>
-        <div class="tab-pane" id="filepickerFileBLADE">
-<pre><code class="language-php">@include('nodes.backend::partials.components.file-picker', [
-    'label' => 'File',
-    'file' => 'https://placehold.it/500x500'
-])
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
 </code></pre>
+            </div>
         </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>

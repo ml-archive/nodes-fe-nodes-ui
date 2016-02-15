@@ -8,7 +8,6 @@
 	 */
 	var colorpickerWrapper = {
 		init: function( options, elem ) {
-			console.log('init den farve', elem);
 			// Save the element reference, both as a jQuery
 			// reference and a normal reference
 			this.elem  = elem;

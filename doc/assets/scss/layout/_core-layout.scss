@@ -25,6 +25,11 @@ $sidebar-width: 300px;
 	@include whitespace($type: padding, $side: horizontal);
 }
 
+.docs--layout-toc {
+	position: relative;
+	max-width: $sidebar-width / 1.5;
+}
+
 #docs--get-me-out-of-here {
 	position: fixed;
 	top: 5px;

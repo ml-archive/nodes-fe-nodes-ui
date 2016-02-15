@@ -1,14 +1,41 @@
-.docs--page-header {
+// Assemble interprets whitespace lines in the html and renders these as empty <p> tags.
+// To keep a consisten layout, any <p> tag with NO class attribute will be collapsed.
+p:not([class]) {
+	margin: 0 !important;
+}
 
+.docs--page-header {
+	@include whitespace($side: vertical, $size: lg, $type: margin);
+	@include whitespace($side: bottom);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid $docs-gray-lighter;
 }
 .docs--page-description {
-
+	@include whitespace($side: bottom, $size: lg);
+	font-size: 2rem;
+	font-weight: 300;
 }
 .docs--section-header {
-
+	@include whitespace($side: top, $type: margin, $size: lg);
+	@include whitespace($side: bottom, $type: margin);
 }
 .docs--section-description {
+	@include whitespace($side: bottom, $type: margin);
+}
+.docs--configuration-options,
+.table.docs--configuration-options {
+	@include whitespace($side: bottom, $type: margin);
+}
 
+.docs--third-party-link {
+	font-size: 12px;
+	&::before {
+		content: '\f08e';
+		font-family: 'FontAwesome';
+		margin-right: 5px;
+	}
 }
 
 .docs--panel {

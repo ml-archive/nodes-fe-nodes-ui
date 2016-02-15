@@ -1,0 +1,27 @@
+.docs--layout-toc {
+	#toc {
+
+	}
+}
+.docs--toc {
+
+}
+.docs--toc__item {
+	&.active a {
+		font-weight: bold;
+	}
+}
+.docs--toc__github {
+	a::before {
+		content: '\f09b';
+		font-family: 'FontAwesome';
+		margin-right: 5px;
+	}
+}
+.docs--toc__link {
+
+}
+.docs--toc__divider {
+	height: 1px;
+	background-color: $docs-gray-light;
+}

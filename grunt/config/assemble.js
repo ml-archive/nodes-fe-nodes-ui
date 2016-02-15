@@ -19,6 +19,7 @@ module.exports = {
 			assets: '<%= paths.dist %>/assets',
 			data: ['<%= paths.doc %>data/*.json'],
 			helpers: ['<%= paths.doc %>helpers/*.js'],
+			plugins: ['<%= paths.doc %>plugins/*.js'],
 			partials: ['<%= paths.doc %>includes/**/*.{html,scss}'],
 			layoutdir: '<%= paths.doc %>layouts',
 			layout: 'default.html',
