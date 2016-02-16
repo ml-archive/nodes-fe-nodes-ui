@@ -1,6 +1,6 @@
 // Assemble interprets whitespace lines in the html and renders these as empty <p> tags.
-// To keep a consisten layout, any <p> tag with NO class attribute will be collapsed.
-p:not([class]) {
+// To keep a consisten layout, any <p> tag with NO content.
+p:empty {
 	margin: 0 !important;
 }
 
@@ -41,26 +41,26 @@ p:not([class]) {
 .docs--panel {
 
 }
-.docs--panel-shaded {
+.docs--panel--shaded {
 
 }
-.docs--panel-info {
+.docs--panel--info {
 
 }
-.docs--panel-success {
+.docs--panel--success {
 
 }
-.docs--panel-warning {
+.docs--panel--warning {
 
 }
-.docs--panel-danger {
+.docs--panel--danger {
 
 }
 
-.docs--panel-designers {
+.docs--panel--designers {
 
 }
-.docs--panel-developers {
+.docs--panel--developers {
 
 }
 

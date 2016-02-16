@@ -192,6 +192,13 @@ $whitespace-xlarge-modifier: 8 !default;
 //
 // Typography
 //
+// Let's copy from BS, not the best solution...
+$font-size-base: 14px;
+$line-height-base: 1.428571429;
+
+$font-size-giga: floor(($font-size-base * 2.6)) * 2; // ~72px
+$font-size-mega: floor(($font-size-base * 2.6)) * 1.33; // ~48px
+
 $font-weight-bold: 700;
 $font-weight-semi-bold: 600;
 $font-weight-semi-light: 400;
