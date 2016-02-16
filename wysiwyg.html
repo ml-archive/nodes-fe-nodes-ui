@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Applications dropdown | Foundation Docs</title>
+<title>Wysiwyg | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600" rel="stylesheet" type="text/css">
@@ -173,7 +173,7 @@
                 <a href="color-picker.html">Color Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
             <!-- Wysiwyg -->
-            <li class="docs--sidebar__item">
+            <li class="docs--sidebar__item active">
                 <a href="wysiwyg.html">Wysiwyg <span class="docs--badge docs--badge__js"></span></a>
             </li>
         </ul>
@@ -229,7 +229,7 @@
                 <a href="user-dropdown.html">User dropdown</a>
             </li>
             <!-- Applications Dropdown (FJERN FRA NODES-UI...) -->
-            <li class="docs--sidebar__item active">
+            <li class="docs--sidebar__item">
                 <a href="applications-dropdown.html">Applications dropdown</a>
             </li>
         </ul>
@@ -324,100 +324,101 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content" data-spy="scroll" data-target="#toc" data-offset="60">
-                    <h1 class="docs--page-header">Applications dropdown</h1>
-
+                    <p></p><h1 class="docs--page-header">
+    Wysiwyg
+    <a class="docs--third-party-link" href="http://ckeditor.com/" target="_blank">CKEditor</a>
+</h1><p></p>
 <p class="docs--page-description">
-    This dropdown is designed specifically for the topbar. It can contain application info and related shortcuts.
+    We offer 2 pre-configured wysiwyg editors that you can use in your forms.
+    <br>
+    We have chosen to use CKEditor as it so far has been the least buggy and most flexible solution.
+    <br>
+    You can configure the individual editors using the data-options attribute, or when instantiating in javascript by calling the <code>$(&#39;myElement&#39;).wysiwyg({options...});</code> method. Good luck with configuring it though.
 </p>
 
-<div class="dropdown dropdown-applications open">
-    <button class="btn btn-transparent" data-toggle="dropdown">
-        <i class="fa fa-user"></i>
-    </button>
-    <div class="dropdown-menu dropdown-inverse animate-expand align-right">
-        <div class="dropdown-content">
-            <p class="dropdown-content__title">
-                Application
-            </p>
-            <div class="application">
-                <div class="application__icon">
-                    <img class="img-responsive" src="//placehold.it/300x300">
-                </div>
-                <div class="application__info">
-                    <span class="application__info-name" title="eBoks">
-                        eBoks
-                        <span class="indicator indicator-lg indicator-success indicator-baseline"></span>
-                    </span>
-                </div>
+<p></p><p class="docs--section-description">
+    By default, you will get the advanced wysiwyg in your forms, but you can choose which version you want by defining the <code>data-wysiwyg-type</code> attribute on your textarea.
+</p><p></p>
+<table class="table table-striped table-bordered docs--configuration-options">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Type</th>
+            <th class="col-sm-10">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>&#39;simple&#39;</code></td>
+            <td><strong class="text-danger">FOR MOBILE PLATFORMS</strong> this wysiwyg only offers the ability to wrap text in common html elements. It does <em>not</em> offer any inline-styling options.</td>
+        </tr>
+        <tr>
+            <td><code>&#39;advanced&#39;</code></td>
+            <td>This wysiwyg offers a complete wysiwyg editor with all common html elements aswell as options to add inline styles and more.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p></p><h2 class="docs--section-header">Default / Advanced</h2><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="basicWysiwygEditor">Wysiwyg</label>
+            <textarea name="basicWysiwygEditor" id="basicWysiwygEditor" class="form-control" data-wysiwyg="true"></textarea>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#basicOutputHTML">HTML</button>
             </div>
-            <div class="application-actions">
-                <button class="btn btn-sm btn-transparent application__dashboard">
-                    <i class="fa fa-tachometer"></i>
-                    Dashboard
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Edit application" class="btn btn-sm btn-transparent application__settings">
-                    <i class="fa fa-pencil"></i>
-                </button>
-            </div>
-            <p class="dropdown-content__title application-list-title">
-                Switch application
-            </p>
-            <div class="application-list">
-                <ul>
-                    <li>
-                        <a href="#">
-                            eBoks
-                            <span class="indicator indicator-success indicator-baseline"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                            <span class="indicator indicator-success indicator-baseline"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                            <span class="indicator indicator-danger indicator-baseline"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                            <span class="indicator indicator-danger indicator-baseline"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            eBoks
-                            <span data-toggle="tooltip" data-placement="left" title="In production" class="indicator indicator-success indicator-baseline"></span>
-                        </a>
-                    </li>
-                    <li class="application-list__more">
-                        <a href="#">
-                            <i class="fa fa-plus"></i>
-                            more
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="company-actions">
-                <button class="btn btn-transparent company__invite">
-                    <i class="fa fa-user-plus"></i>
-                    Invite to company
-                </button>
-                <button data-toggle="tooltip" data-placement="left" title="Edit company" class="button btn btn-transparent company__settings">
-                    <i class="fa fa-cog"></i>
-                </button>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#basicOutputBLADE">BLADE</button>
             </div>
         </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="basicOutputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="basicOutputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 class="docs--section-header">Simple</h2><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="simpleWysiwygEditor">Wysiwyg</label>
+            <textarea name="simpleWysiwygEditor" id="simpleWysiwygEditor" class="form-control" data-wysiwyg="true" data-wysiwyg-type="simple"></textarea>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>
 
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__github docs--toc__item"><a class="docs--toc__link" href="https://github.com/nodes-frontend/nodes-ui/edit/master/doc/pages/components/forms/wysiwyg.html" target="_blank">Edit this page</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
                 </div>
             </div>
 

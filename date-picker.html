@@ -13,11 +13,13 @@
 
 <link href="assets/css/docs.css" rel="stylesheet">
 <link href="assets/css/nodes.css" rel="stylesheet">
-        <script src="assets/js/vendor.js"></script>
+        <script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
+<script src="assets/js/vendor.js"></script>
 
 <script src="assets/js/modules/file-picker.js"></script>
 <script src="assets/js/modules/date-time-picker.js"></script>
 <script src="assets/js/modules/color-picker.js"></script>
+<script src="assets/js/modules/wysiwygs.js"></script>
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/nodes.js"></script>
     </head>
@@ -169,6 +171,10 @@
             <!-- Color picker -->
             <li class="docs--sidebar__item">
                 <a href="color-picker.html">Color Picker <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
+            </li>
+            <!-- Wysiwyg -->
+            <li class="docs--sidebar__item">
+                <a href="wysiwyg.html">Wysiwyg <span class="docs--badge docs--badge__js"></span></a>
             </li>
         </ul>
 
@@ -325,7 +331,7 @@
 
 <p class="docs--page-description">
     Full list of options can be found <a href="https://eonasdan.github.io/bootstrap-datetimepicker/Options/" target="_blank">here</a> which can be set by the data-options attribute.<br>
-    The date picker component is initialized by .date-picker classname.<br>
+    The date picker component is initialized by <code>.date-picker</code> classname.<br>
     <strong>NOTE: If data-toggle attribute isn&#39;t set, the component will default to date and time picker.</strong>
 </p>
 
