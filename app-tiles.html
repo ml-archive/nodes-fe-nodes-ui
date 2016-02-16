@@ -318,265 +318,306 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">
-                    <h1 class="docs--page-header">App-tiles</h1>
+                    <h1 id="topOfPage" class="docs--page-header">App-tiles</h1>
 
 <p class="docs--page-description">
-    Designed to be used in the block-layout lists these components are designed to offer easy launchers for Applications and features.
+    Designed to be used in the block-layout lists these components are designed to act as easy launchers / shortcuts for Applications and features.
+    <br>
+    App-tiles uses flex-box layouts and will center content both horizontally and vertically.
+    <br>
+    You can put any content you want inside of app-tiles, but be aware of how the tile scales (or does not scale) to fit.
+    <br>
+    Read all about how to use the block-layout grid system <a href="block-layout.html">here</a>.
 </p>
 
-<ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-</ul>
+<p></p><h2 id="basic" class="docs--section-header">
+    Basic
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    In its most basic configuration, an app-tile does not do much. Scroll onwards to see how to combine css-classes and markup to build good looking tiles.
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile">
+                    Basic app-tile
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
 
-<h2 class="docs--section-header">
+<p></p><h2 id="aspectRatio" class="docs--section-header">
+    Aspect Ratio
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    One common way of presenting tiles is with an intrisinct layout. Wrap an app-tile in a special aspect-ratio container to have it scale its height according to its width based on the desired aspect-ratio.
+</p><p></p>
+<div class="docs--panel docs--panel--warning">
+    <p>
+        Be aware that wrapping an app-tile in an aspect-ratio container will &quot;lock&quot; the height of the tile. Overflowing content will be clipped off.
+    </p>
+</div>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--1-1">
+                    <div class="app-tile">
+                        App-tile 1:1
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--2-1">
+                    <div class="app-tile">
+                        App-tile 2:1
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--1-2">
+                    <div class="app-tile">
+                        App-tile 1:2
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--4-3">
+                    <div class="app-tile">
+                        App-tile 4:3
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--16-9">
+                    <div class="app-tile">
+                        App-tile 16:9
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--16-9">
+                    <div class="app-tile">
+                        I am here to show you what happens when you put too much content into an aspect-ratio app-tile.
+                        I am here to show you what happens when you put too much content into an aspect-ratio app-tile.
+                        I am here to show you what happens when you put too much content into an aspect-ratio app-tile.
+                        I am here to show you what happens when you put too much content into an aspect-ratio app-tile.
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 id="whiteSpace" class="docs--section-header">
+    White-space
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    Control the padding of your app-tiles using these white-space modifier classes on the app-tile.
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile">
+                    Default padding
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--xs">
+                    Extra small padding
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--sm">
+                    Small padding
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--lg">
+                    Large padding
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--xl">
+                    Extra large padding
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--no-padding">
+                    No padding
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 id="icons" class="docs--section-header">
+    Using icons
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    Want to have a prominent icon on your app-tile? You can do that by adding the <code>app-tile--icon</code> modifier class to your tile.
+    <br>
+    Add the <code>app-tile<strong>icon</strong></code> to your icon-font, image or svg and control its sizing using the <code>app-tileicon--small</code>, and <code>app-tile__icon--large</code> classes respectively.
+    <br>
+    We also offer the special <code>cover</code> modifier instead of the <code>icon</code>. This is very useful for thumbnails.
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <a href="#">
+                        <i class="fa fa-search app-tile__icon"></i>
+                        Search our database...
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--link app-tile--icon">
+                    <a href="#">
+                        <i class="fa fa-search app-tile__icon app-tile__icon--small"></i>
+                        Search our database...
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--link app-tile--icon">
+                    <a href="#">
+                        <i class="fa fa-search app-tile__icon app-tile__icon--large"></i>
+                        Search our database...
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon">
+                    <a href="#">Watch this video</a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon app-tile__icon--small">
+                    <a href="#">Watch this video</a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon app-tile__icon--large">
+                    <a href="#">Watch this video</a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--cover">
+                    <img src="http://placehold.it/500x200" class="app-tile__cover">
+                    <a href="#">Watch this video</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 id="colors" class="docs--section-header">
     Colors
-</h2>
-<p class="docs--section-description">
-    By default, tiles uses a white background. We offer a range of coloring classes if you want your tile to stand out or fit in.
-</p>
-
-<ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
-    <li class="app-tile app-tile-square app-tile-primary">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-secondary">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-info">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-success">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-warning">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-danger">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-transparent">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-</ul>
-
-<h2 class="docs--section-header">
-    Squared tiles
-</h2>
-<p class="docs--section-description">
-    Tiles looks best when they are completely squared. Just add the <code>.app-tile-square</code> class to make the tiles maintain a squared aspect ratio.
-</p>
-
-<ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-    <li class="app-tile app-tile-square">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            App-tile
-        </a>
-    </li>
-</ul>
-
-<h2 class="docs--section-header">
-    Sizes
-</h2>
-
-<p class="docs--section-description">
-    Sometimes you need to cramp app-tiles in a tight enviroment, we offer to smaller variations of the app-tiles for these purposes.
-</p>
-
-<ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-4 x-large-block-layout-6">
-    <li class="app-tile app-tile-xs">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            Extra small
-        </a>
-    </li>
-    <li class="app-tile app-tile-sm">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            Small
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-xs">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            Extra small
-        </a>
-    </li>
-    <li class="app-tile app-tile-square app-tile-sm">
-        <a href="#">
-            <span class="fa fa-flag-checkered"></span>
-            Small
-        </a>
-    </li>
-</ul>
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    Make app-tiles stand out and draw attention by coloring them.
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile app-tile--primary">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--secondary">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--info">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--success">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--warning">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--danger">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--gray-dark">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--gray-light">
+                    <h2>Income</h2>
+                    <p>$3.000</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
 
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Top of page</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__item"><a class="docs--toc__link" href="#basic">Basic</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#aspectRatio">Aspect Ratio</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#whiteSpace">White-space</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#icons">Using icons</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#colors">Colors</a></li><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#topOfPage">Back to top</a></li></ul></div>
                 </div>
             </div>
 
