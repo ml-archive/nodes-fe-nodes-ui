@@ -1,0 +1,96 @@
+---
+title: Wysiwyg
+layout: nested-component.html
+github: components/forms/wysiwyg.html
+---
+<h1 class="docs--page-header">
+    Wysiwyg
+    <a class="docs--third-party-link" href="http://ckeditor.com/" target="_blank">CKEditor</a>
+</h1>
+<p class="docs--page-description">
+    We offer 2 pre-configured wysiwyg editors that you can use in your forms.
+    <br>
+    We have chosen to use CKEditor as it so far has been the least buggy and most flexible solution.
+    <br>
+    You can configure the individual editors using the data-options attribute, or when instantiating in javascript by calling the <code>$('myElement').wysiwyg({options...});</code> method. Good luck with configuring it though.
+</p>
+
+<p class="docs--section-description">
+    By default, you will get the advanced wysiwyg in your forms, but you can choose which version you want by defining the <code>data-wysiwyg-type</code> attribute on your textarea.
+</p>
+<table class="table table-striped table-bordered docs--configuration-options">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Type</th>
+            <th class="col-sm-10">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>'simple'</code></td>
+            <td><strong class="text-danger">FOR MOBILE PLATFORMS</strong> this wysiwyg only offers the ability to wrap text in common html elements. It does <em>not</em> offer any inline-styling options.</td>
+        </tr>
+        <tr>
+            <td><code>'advanced'</code></td>
+            <td>This wysiwyg offers a complete wysiwyg editor with all common html elements aswell as options to add inline styles and more.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">Default / Advanced</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="basicWysiwygEditor">Wysiwyg</label>
+            <textarea name="basicWysiwygEditor" id="basicWysiwygEditor" class="form-control" data-wysiwyg="true"></textarea>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#basicOutputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#basicOutputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="basicOutputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="basicOutputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 class="docs--section-header">Simple</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="simpleWysiwygEditor">Wysiwyg</label>
+            <textarea name="simpleWysiwygEditor" id="simpleWysiwygEditor" class="form-control" data-wysiwyg="true" data-wysiwyg-type="simple"></textarea>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>

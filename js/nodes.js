@@ -314,8 +314,16 @@ var Nodes = (function() {
 			});
 		},
 
+		/**
+		 * DEPRECATION WARNING:
+		 * This method will be deprecated in favor of the UMD modules introduced in 1.1+
+		 *
+		 * If you experience ANY issue instantiating through the new API feel free to go back to the old way.
+		 * Please report the bug though!
+		 */
 		wysiwyg: function(element) {
-			CKEDITOR.replace(element.attr('id'));
+			$(element).wysiwyg();
+			//CKEDITOR.replace(element.attr('id'));
 		},
 
 		// Set default configuration for all Chart.js charts
