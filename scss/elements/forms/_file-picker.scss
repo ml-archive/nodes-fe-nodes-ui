@@ -1,5 +1,5 @@
 .file-picker {
-
+	width: 100%;
 }
 .file-picker:not(.file-picker--no-preview) .file-picker__input-group {
 	@include whitespace($side: left, $type: margin);
@@ -8,10 +8,13 @@
 	display: flex;
 	align-items: center;
 }
+.file-picker__zone:not([style]) {
+	padding-bottom: 25%;
+}
 .file-picker__zone {
 	position: relative;
+	flex: 1 0 auto;
 	width: 25%;
-	padding-bottom: 25%;
 
 	border-radius: $border-radius-base;
 	border: 2px dotted $gray;
@@ -70,7 +73,6 @@
 }
 .file-picker__input-group {
 	position: relative;
-	width: 75%;
 
 	.input-group-btn {
 		line-height: 20px;
@@ -111,7 +113,7 @@
 
 .file-picker.file-picker--vertical {
 
-	.file-picker__inner {
+	&:not(.file-picker--no-preview) .file-picker__inner {
 		flex-wrap: wrap;
 	}
 
@@ -126,37 +128,28 @@
 
 }
 
-//.file-picker {
-//	label {
-//		width: 100%;
-//	}
-//}
-//.input-group-btn .btn.btn-default {
-//	line-height: 20px;
-//	border-color: $input-border;
-//}
-//.btn-file {
-//	position: relative;
-//	overflow: hidden;
-//}
-//.file-input input[type=file] {
-//	position: absolute;
-//	top: 0;
-//	right: 0;
-//	min-width: 100%;
-//	min-height: 100%;
-//	font-size: 100px;
-//	text-align: right;
-//	filter: alpha(opacity=0);
-//	opacity: 0;
-//	background: red;
-//	cursor: inherit;
-//	display: block;
-//}
-//input[readonly] {
-//	background-color: white !important;
-//	cursor: default;
-//	&:focus {
-//		border-color: $input-border;
-//	}
-//}
+.file-picker.file-picker--reverse {
+	.file-picker__inner {
+		flex-direction: row-reverse;
+	}
+}
+.file-picker.file-picker--vertical.file-picker--reverse {
+	.file-picker__inner {
+		flex-direction: column-reverse;
+	}
+}
+.file-picker.file-picker--reverse:not(.file-picker--no-preview) {
+	.file-picker__input-group {
+		margin: 0;
+		@include whitespace($side: right, $type: margin);
+	}
+}
+.file-picker.file-picker--vertical.file-picker--reverse:not(.file-picker--no-preview) {
+	.file-picker__zone {
+		margin: 0;
+		@include whitespace($side: top, $type: margin);
+	}
+	.file-picker__input-group {
+		margin: 0;
+	}
+}

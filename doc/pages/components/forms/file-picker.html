@@ -283,3 +283,228 @@ layout: nested-component.html
         <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
     </div>
 </div>
+
+<h2 class="docs--section-header">
+    Direction
+</h2>
+<p class="docs--section-description">
+    You can control the direction in which elements are rendered both vertically and horizontally by adding any combination of the following modifier classes.
+</p>
+<table class="table table-bordered table-striped docs--configuration-options">
+    <thead>
+        <tr>
+            <th>Class name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>.file-picker--reverse</code></td>
+            <td>Reverses the direction of the drop zone and the input field</td>
+        </tr>
+        <tr>
+            <td><code>.file-picker--vertical</code></td>
+            <td>Arranges the drop-zone and input in vertical</td>
+        </tr>
+    </tbody>
+</table>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker file-picker--reverse">
+            <label for="filePicker">Reverse</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file" id="filePicker">
+                    <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
+                    </span>
+                </span>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker file-picker--vertical">
+            <label for="filePicker">Vertical</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file" id="filePicker">
+                    <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
+                    </span>
+                </span>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker file-picker--vertical file-picker--reverse">
+            <label for="filePicker">Vertical Reverse</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file" id="filePicker">
+                    <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
+                    </span>
+                </span>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 class="docs--section-header">
+    Dropzone sizing
+</h2>
+<p class="docs--section-description">
+    Controlling the size of the drop zone is as easy as adding an inline style to the <code>.file-picker__zone</code>.
+</p>
+<div class="docs--panel docs--panel--warning">
+    <p>
+        Keep in mind that inline styling always wins. If you set the width of the drop-zone higher than its parent container, you will introduce scrolling.
+    </p>
+</div>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group input-group file-picker">
+            <label for="filePicker">Vertical Reverse</label>
+            <div class="file-picker__inner">
+                <div class="file-picker__zone" style="width: 110px; height: 20px;">
+                    <img src="" class="file-picker__preview img-responsive img-thumb">
+                    <i class="file-picker__icon fa"></i>
+                    <span class="file-picker__drop-text">Drop your file here</span>
+                    <button class="btn btn-transparent btn-sm file-picker__clear">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="file-picker__input-group">
+                    <input class="file-picker__file-input" type="file" id="filePicker">
+                    <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="file-input__choose btn btn-default">
+                        Browse
+                    </span>
+                </span>
+                        <input type="text" class="form-control file-picker__file-name" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
