@@ -21,6 +21,7 @@
 <script src="assets/js/modules/date-time-picker.js"></script>
 <script src="assets/js/modules/color-picker.js"></script>
 <script src="assets/js/modules/wysiwygs.js"></script>
+<script src="assets/js/modules/autocomplete.js"></script>
 <script src="assets/js/docs.js"></script>
 <script src="assets/js/nodes.js"></script>
     </head>
@@ -177,6 +178,10 @@
             <li class="docs--sidebar__item">
                 <a href="wysiwyg.html">Wysiwyg <span class="docs--badge docs--badge__js"></span></a>
             </li>
+            <!-- Auto-complete -->
+            <li class="docs--sidebar__item">
+                <a href="auto-complete.html">Auto-complete <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
+            </li>
         </ul>
 
         <!-- Buttons -->
@@ -325,153 +330,21 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content">
-                    <div class="form-group input-group file-picker">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone" style="width: 35px; height: 35px;">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                <span class="input-group-btn">
-                    <span class="file-input__choose btn btn-default">
-                        Browse
-                    </span>
-                </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
+                    <div class="form-group">
+    <label for="autocomplete">
+        Search
+    </label>
+    <div class="auto-complete">
+        <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input">
     </div>
 </div>
 
-<div class="form-group input-group file-picker file-picker--reverse">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone" style="width: 35px; height: 35px;">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                <span class="input-group-btn">
-                    <span class="file-input__choose btn btn-default">
-                        Browse
-                    </span>
-                </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group input-group file-picker file-picker--vertical">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone" style="width: 400px; height: 100px;">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                        <span class="input-group-btn">
-                            <span class="file-input__choose btn btn-default">
-                                Browse
-                            </span>
-                        </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group input-group file-picker file-picker--vertical file-picker--reverse">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone" style="width: 400px; height: 100px;">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                        <span class="input-group-btn">
-                            <span class="file-input__choose btn btn-default">
-                                Browse
-                            </span>
-                        </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group input-group file-picker file-picker--vertical file-picker--reverse">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone" style="width: 100%; height: 100px;">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                        <span class="input-group-btn">
-                            <span class="file-input__choose btn btn-default">
-                                Browse
-                            </span>
-                        </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="form-group input-group file-picker file-picker--vertical file-picker--reverse">
-    <label for="filePicker">Profile image</label>
-    <div class="file-picker__inner">
-        <div class="file-picker__zone">
-            <img src="" class="file-picker__preview img-responsive img-thumb">
-            <i class="file-picker__icon fa"></i>
-            <span class="file-picker__drop-text">Drop your file here</span>
-            <button class="btn btn-transparent btn-sm file-picker__clear">
-                <i class="fa fa-times"></i>
-            </button>
-        </div>
-        <div class="file-picker__input-group">
-            <input class="file-picker__file-input" type="file" id="filePicker">
-            <div class="input-group">
-                        <span class="input-group-btn">
-                            <span class="file-input__choose btn btn-default">
-                                Browse
-                            </span>
-                        </span>
-                <input type="text" class="form-control file-picker__file-name" readonly>
-            </div>
-        </div>
+<div class="form-group">
+    <label for="autocomplete">
+        Search
+    </label>
+    <div class="auto-complete auto-complete--inverse">
+        <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input">
     </div>
 </div>
 

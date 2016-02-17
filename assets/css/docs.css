@@ -9236,6 +9236,79 @@ body.staging {
 .colorpicker.color-picker--large .colorpicker-color div {
   height: 30px; }
 
+.auto-complete {
+  position: relative; }
+
+.auto-complete__loading-indicator {
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  color: #638796;
+  -webkit-transform: translateX(3px);
+          transform: translateX(3px);
+  opacity: 0;
+  transition: all .1s; }
+  .auto-complete__loading-indicator.auto-complete__loading-indicator--active {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+.autocomplete-suggestions {
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }
+
+.autocomplete-suggestion {
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #638796; }
+  .autocomplete-suggestion:hover, .autocomplete-suggestion:focus {
+    text-decoration: none;
+    color: #597987;
+    background-color: #f5f5f5;
+    cursor: pointer; }
+
+.autocomplete-selected {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #37EF81; }
+
+.autocomplete-group {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #f4f7f8;
+  color: #93adb8; }
+
+.autocomplete-group strong {
+  font-weight: normal; }
+
+.autocomplete-suggestions.autocomplete-suggestions--inverse {
+  background-color: #12222F; }
+  .autocomplete-suggestions.autocomplete-suggestions--inverse .autocomplete-suggestion {
+    color: #638796; }
+    .autocomplete-suggestions.autocomplete-suggestions--inverse .autocomplete-suggestion:hover, .autocomplete-suggestions.autocomplete-suggestions--inverse .autocomplete-suggestion:focus {
+      background-color: #121016; }
+  .autocomplete-suggestions.autocomplete-suggestions--inverse .autocomplete-selected {
+    background-color: #121016; }
+  .autocomplete-suggestions.autocomplete-suggestions--inverse .autocomplete-group {
+    background-color: #2B4454;
+    color: #5e808e; }
+
 .logo {
   position: relative;
   width: 80px;
@@ -18700,8 +18773,21 @@ p:empty {
   .docs--badge.docs--badge__beta::after {
     content: "BETA"; }
 
-.docs--toc__item.active a {
-  font-weight: bold; }
+.docs--toc__item {
+  position: relative;
+  display: block; }
+  .docs--toc__item a {
+    position: relative;
+    display: block;
+    padding: 10px 15px; }
+    .docs--toc__item a:hover, .docs--toc__item a:focus {
+      text-decoration: none;
+      background-color: #f4f7f8; }
+  .docs--toc__item.active a {
+    font-weight: bold; }
+  .docs--toc__item ul {
+    padding: 0;
+    list-style: none; }
 
 .docs--toc__github a::before {
   content: '\f09b';

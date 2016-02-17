@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Building Tables | Foundation Docs</title>
+<title>Auto-complete | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600" rel="stylesheet" type="text/css">
@@ -135,7 +135,7 @@
                 <a href="table-responsive.html">Responsive Tables</a>
             </li>
             <!-- Building Tables -->
-            <li class="docs--sidebar__item active">
+            <li class="docs--sidebar__item">
                 <a href="table-building.html">Building Tables</a>
             </li>
         </ul>
@@ -178,7 +178,7 @@
                 <a href="wysiwyg.html">Wysiwyg <span class="docs--badge docs--badge__js"></span></a>
             </li>
             <!-- Auto-complete -->
-            <li class="docs--sidebar__item">
+            <li class="docs--sidebar__item active">
                 <a href="auto-complete.html">Auto-complete <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
         </ul>
@@ -329,13 +329,211 @@
 </ul>
                 </div>
                 <div class="flex-2 scroll docs--layout-content" data-spy="scroll" data-target="#toc" data-offset="60">
-                    <h1 class="docs--page-header">Building Tables</h1>
+                    <h1 id="topOfPage" class="docs--page-header">
+    Auto-complete
+    <a class="docs--third-party-link" href="https://www.devbridge.com/sourcery/components/jquery-autocomplete/" target="_blank">jquery-autocomplete</a>
+</h1>
 
-<p class="text-danger">NYI...</p>
+<p class="docs--page-description">
+    Auto-complete components are ajax powered search fields. The input returns a list of results filtered based on the query, highlighting the query in each result.
+    <br>
+    <strong>NOTE: This plugin <span class="text-danger">CAN ONLY</span> be configured and initialized through javascript.</strong>
+    <br>
+</p>
+
+<p></p><h2 id="jsSetup" class="docs--section-header">
+    Setup
+</h2><p></p>
+<p class="docs--section-description">
+    The minimum required configuration for the auto-complete component takes two functions:
+    <br>
+    <code>serviceUrl</code> and <code>transformResult</code> which both needs to return a value detailed below.
+</p>
+
+<p></p><h3 id="jsSetupServiceUrl" class="docs--section-header">
+    1 serviceUrl
+</h3><p></p>
+<p class="docs--section-description">
+    The serviceUrl function must return a full url including query and any optional parameters.
+    <br>
+    The function provides the query as an argument.
+    <br>
+    Example:
+</p>
+<pre class="docs--syntax-highlight"><code>
+serviceUrl: function(query) {
+    return &#39;<a href="https://api.usa.gov/jobs/search.json?query=">https://api.usa.gov/jobs/search.json?query=</a>&#39; + query;
+},
+</code></pre>
+<h3 id="jsSetupTransformResult" class="docs--section-header">
+    2 transformResult
+</h3>
+<p class="docs--section-description">
+    The transformResult function must return an object:
+    <br>
+    <code>{query: &#39;the_query_to_highlight&#39;, value: &#39;the_value_to_show&#39;, data: null}</code>
+    <br>
+    The function provides the Ajax response and the query as arguments.
+    <br>
+    The data property is optional but can be used to group results together with the groupBy option.
+    <br>
+    Example:
+</p>
+<pre class="docs--syntax-highlight"><code>
+transformResult: function(response, query) {
+    return {
+        query: query,
+        suggestions: $.map(response, function(item) {
+            return {value: item.position_title, data: {location: item.locations[0]}};
+        })
+    };
+}
+</code></pre>
+<h3 id="jsSetupInit" class="docs--section-header">
+    3 Initialize
+</h3>
+<p class="docs--section-description">
+    Now it&#39;s just a matter of wrapping a <code>&lt;input type=&quot;text&quot;/&gt;</code> in a <code>&lt;div&gt;</code> wich must have the <code>auto-complete</code> class and initializing the plugin:
+</p>
+<pre class="docs--syntax-highlight"><code>
+$(&#39;.auto-complete&#39;).autoCompleteWrapper({
+    serviceUrl: ...,
+    transformResult: ...
+});
+</code></pre>
+
+<p class="docs--section-description">
+    Search suggestions for the demos below: <code>nurse, mechanic, pilot, cook</code>
+</p>
+
+<p></p><h2 id="defaultAutocomplete" class="docs--section-header">
+    Default
+</h2><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="autocomplete">
+                Search
+            </label>
+            <div class="auto-complete">
+                <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input">
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputJS">JS</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="js" class="docs--code-example__code-block tab-pane" id="outputJS">
+<pre><code class="lang-js">var autoCompleteEndpoint = &#39;<a href="https://api.usa.gov/jobs">https://api.usa.gov/jobs</a>&#39;;
+$(&#39;.auto-complete&#39;).autoCompleteWrapper({
+    serviceUrl: function(query) {
+        return autoCompleteEndpoint + &#39;/&#39; + &#39;search.json?query=&#39; + query;
+    },
+    transformResult: function(response, query) {
+        response = JSON.parse(response);
+        return {
+            query: query,
+            suggestions: $.map(response, function(item) {
+                return {value: item.position_title, data: {location: item.locations[0]}};
+            })
+        }
+    },
+    onSelect: function (suggestion) {
+        alert(&#39;You selected: &#39; + suggestion.value + &#39;, &#39; + suggestion.data);
+    },
+    deferRequestBy: 500,
+    groupBy: &#39;location&#39;
+});
+</code></pre>
+            </div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 id="inverseAutocomplete" class="docs--section-header">
+    Inverse
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    Invert the colors of the auto-complete results by adding a <code>auto-complete--inverse</code> modifier class to the <code>&lt;div class=&quot;auto-complete&quot;&gt;</code>
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="autocomplete">
+                Search
+            </label>
+            <div class="auto-complete auto-complete--inverse">
+                <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input">
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputJS">JS</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="js" class="docs--code-example__code-block tab-pane" id="outputJS">
+<pre><code class="lang-js">var autoCompleteEndpoint = &#39;<a href="https://api.usa.gov/jobs">https://api.usa.gov/jobs</a>&#39;;
+$(&#39;.auto-complete&#39;).autoCompleteWrapper({
+    serviceUrl: function(query) {
+        return autoCompleteEndpoint + &#39;/&#39; + &#39;search.json?query=&#39; + query;
+    },
+    transformResult: function(response, query) {
+        response = JSON.parse(response);
+        return {
+            query: query,
+            suggestions: $.map(response, function(item) {
+                return {value: item.position_title, data: {location: item.locations[0]}};
+            })
+        }
+    },
+    onSelect: function (suggestion) {
+        alert(&#39;You selected: &#39; + suggestion.value + &#39;, &#39; + suggestion.data);
+    },
+    deferRequestBy: 500,
+    groupBy: &#39;location&#39;
+});
+</code></pre>
+            </div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
 
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__item"><a class="docs--toc__link" href="#jsSetup">Setup</a></li><li class="docs--toc__item"><ul><li class="docs--toc__item"><a class="docs--toc__link" href="#jsSetupServiceUrl">1 serviceUrl</a></li></ul></li><li class="docs--toc__item"><ul><li class="docs--toc__item"><a class="docs--toc__link" href="#jsSetupTransformResult">2 transformResult</a></li></ul></li><li class="docs--toc__item"><ul><li class="docs--toc__item"><a class="docs--toc__link" href="#jsSetupInit">3 Initialize</a></li></ul></li><li class="docs--toc__item"><a class="docs--toc__link" href="#defaultAutocomplete">Default</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#inverseAutocomplete">Inverse</a></li><li class="docs--toc__divider"></li><li class="docs--toc__github docs--toc__item"><a class="docs--toc__link" href="https://github.com/nodes-frontend/nodes-ui/edit/master/doc/pages/components/forms/auto-complete.html" target="_blank">Edit this page</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#topOfPage">Back to top</a></li></ul></div>
                 </div>
             </div>
 
