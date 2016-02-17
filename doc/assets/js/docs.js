@@ -72,6 +72,30 @@ $(document).ready(function() {
 	});
 
 	/**
+	 * Setup autocomplete demos
+	 */
+	var autoCompleteEndpoint = 'https://api.usa.gov/jobs';
+	$('.auto-complete').autoCompleteWrapper({
+		serviceUrl: function(query) {
+			return autoCompleteEndpoint + '/' + 'search.json?query=' + query;
+		},
+		transformResult: function(response, query) {
+			response = JSON.parse(response);
+			return {
+				query: query,
+				suggestions: $.map(response, function(item) {
+					return {value: item.position_title, data: {location: item.locations[0]}};
+				})
+			}
+		},
+		onSelect: function (suggestion) {
+			alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+		},
+		deferRequestBy: 500,
+		groupBy: 'location'
+	});
+
+	/**
 	 * Setup some dummy-data for use with chart.js
 	 */
 	var apiUsageLineData = {"data":[749,4028,1302,250,9,21,5,2,102,18,133,371,27,82,440,246,235,540,87,324,525,807,301,345,706,17,3,1591,2358,2271,3595,4141,240,234,5174,3474,3397,2813,3649,258,93,2800,4579,9158,4158,4649,486,623,2639,146],"labels":["09\/05","09\/07","09\/08","09\/09","09\/10","09\/11","09\/13","09\/14","09\/15","09\/16","09\/17","09\/18","09\/19","09\/21","09\/22","09\/23","09\/24","09\/25","09\/26","09\/27","09\/28","09\/29","09\/30","10\/01","10\/02","10\/03","10\/04","10\/05","10\/06","10\/07","10\/08","10\/09","10\/10","10\/11","10\/12","10\/13","10\/14","10\/15","10\/16","10\/17","10\/18","10\/19","10\/20","10\/21","10\/22","10\/23","10\/24","10\/25","10\/26","10\/27"]};

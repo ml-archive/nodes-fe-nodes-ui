@@ -7,8 +7,25 @@
 
 }
 .docs--toc__item {
+	position: relative;
+	display: block;
+	a {
+		position: relative;
+		display: block;
+		padding: 10px 15px;
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			background-color: #f4f7f8;
+		}
+	}
+
 	&.active a {
 		font-weight: bold;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
 	}
 }
 .docs--toc__github {

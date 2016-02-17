@@ -32,7 +32,7 @@ module.exports = function(params, callback) {
 		var link = $(el).attr('id');
 		var depth = parseInt(el.name.replace(/h/gi, ''), 10);
 		var arr = new Array(depth - 1);
-		var level = arr.join('<li><ul>') + '<li class="' + cssClasses.li + '"><a class="' + cssClasses.a + '" href="#' + link + '">' + text + '</a></li>' + arr.join('</ul></li>');
+		var level = arr.join('<li class="' + cssClasses.li + '"><ul>') + '<li class="' + cssClasses.li + '"><a class="' + cssClasses.a + '" href="#' + link + '">' + text + '</a></li>' + arr.join('</ul></li>');
 		$toc('#toc-list').append(level);
 	});
 
