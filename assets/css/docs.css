@@ -8666,6 +8666,9 @@ body.staging {
   padding-left: 30px;
   padding-right: 30px; }
 
+.file-picker {
+  width: 100%; }
+
 .file-picker:not(.file-picker--no-preview) .file-picker__input-group {
   margin-left: 20px; }
 
@@ -8677,10 +8680,15 @@ body.staging {
       -ms-flex-align: center;
           align-items: center; }
 
+.file-picker__zone:not([style]) {
+  padding-bottom: 25%; }
+
 .file-picker__zone {
   position: relative;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   width: 25%;
-  padding-bottom: 25%;
   border-radius: 4px;
   border: 2px dotted #c4d2d8;
   overflow: hidden; }
@@ -8731,8 +8739,7 @@ body.staging {
   z-index: 20; }
 
 .file-picker__input-group {
-  position: relative;
-  width: 75%; }
+  position: relative; }
   .file-picker__input-group .input-group-btn {
     line-height: 20px; }
     .file-picker__input-group .input-group-btn .btn {
@@ -8760,7 +8767,7 @@ body.staging {
     .file-picker__input-group input[readonly]:focus {
       border-color: #c4d2d8; }
 
-.file-picker.file-picker--vertical .file-picker__inner {
+.file-picker.file-picker--vertical:not(.file-picker--no-preview) .file-picker__inner {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
@@ -8771,6 +8778,27 @@ body.staging {
 .file-picker.file-picker--vertical .file-picker__input-group {
   width: 100%;
   margin-left: 0; }
+
+.file-picker.file-picker--reverse .file-picker__inner {
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.file-picker.file-picker--vertical.file-picker--reverse .file-picker__inner {
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+
+.file-picker.file-picker--reverse:not(.file-picker--no-preview) .file-picker__input-group {
+  margin: 0;
+  margin-right: 20px; }
+
+.file-picker.file-picker--vertical.file-picker--reverse:not(.file-picker--no-preview) .file-picker__zone {
+  margin: 0;
+  margin-top: 20px; }
+
+.file-picker.file-picker--vertical.file-picker--reverse:not(.file-picker--no-preview) .file-picker__input-group {
+  margin: 0; }
 
 .sr-only, .bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showHours"]::after, .bootstrap-datetimepicker-widget .btn[data-action="showMinutes"]::after, .bootstrap-datetimepicker-widget .btn[data-action="togglePeriod"]::after, .bootstrap-datetimepicker-widget .btn[data-action="clear"]::after, .bootstrap-datetimepicker-widget .btn[data-action="today"]::after, .bootstrap-datetimepicker-widget .picker-switch::after, .bootstrap-datetimepicker-widget table th.prev::after, .bootstrap-datetimepicker-widget table th.next::after {
   position: absolute;
@@ -11000,7 +11028,8 @@ a.nodes-link {
 
 .app-tile--icon,
 .app-tile--icon a,
-.app-tile--cover {
+.app-tile--cover,
+.app-tile--link {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -11037,9 +11066,11 @@ a.nodes-link {
 .app-tile--no-padding {
   padding: 0; }
 
-.app-tile--cover {
+.app-tile--cover,
+.app-tile--link {
   padding: 0; }
-  .app-tile--cover a {
+  .app-tile--cover a,
+  .app-tile--link a {
     padding: 20px; }
 
 .app-tile-aspect-ratio {

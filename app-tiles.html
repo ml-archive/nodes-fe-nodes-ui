@@ -490,6 +490,8 @@
     Add the <code>app-tile<strong>icon</strong></code> to your icon-font, image or svg and control its sizing using the <code>app-tileicon--small</code>, and <code>app-tile__icon--large</code> classes respectively.
     <br>
     We also offer the special <code>cover</code> modifier instead of the <code>icon</code>. This is very useful for thumbnails.
+    <br>
+    Last, but not least, you can make the entire tile clickable by nesting an <code>&lt;a&gt;</code> tag directly inside the tile and adding a <code>app-tile--link</code> modifier to the tile (works with all types of tiles).
 </p><p></p>
 <div class="docs--code-example">
     <div class="docs--code-example__output">
@@ -540,6 +542,14 @@
                 <div class="app-tile app-tile--cover">
                     <img src="http://placehold.it/500x200" class="app-tile__cover">
                     <a href="#">Watch this video</a>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--link app-tile--icon">
+                    <a href="#">
+                        <i class="fa fa-search app-tile__icon"></i>
+                        Launch Application
+                    </a>
                 </div>
             </li>
         </ul>

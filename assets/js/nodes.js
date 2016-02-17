@@ -654,7 +654,6 @@ function leftSidebarToggleClick() {
 			// Mix in the data-options with the options
 			this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
 
-			console.log('init with ', this.wysiwygType, this.options[this.wysiwygType]);
 			// Initialize wysiwyg plugin
 			CKEDITOR.replace(this.$elem.attr('id'), this.options[this.wysiwygType]);
 
