@@ -256,8 +256,40 @@
 			// Mix in the data-options with the options
 			this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
 
+			if( this.options.hasOwnProperty('parseISO') ) {
+				this.customOptions.parseISO = this.options.parseISO;
+				delete this.options.parseISO;
+			}
+
+			var viewInput = this.elem.getElementsByTagName('input');
+			if(viewInput[0]) {
+
+				var name = viewInput[0].getAttribute('name');
+				if(name) {
+					var form = viewInput[0].form;
+
+					// Rename original input field as this is just for the view, and should not be sent to the server
+					viewInput[0].setAttribute('name', name + '-datetimepickerWrapper');
+
+					// Create hidden input field
+					var input = document.createElement('input');
+					input.setAttribute('type', 'text');
+					input.setAttribute('name', name);
+
+					form.appendChild(input);
+				}
+			}
+
 			// Initialize datetimepicker plugin
-			this.$elem.datetimepicker(this.options);
+			this.$elem.datetimepicker(this.options).on('dp.change', function() {
+				var date = this.$elem.data('DateTimePicker').date();
+
+				if(this.customOptions.parseISO) {
+					input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
+				} else {
+					input.value = date.format('YYYY-MM-DD HH:mm:ss');
+				}
+			}.bind(this));
 
 			// return this so that we can chain and use the bridge with less code.
 			return this;
@@ -276,6 +308,10 @@
 				clear: 'fa fa-trash',
 				close: 'fa fa-times'
 			}
+		},
+		// Options which aren't recognized by datetimepicker should be saved here
+		customOptions: {
+			parseISO: false
 		}
 	};
 
