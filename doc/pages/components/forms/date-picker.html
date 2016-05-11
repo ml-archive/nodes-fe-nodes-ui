@@ -296,16 +296,63 @@ github: components/forms/date-picker.html
         Custom formats
     </h2>
 
-    <p class="docs--page-description">
-        See <a href="http://momentjs.com/docs/#/displaying/format/">momentjs' docs</a>
-        for valid formats. Format also dictates what components are shown, e.g.<code>MM/dd/YYYY</code>
-        will not display the time picker.
+    <p class="docs--section-header">
+    <pre>Date default: YYYY-MM-DD</pre>
+    <pre>Time default: HH:mm</pre>
+    <pre>Date & time default: YYYY-MM-DD HH:mm</pre>
+    See <a href="http://momentjs.com/docs/#/displaying/format/">momentjs' docs</a>
+    for valid formats. Format also dictates what components are shown, e.g.<code>MM/dd/YYYY</code>
+    will not display the time picker. <br />
+    <strong>Note</strong>: This is only affecting the "view" value, and NOT the value sent to the backend. Default format sent to the backend is <code>YYYY-MM-DD HH:mm:ss</code> which is not configureable.
+    </p>
+    
+    <div class="docs--code-example">
+        <div class="docs--code-example__output">
+            <div class="form-group">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{format: 'DD/MM/YYYY HH:mm'}">
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY HH:mm"/>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+        </div>
+    </div>
+
+    <!-- Parse ISO -->
+    <h2 id="parseISO" class="docs--section-header">
+        Parse ISO
+    </h2>
+
+    <p class="docs--section-header">
+    <pre>Default: false</pre>
+    Formatting date/datetime for PHP ISO standard.<br />
+    <strong>Note</strong>: This is not affecting the "view" value, but only the value sent to the backend <code>format: YYYY-MM-DDTHH:mm:ssZZ</code>
     </p>
 
     <div class="docs--code-example">
         <div class="docs--code-example__output">
             <div class="form-group">
-                <div class="input-group date-picker" data-toggle="datetime" data-options="{format: 'DD/MM/YYYY HH:mm'}">
+                <div class="input-group date-picker" data-toggle="datetime" data-options="{parseISO: true}">
                     <input type="text" class="form-control" placeholder="DD/MM/YYYY HH:mm"/>
                     <span class="input-group-addon">
                         <i class="fa fa-calendar"></i>
