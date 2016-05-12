@@ -275,6 +275,7 @@
 					var input = document.createElement('input');
 					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
+					input.value = viewInput[0].getAttribute('value');
 
 					form.appendChild(input);
 				}
@@ -282,12 +283,14 @@
 
 			// Initialize datetimepicker plugin
 			this.$elem.datetimepicker(this.options).on('dp.change', function() {
-				var date = this.$elem.data('DateTimePicker').date();
+				if(input) {
+					var date = this.$elem.data('DateTimePicker').date();
 
-				if(this.customOptions.parseISO) {
-					input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
-				} else {
-					input.value = date.format('YYYY-MM-DD HH:mm:ss');
+					if(this.customOptions.parseISO) {
+						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
+					} else {
+						input.value = date.format('YYYY-MM-DD HH:mm:ss');
+					}
 				}
 			}.bind(this));
 
@@ -307,6 +310,10 @@
 				today: 'fa fa-calendar-times-o',
 				clear: 'fa fa-trash',
 				close: 'fa fa-times'
+			},
+			parseInputDate: function (inputDate) {
+				inputDate = moment(inputDate);
+				return inputDate;
 			}
 		},
 		// Options which aren't recognized by datetimepicker should be saved here
