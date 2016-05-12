@@ -59,7 +59,7 @@
 
 					// Create hidden input field
 					var input = document.createElement('input');
-					input.setAttribute('type', 'text');
+					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
 
 					form.appendChild(input);
