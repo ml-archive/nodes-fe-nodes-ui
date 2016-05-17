@@ -269,7 +269,7 @@
 					var form = viewInput[0].form;
 
 					// Rename original input field as this is just for the view, and should not be sent to the server
-					viewInput[0].setAttribute('name', name + '-datetimepickerWrapper');
+					viewInput[0].removeAttribute('name');
 
 					// Create hidden input field
 					var input = document.createElement('input');
