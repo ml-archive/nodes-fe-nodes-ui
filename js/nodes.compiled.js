@@ -692,6 +692,9 @@
 	$.plugin('filePicker', filePicker);
 
 })( jQuery, window, document );
+$(function() {
+	$('select[readonly="readonly"] > option').css({display: 'none'});
+});	
 function evalDataOptions(str) {
 	try {
 		return eval( '(' + str + ')' )
