@@ -42,11 +42,6 @@
 			// Mix in the data-options with the options
 			this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
 
-			if( this.options.hasOwnProperty('parseISO') ) {
-				this.customOptions.parseISO = this.options.parseISO;
-				delete this.options.parseISO;
-			}
-
 			var viewInput = this.elem.getElementsByTagName('input');
 			if(viewInput[0]) {
 
@@ -61,18 +56,32 @@
 					var input = document.createElement('input');
 					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
-					input.value = viewInput[0].getAttribute('value');
+
+					// Format existing value
+					var date = moment(viewInput[0].getAttribute('value'));
+
+					if(date && this.options.parseISO) {
+						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
+					} else if (date && !this.options.parseISO) {
+						input.value = date.format('YYYY-MM-DD HH:mm:ss');
+					}
 
 					form.appendChild(input);
 				}
 			}
 
+			var datetimepickerOptions = this.options;
+			delete datetimepickerOptions.parseISO;
+
 			// Initialize datetimepicker plugin
-			this.$elem.datetimepicker(this.options).on('dp.change', function() {
+			this.$elem.datetimepicker(datetimepickerOptions).on('dp.change', function() {
+
 				if(input) {
 					var date = this.$elem.data('DateTimePicker').date();
 
-					if(this.customOptions.parseISO) {
+					if(!date) {
+						input.value = '';
+					} else if(this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
 					} else {
 						input.value = date.format('YYYY-MM-DD HH:mm:ss');
@@ -100,10 +109,7 @@
 			parseInputDate: function (inputDate) {
 				inputDate = moment(inputDate);
 				return inputDate;
-			}
-		},
-		// Options which aren't recognized by datetimepicker should be saved here
-		customOptions: {
+			},
 			parseISO: false
 		}
 	};
