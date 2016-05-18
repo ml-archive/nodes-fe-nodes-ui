@@ -13,3 +13,11 @@
 	}
 
 }
+
+.form-control[readonly="readonly"] {
+	cursor: not-allowed;
+
+	> option {
+		display: none;
+	}
+}
