@@ -256,11 +256,6 @@
 			// Mix in the data-options with the options
 			this.options = $.extend( {}, this.options, _evalDataOptions( this.$elem.data('options') ) );
 
-			if( this.options.hasOwnProperty('parseISO') ) {
-				this.customOptions.parseISO = this.options.parseISO;
-				delete this.options.parseISO;
-			}
-
 			var viewInput = this.elem.getElementsByTagName('input');
 			if(viewInput[0]) {
 
@@ -269,25 +264,42 @@
 					var form = viewInput[0].form;
 
 					// Rename original input field as this is just for the view, and should not be sent to the server
-					viewInput[0].setAttribute('name', name + '-datetimepickerWrapper');
+					viewInput[0].removeAttribute('name');
 
 					// Create hidden input field
 					var input = document.createElement('input');
-					input.setAttribute('type', 'text');
+					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
+
+					// Format existing value
+					var date = moment(viewInput[0].getAttribute('value'));
+
+					if(date && this.options.parseISO) {
+						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
+					} else if (date && !this.options.parseISO) {
+						input.value = date.format('YYYY-MM-DD HH:mm:ss');
+					}
 
 					form.appendChild(input);
 				}
 			}
 
-			// Initialize datetimepicker plugin
-			this.$elem.datetimepicker(this.options).on('dp.change', function() {
-				var date = this.$elem.data('DateTimePicker').date();
+			var datetimepickerOptions = this.options;
+			delete datetimepickerOptions.parseISO;
 
-				if(this.customOptions.parseISO) {
-					input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
-				} else {
-					input.value = date.format('YYYY-MM-DD HH:mm:ss');
+			// Initialize datetimepicker plugin
+			this.$elem.datetimepicker(datetimepickerOptions).on('dp.change', function() {
+
+				if(input) {
+					var date = this.$elem.data('DateTimePicker').date();
+
+					if(!date) {
+						input.value = '';
+					} else if(this.options.parseISO) {
+						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
+					} else {
+						input.value = date.format('YYYY-MM-DD HH:mm:ss');
+					}
 				}
 			}.bind(this));
 
@@ -307,10 +319,11 @@
 				today: 'fa fa-calendar-times-o',
 				clear: 'fa fa-trash',
 				close: 'fa fa-times'
-			}
-		},
-		// Options which aren't recognized by datetimepicker should be saved here
-		customOptions: {
+			},
+			parseInputDate: function (inputDate) {
+				inputDate = moment(inputDate);
+				return inputDate;
+			},
 			parseISO: false
 		}
 	};
