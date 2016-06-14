@@ -1,4 +1,13 @@
-@mixin table-coloring($state) {
+@mixin table-coloring($state: 'default') {
+
+	$color: $gray;
+	$color-shade: $gray-dark;
+
+	$color-light: $gray-light;
+	$color-light-shade: $gray;
+
+	$color-lighter: $gray-lighter;
+	$color-lighter-shade: $gray-light;
 	
 	@if $state == 'info' {
 		$color: $info-color;
@@ -40,7 +49,7 @@
 		$color-lighter: $danger-color-lighter;
 		$color-lighter-shade: $danger-color-light;
 	}
-	@else {
+	@else if $state == 'default' {
 		$color: $gray;
 		$color-shade: $gray-dark;
 
