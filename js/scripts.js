@@ -16,6 +16,11 @@ jQuery(document).ready(function($) {
 	$('.color-picker').colorpickerWrapper();
 
 	/**
+	 * Ace-editor
+	 */
+	$('.ace-editor').aceEditorWrapper();
+
+	/**
 	 * Init dropdown-menu
 	 * @param el
 	 */

@@ -1,0 +1,96 @@
+---
+title: Ace Editor
+layout: nested-component.html
+github: components/ace-editor/ace-editor.html
+---
+<h1 id="topOfPage" class="docs--page-header">
+    Ace-editor
+    <a class="docs--third-party-link" href="https://ace.c9.io/" target="_blank">Ace-editor</a>
+</h1>
+
+<p class="docs--page-description">
+    We do not support setting options besides the language on a per-instance basis as this plugin is fairly complex to manage.
+    The editor component is initialized by <code>.ace-editor</code> classname.<br />
+    <strong>NOTE: If data-language attribute isn't set, the component will default to JSON.</strong>
+</p>
+
+<form>
+    <!-- Default -->
+    <h2 id="ace-editor" class="docs--section-header">
+        Ace-editor default
+    </h2>
+
+    <div class="docs--code-example">
+        <div class="docs--code-example__output">
+            <div class="form-group">
+                <div class="ace-editor">{
+    "foo": {
+        "bar": 1,
+        "baz": "1234"
+        "array": [1,2,3,4],
+        invalid: json
+    }
+}</div>
+            </div>
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+        </div>
+    </div>
+
+    <!-- Default -->
+    <h2 id="ace-editor-js" class="docs--section-header">
+        Ace-editor langauge example
+    </h2>
+
+    <div class="docs--code-example">
+        <div class="docs--code-example__output">
+            <div class="form-group">
+                <div class="ace-editor" data-language="javascript">function add(x, y) {
+var resultString = "Hello, ACE! The result of your math is: ";
+var result = x + y;
+return resultString + result;
+}
+
+var addResult = add(3, 2);
+console.log(addResult);
+                </div>
+            </div>
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+        </div>
+    </div>
+</form>
