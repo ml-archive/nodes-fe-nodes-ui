@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DHNI&#x27;s legeplads | Foundation Docs</title>
+<title>Ace Editor | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600" rel="stylesheet" type="text/css">
@@ -13,7 +13,6 @@
 
 <link href="assets/css/docs.css" rel="stylesheet">
 <link href="assets/css/nodes.css" rel="stylesheet">
-
         <script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
 <script src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"></script>
 <script src="assets/js/vendor.js"></script>
@@ -293,7 +292,7 @@
         </ul>
 
         <!-- Ace-editor -->
-        <li class="docs--sidebar__item">
+        <li class="docs--sidebar__item active">
             <a href="ace-editor.html">Ace-editor <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
         </li>
     </ul>
@@ -335,11 +334,102 @@
     </li>
 </ul>
                 </div>
-                <div class="flex-2 scroll docs--layout-content">
-                    
+                <div class="flex-2 scroll docs--layout-content" data-spy="scroll" data-target="#toc" data-offset="60">
+                    <h1 id="topOfPage" class="docs--page-header">
+    Ace-editor
+    <a class="docs--third-party-link" href="https://ace.c9.io/" target="_blank">Ace-editor</a>
+</h1>
+
+<p class="docs--page-description">
+    We do not support setting options besides the language on a per-instance basis as this plugin is fairly complex to manage.
+    The editor component is initialized by <code>.ace-editor</code> classname.<br>
+    <strong>NOTE: If data-language attribute isn&#39;t set, the component will default to JSON.</strong>
+</p>
+
+<form>
+    <!-- Default -->
+    <h2 id="ace-editor" class="docs--section-header">
+        Ace-editor default
+    </h2>
+
+    <div class="docs--code-example">
+        <div class="docs--code-example__output">
+            <div class="form-group">
+                <div class="ace-editor">{
+    &quot;foo&quot;: {
+        &quot;bar&quot;: 1,
+        &quot;baz&quot;: &quot;1234&quot;
+        &quot;array&quot;: [1,2,3,4],
+        invalid: json
+    }
+}</div>
+            </div>
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+        </div>
+    </div>
+
+    <!-- Default -->
+    <h2 id="ace-editor-js" class="docs--section-header">
+        Ace-editor langauge example
+    </h2>
+
+    <div class="docs--code-example">
+        <div class="docs--code-example__output">
+            <div class="form-group">
+                <div class="ace-editor" data-language="javascript">function add(x, y) {
+var resultString = &quot;Hello, ACE! The result of your math is: &quot;;
+var result = x + y;
+return resultString + result;
+}
+
+var addResult = add(3, 2);
+console.log(addResult);
+                </div>
+            </div>
+        </div>
+        <div class="docs--code-example__code">
+            <p class="docs--code-example__loader">Loading...</p>
+            <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                </div>
+            </div>
+            <div class="tab-content docs--code-example__code-blocks">
+                <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+                <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+                </div>
+            </div>
+            <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+        </div>
+    </div>
+</form>
+
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__item"><a class="docs--toc__link" href="#ace-editor">Ace-editor default</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#ace-editor-js">Ace-editor langauge example</a></li><li class="docs--toc__divider"></li><li class="docs--toc__github docs--toc__item"><a class="docs--toc__link" href="https://github.com/nodes-frontend/nodes-ui/edit/master/doc/pages/components/ace-editor/ace-editor.html" target="_blank">Edit this page</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#topOfPage">Back to top</a></li></ul></div>
                 </div>
             </div>
 
