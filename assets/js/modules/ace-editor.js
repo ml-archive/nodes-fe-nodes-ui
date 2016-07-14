@@ -27,6 +27,8 @@
 			this.elem  = elem;
 			this.$elem = $(elem);
 
+			this.$output = this.$elem.parent().find('.ace-editor-output textarea');
+
 			var ACE_MODE_PREFIX = 'ace/mode/';
 
 			// Most options are NOT configurable
@@ -55,6 +57,18 @@
 			this.editorInstance = ace.edit(this.elem);
 			this.editorInstance.setTheme(this.options.theme);
 			this.editorInstance.getSession().setMode(LANG);
+
+			if(this.$output.length > 0) {
+				this.$output.hide();
+				this.editorInstance.setValue(this.$output.val());
+
+				var thatOutput = this.$output;
+				var thatInstance = this.editorInstance;
+
+				thatInstance.getSession().on('change', function() {
+					thatOutput.val(thatInstance.getSession().getValue());
+				});
+			}
 
 			// Loop through and apply options
 			for(var key in ACE_OPTIONS) {
