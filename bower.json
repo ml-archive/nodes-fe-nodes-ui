@@ -21,7 +21,8 @@
     "tether-drop": "~1.4.2",
     "eonasdan-bootstrap-datetimepicker": "~4.17.37",
     "mjolnic-bootstrap-colorpicker": "~2.3.0",
-    "devbridge-autocomplete": "~1.2.24"
+    "devbridge-autocomplete": "~1.2.24",
+    "spinkit": "~1.2.5"
   },
   "devDependencies": {
     "zeroclipboard": "~2.2.0",

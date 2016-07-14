@@ -1,0 +1,367 @@
+---
+title: Spinners
+layout: nested-component.html
+---
+<h1 class="docs--page-header">
+    Spinners
+</h1>
+
+<p class="docs--page-description">
+    Uses <a href="http://tobiasahlin.com/spinkit/" target="_blank">SpinKit</a><br/>
+    We offer a few selected spinners based on html and css that you can use in your views.
+</p>
+
+<h2 id="spinnerModifiers" class="docs--section-header">Modifiers</h2>
+<p class="docs--section-description">
+    The spinners comes in 4 color variations and 2 sizes, add any of these classes to the &lt;div class="spinner"&gt;...&lt;/div&gt; container to get the desired modifier(s)
+</p>
+<table class="docs--configuration-options">
+    <thead>
+        <tr>
+            <th>
+                Class
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>.spinner-small</code>
+            </td>
+            <td>
+                <code>Half the size</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>.spinner-secondary</code>
+            </td>
+            <td>
+                <code>Spinner in the secondary color</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>.spinner-white</code>
+            </td>
+            <td>
+                <code>Spinner in white</code>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>.spinner-black</code>
+            </td>
+            <td>
+                <code>Spinner in black</code>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="spinnerRotatingPlane" class="docs--section-header">Rotating Plane</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-rotating-plane"></div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-rotating-plane')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerDoubleBounce" class="docs--section-header">Double Bounce</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-double-bounce">
+                <div class="sk-child sk-double-bounce1"></div>
+                <div class="sk-child sk-double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-double-bounce')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerWave" class="docs--section-header">Wave</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-wave">
+                <div class="sk-rect sk-rect1"></div>
+                <div class="sk-rect sk-rect2"></div>
+                <div class="sk-rect sk-rect3"></div>
+                <div class="sk-rect sk-rect4"></div>
+                <div class="sk-rect sk-rect5"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-wave')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerPulse" class="docs--section-header">Pulse</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-spinner sk-spinner-pulse"></div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-pulse')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerChasingDots" class="docs--section-header">Chasing Dots</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-chasing-dots">
+                <div class="sk-child sk-dot1"></div>
+                <div class="sk-child sk-dot2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-chasing-dots')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerThreeBounce" class="docs--section-header">Three Bounce</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-three-bounce">
+                <div class="sk-child sk-bounce1"></div>
+                <div class="sk-child sk-bounce2"></div>
+                <div class="sk-child sk-bounce3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-three-bounce')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerCircle" class="docs--section-header">Circle</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-circle')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerCubeGrid" class="docs--section-header">Cube Grid</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-cube-grid')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 id="spinnerFadingCircle" class="docs--section-header">Fading Circle</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="spinner">
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">&lt;div class="spinner"&gt;@include('nodes.backend::partials.elements.spinner-cube-grid')&lt;/div&gt;
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
