@@ -2,6 +2,8 @@
 @import "mixins";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bower_components/spinkit/scss/variables";
+@import "bower_components/spinkit/scss/spinkit";
 
 /**
  * Third-party plugins
@@ -30,6 +32,7 @@
 @import "elements/labels";
 
 
+@import "elements/spinners";
 @import "elements/headings";
 @import "elements/tables";
 @import "elements/buttons";

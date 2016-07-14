@@ -19,6 +19,8 @@ $block-layout-spacing: 20px !default;
 //
 $logo-size: 80px !default;
 $logo-size-small: 40px !default;
+$logo-size-large: 120px !default;
+$logo-size-xlarge: 160px !default;
 
 //
 //  Primary Colors
@@ -268,3 +270,10 @@ $color-picker-default-size: 100px;
 $color-picker-large-size: 200px;
 $color-picker-slider-default-size: 15px;
 $color-picker-slider-large-size: 30px;
+
+//
+// Spinkit (spinners)
+//
+$spinkit-spinner-margin: 0 auto;
+$spinkit-size: 40px;
+$spinkit-spinner-color: $primary-color;
