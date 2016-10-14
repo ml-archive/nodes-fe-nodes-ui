@@ -1,0 +1,51 @@
+.app-tile__banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	padding: $whitespace-root $whitespace-root*2;
+
+	border-radius: $border-radius-base;
+	overflow: hidden;
+
+	pointer-events: none;
+}
+
+.app-tile__banner,
+.app-tile__banner--primary {
+	@include background-color($primary-color-lighter);
+	@include font-color($primary-color-darker);
+}
+
+.app-tile__banner--secondary {
+	@include background-color($secondary-color-lighter);
+	@include font-color($secondary-color-darker);
+}
+
+.app-tile__banner--info {
+	@include background-color($info-color-lighter);
+	@include font-color($info-color-darker);
+	border: 1px solid;
+	border-color: $info-color-light;
+}
+
+.app-tile__banner--success {
+	@include background-color($success-color-lighter);
+	@include font-color($success-color-darker);
+	border: 1px solid;
+	border-color: $success-color-light;
+}
+
+.app-tile__banner--warning {
+	@include background-color($warning-color-lighter);
+	@include font-color($warning-color-darker);
+	border: 1px solid;
+	border-color: $warning-color-light;
+}
+
+.app-tile__banner--danger {
+	@include background-color($danger-color-lighter);
+	@include font-color($danger-color-darker);
+	border: 1px solid;
+	border-color: $danger-color-light;
+}
