@@ -15,7 +15,26 @@
 <link href="assets/css/nodes.css" rel="stylesheet">
         <script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
 <script src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"></script>
-<script src="assets/js/vendor.js"></script>
+<!-- build:js assets/js/vendor.js -->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/Chart.js/Chart.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../bower_components/bootbox.js/bootbox.js"></script>
+<script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="../../bower_components/velocity/velocity.js"></script>
+<script src="../../bower_components/velocity/velocity.ui.js"></script>
+<script src="../../bower_components/tether/dist/js/tether.js"></script>
+<script src="../../bower_components/tether-drop/dist/js/drop.js"></script>
+<script src="../../bower_components/moment/moment.js"></script>
+<script src="../../bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+<script src="../../bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<script src="../../bower_components/devbridge-autocomplete/dist/jquery.autocomplete.js"></script>
+<!-- endbower -->
+<script src="../../bower_components/moment/min/moment-with-locales.min.js"></script>
+<script src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../bower_components/right-height/dist/js/right-height.js"></script>
+<!-- endbuild -->
 
 <script src="assets/js/modules/file-picker.js"></script>
 <script src="assets/js/modules/date-time-picker.js"></script>
@@ -366,6 +385,21 @@
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
     <div class="form-group">
+        <label for="exampleInputSelect">Select</label>
+        <select class="form-control" id="exampleInputSelect" placeholder="Select something">
+            <option value="1">Value 1</option>
+            <option value="2">Value 2</option>
+            <option value="3">Value 3</option>
+            <option value="4">Value 4</option>
+            <option value="5">Value 5</option>
+            <option value="6">Value 6</option>
+            <option value="7">Value 7</option>
+            <option value="8">Value 8</option>
+            <option value="9">Value 9</option>
+            <option value="10">Value 10</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="exampleInputFile">File input</label>
         <input type="file" id="exampleInputFile">
         <p class="help-block">Example block-level help text here.</p>
@@ -401,6 +435,23 @@
         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-10">
             <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputSelectB" class="col-sm-2 control-label">Select</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="exampleInputSelectB" placeholder="Select something">
+                <option value="1">Value 1</option>
+                <option value="2">Value 2</option>
+                <option value="3">Value 3</option>
+                <option value="4">Value 4</option>
+                <option value="5">Value 5</option>
+                <option value="6">Value 6</option>
+                <option value="7">Value 7</option>
+                <option value="8">Value 8</option>
+                <option value="9">Value 9</option>
+                <option value="10">Value 10</option>
+            </select>
         </div>
     </div>
     <div class="form-group">

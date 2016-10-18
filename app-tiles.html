@@ -15,7 +15,26 @@
 <link href="assets/css/nodes.css" rel="stylesheet">
         <script src="//cdn.ckeditor.com/4.5.2/standard/ckeditor.js"></script>
 <script src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"></script>
-<script src="assets/js/vendor.js"></script>
+<!-- build:js assets/js/vendor.js -->
+<!-- bower:js -->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/Chart.js/Chart.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../bower_components/bootbox.js/bootbox.js"></script>
+<script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="../../bower_components/velocity/velocity.js"></script>
+<script src="../../bower_components/velocity/velocity.ui.js"></script>
+<script src="../../bower_components/tether/dist/js/tether.js"></script>
+<script src="../../bower_components/tether-drop/dist/js/drop.js"></script>
+<script src="../../bower_components/moment/moment.js"></script>
+<script src="../../bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+<script src="../../bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+<script src="../../bower_components/devbridge-autocomplete/dist/jquery.autocomplete.js"></script>
+<!-- endbower -->
+<script src="../../bower_components/moment/min/moment-with-locales.min.js"></script>
+<script src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<script src="../../bower_components/right-height/dist/js/right-height.js"></script>
+<!-- endbuild -->
 
 <script src="assets/js/modules/file-picker.js"></script>
 <script src="assets/js/modules/date-time-picker.js"></script>
@@ -375,6 +394,11 @@
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
         <div class="tab-content docs--code-example__code-blocks">
             <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
         </div>
@@ -445,6 +469,11 @@
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
         <div class="tab-content docs--code-example__code-blocks">
             <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
         </div>
@@ -495,6 +524,11 @@
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
         <div class="tab-content docs--code-example__code-blocks">
             <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
         </div>
@@ -577,6 +611,11 @@
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
         <div class="tab-content docs--code-example__code-blocks">
             <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
         </div>
@@ -645,6 +684,87 @@
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<p></p><h2 id="banners" class="docs--section-header">
+    Banners
+</h2><p></p>
+<p></p><p class="docs--section-description">
+    Sometimes we have features or areas inside a backend that are not fully implemented, running in beta or for some other reason needs to be highlighted.
+    <br>
+    You can use these app-tile-banners to make your tiles stand out.
+</p><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <ul class="small-block-layout-2 medium-block-layout-3 large-block-layout-2 x-large-block-layout-4">
+            <li>
+                <div class="app-tile">
+                    <a href="#">
+                        Search our database...
+                    </a>
+                    <div class="app-tile__banner app-tile__banner--primary">NEW!</div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile-aspect-ratio app-tile-aspect-ratio--1-1">
+                    <div class="app-tile app-tile--link app-tile--icon">
+                        <a href="#">
+                            <i class="fa fa-search app-tile__icon app-tile__icon--small"></i>
+                            Search our database...
+                        </a>
+                        <div class="app-tile__banner app-tile__banner--secondary">Updated</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--link app-tile--icon">
+                    <a href="#">
+                        <i class="fa fa-search app-tile__icon app-tile__icon--large"></i>
+                        Search our database...
+                    </a>
+                    <div class="app-tile__banner app-tile__banner--info">On Sale!</div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon">
+                    <a href="#">Watch this video</a>
+                    <div class="app-tile__banner app-tile__banner--success">Success</div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon app-tile__icon--small">
+                    <a href="#">Watch this video</a>
+                    <div class="app-tile__banner app-tile__banner--warning">Beta</div>
+                </div>
+            </li>
+            <li>
+                <div class="app-tile app-tile--icon">
+                    <img src="http://placehold.it/500x500" class="app-tile__icon app-tile__icon--large">
+                    <a href="#">Watch this video</a>
+                    <div class="app-tile__banner app-tile__banner--danger">Offline</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+        </div>
         <div class="tab-content docs--code-example__code-blocks">
             <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
         </div>
@@ -654,7 +774,7 @@
 
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__item"><a class="docs--toc__link" href="#basic">Basic</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#aspectRatio">Aspect Ratio</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#whiteSpace">White-space</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#icons">Using icons</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#colors">Colors</a></li><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#topOfPage">Back to top</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__item"><a class="docs--toc__link" href="#basic">Basic</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#aspectRatio">Aspect Ratio</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#whiteSpace">White-space</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#icons">Using icons</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#colors">Colors</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#banners">Banners</a></li><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#topOfPage">Back to top</a></li></ul></div>
                 </div>
             </div>
 
