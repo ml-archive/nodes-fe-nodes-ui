@@ -5,7 +5,7 @@
         <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Logos | Foundation Docs</title>
+<title>Range Sldier | Foundation Docs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,600" rel="stylesheet" type="text/css">
@@ -184,7 +184,7 @@
                 <a href="auto-complete.html">Auto-complete <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
             <!-- Range slider -->
-            <li class="docs--sidebar__item">
+            <li class="docs--sidebar__item active">
             <a href="range-slider.html">Range Slider <span class="docs--badge docs--badge__js"></span><span class="docs--badge docs--badge__beta"></span></a>
             </li>
         </ul>
@@ -200,7 +200,7 @@
         </li>
     
         <!-- Logos -->
-        <li class="docs--sidebar__item active">
+        <li class="docs--sidebar__item">
             <a href="logos.html">Logos</a>
         </li>
     
@@ -351,153 +351,67 @@
                 </div>
                 <div class="flex-2 scroll docs--layout-content" data-spy="scroll" data-target="#toc" data-offset="60">
                     <h1 class="docs--page-header">
-    Logos
+    Range Slider
+    <a class="docs--third-party-link" href="https://refreshless.com/nouislider/" target="_blank">noUiSlider</a>
 </h1>
 
-<p class="docs--page-description">
-    The &quot;nStack&quot; logo is used throughout the backends and inherits the <code>$primary</code> or <code>$secondary</code> colors.
-    <br>
-    You can combine any of the classes listed below to modify the look of the logo, eg. <code>&lt;div class=&quot;logo logo-secondary logo-flat&quot;&gt;</code>.
-</p>
-
-<table class="docs--configuration-options">
+<p></p><p class="docs--section-description">
+    The slider works by &quot;enhancing&quot; the <code>&lt;input type=&quot;range&gt;</code> element. Supported attributes:
+</p><p></p>
+<table class="table table-striped table-bordered docs--configuration-options">
     <thead>
         <tr>
-            <th>
-                Class
-            </th>
-            <th>
-                Description
-            </th>
+            <th class="col-sm-2">Attribute</th>
+            <th class="col-sm-10">Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>
-                <code>.logo</code>
-            </td>
-            <td>
-                <code>Default logo size and primary gradient color</code>
-            </td>
+            <td><code>val</code></td>
+            <td>The initial value of the input</td>
         </tr>
         <tr>
-            <td>
-                <code>.logo-small</code>
-            </td>
-            <td>
-                <code>Small logo size</code>
-            </td>
+            <td><code>min</code></td>
+            <td>The minimum amount selectable</td>
         </tr>
         <tr>
-            <td>
-                <code>.logo-large</code>
-            </td>
-            <td>
-                <code>Large logo size</code>
-            </td>
+            <td><code>max</code></td>
+            <td>The maximum amount selectable</td>
         </tr>
         <tr>
-            <td>
-                <code>.logo-xlarge</code>
-            </td>
-            <td>
-                <code>Extra large logo size</code>
-            </td>
+            <td><code>step</code></td>
+            <td>The amount to increase the value by</td>
         </tr>
         <tr>
-            <td>
-                <code>.logo-secondary</code>
-            </td>
-            <td>
-                <code>Secondary logo color</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>.logo-flat</code>
-            </td>
-            <td>
-                <code>Non-gradient color (primary or secondary)</code>
-            </td>
+            <td><code>disabled</code></td>
+            <td>Makes the input read-only</td>
         </tr>
     </tbody>
 </table>
 
-<div class="docs--logo-selector">
-    <p class="text-warning-dark">
-        Note: Because we use inline SVG&#39;s and Gradients you can only have <strong>one</strong> logo variation per page.
-    </p>
-    <label>
-        Logo Sizes:
-        <select id="logoSizePicker">
-            <option value="" selected>Default Logo</option>
-            <option value="logo-small">Small Logo</option>
-            <option value="logo-large">Large Logo</option>
-            <option value="logo-xlarge">Extra Large Logo</option>
-        </select>
-    </label>
-    <label>
-        Logo Colors:
-        <select id="logoColorPicker">
-            <option value="" selected>Flat Logo Color</option>
-            <option value="logo-flat">Flat Logo Color</option>
-            <option value="logo-secondary">Secondary Logo Color</option>
-            <option value="logo-secondary logo-flat">Secondary Flat Color</option>
-        </select>
-    </label>
-</div>
-<div class="docs--logo-example">
-    <div class="logo" id="sgLogo">
-        <svg width="48px" height="48px" viewbox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-            <defs>
-                <lineargradient x1="0%" y1="100%" x2="100%" y2="0%" id="logoGradient">
-                    <stop class="logo-gradient__0" offset="0%"/>
-                    <stop class="logo-gradient__100" stop-color="#37EF81" offset="100%"/>
-                </lineargradient>
-            </defs>
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g fill="url(#logoGradient)">
-                    <g>
-                        <path d="M32,35.7206969 L40,31.1024111 L16,17.2464111 L20,14.9366969 L16,12.6269826 L8,17.2464111 L32,31.1024111 L28,33.4121254 L32,35.7206969 Z M36,0.829268293 L28,5.44755401 L32,7.75726829 L36,5.44755401 L44,10.0669826 L44,37.7789826 L36,42.3984111 L16,30.8509826 L20,28.5412683 L16,26.2326969 L8,30.8509826 L36,47.0166969 L48,40.0886969 L48,7.75726829 L36,0.829268293 Z M12,42.6486969 L4,38.0304111 L4,10.3172683 L12,5.69898258 L32,17.2464111 L28,19.5549826 L32,21.8646969 L40,17.2464111 L12,1.07955401 L0,8.00869686 L0,40.3401254 L12,47.2681254 L20,42.6486969 L16,40.3401254 L12,42.6486969 Z"/>
-                    </g>
-                </g>
-            </g>
-        </svg>
-    </div>
-</div>
-
-<script>
-    (function() {
-        var sizeSelect = document.getElementById('logoSizePicker');
-        var colorSelect = document.getElementById('logoColorPicker');
-
-        var logo = document.getElementById('sgLogo');
-
-        sizeSelect.onchange = function() {
-            console.log('1');
-            logo.classList = 'logo ' + this.value + ' ' + colorSelect.value;
-        };
-        colorSelect.onchange = function() {
-            console.log('2');
-            logo.classList = 'logo ' + this.value + ' ' + sizeSelect.value;
-        };
-    })();
-</script>
-
+<p></p><h2 class="docs--section-header">Using all attributes but disabled</h2><p></p>
 <div class="docs--code-example">
     <div class="docs--code-example__output">
-
+        <div class="form-group">
+            <label for="rangeSlider">Count</label>
+            <input id="rangeSlider" min="0" max="50" value="25" step="1" type="range">
+            <div class="range-slider"></div>
+        </div>
     </div>
     <div class="docs--code-example__code">
         <p class="docs--code-example__loader">Loading...</p>
         <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default active" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#basicOutputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#basicOutputBLADE">BLADE</button>
             </div>
         </div>
         <div class="tab-content docs--code-example__code-blocks">
-            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane active" id="outputBLADE">
-<pre><code class="language-php">&lt;div class=&quot;logo ...&quot;&gt;@include(&#39;nodes.backend::partials.elements.logo-svg&#39;)&lt;/div&gt;
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="basicOutputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="basicOutputBLADE">
+<pre><code class="language-php">NYI
 </code></pre>
             </div>
         </div>
@@ -505,10 +419,39 @@
     </div>
 </div>
 
+<p></p><h2 class="docs--section-header">Disabled Range slider</h2><p></p>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="disabledRangeSlider">Count</label>
+            <input id="disabledRangeSlider" min="0" max="50" value="25" step="1" type="range" disabled>
+            <div class="range-slider"></div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
 
                 </div>
                 <div class="flex-1 scroll docs--layout-toc">
-                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
+                    <div id="toc"><ul id="toc-list" class="nav docs--toc"><li class="docs--toc__divider"></li><li class="docs--toc__github docs--toc__item"><a class="docs--toc__link" href="https://github.com/nodes-frontend/nodes-ui/edit/master/doc/pages/components/forms/range-slider.html" target="_blank">Edit this page</a></li><li class="docs--toc__item"><a class="docs--toc__link" href="#undefined">Back to top</a></li></ul></div>
                 </div>
             </div>
 
