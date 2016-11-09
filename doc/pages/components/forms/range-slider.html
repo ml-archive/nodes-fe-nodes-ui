@@ -1,0 +1,103 @@
+---
+title: Range Sldier
+layout: nested-component.html
+github: components/forms/range-slider.html
+---
+<h1 class="docs--page-header">
+    Range Slider
+    <a class="docs--third-party-link" href="https://refreshless.com/nouislider/" target="_blank">noUiSlider</a>
+</h1>
+
+<p class="docs--section-description">
+    The slider works by "enhancing" the <code>&lt;input type="range&gt;</code> element. Supported attributes:
+</p>
+<table class="table table-striped table-bordered docs--configuration-options">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Attribute</th>
+            <th class="col-sm-10">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>val</code></td>
+            <td>The initial value of the input</td>
+        </tr>
+        <tr>
+            <td><code>min</code></td>
+            <td>The minimum amount selectable</td>
+        </tr>
+        <tr>
+            <td><code>max</code></td>
+            <td>The maximum amount selectable</td>
+        </tr>
+        <tr>
+            <td><code>step</code></td>
+            <td>The amount to increase the value by</td>
+        </tr>
+        <tr>
+            <td><code>disabled</code></td>
+            <td>Makes the input read-only</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="docs--section-header">Using all attributes but disabled</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="rangeSlider">Count</label>
+            <input id="rangeSlider" min="0" max="50" value="25" step="1" type="range">
+            <div class="range-slider"></div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#basicOutputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#basicOutputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="basicOutputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="basicOutputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>
+
+<h2 class="docs--section-header">Disabled Range slider</h2>
+<div class="docs--code-example">
+    <div class="docs--code-example__output">
+        <div class="form-group">
+            <label for="disabledRangeSlider">Count</label>
+            <input id="disabledRangeSlider" min="0" max="50" value="25" step="1" type="range" disabled>
+            <div class="range-slider"></div>
+        </div>
+    </div>
+    <div class="docs--code-example__code">
+        <p class="docs--code-example__loader">Loading...</p>
+        <div class="btn-group btn-group-justified docs--code-example__code-blocks-navigation" role="tablist">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active" aria-controls="lol" role="tab" data-toggle="tab" data-target="#outputHTML">HTML</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" aria-controls="blade" role="tab" data-toggle="tab" data-target="#outputBLADE">BLADE</button>
+            </div>
+        </div>
+        <div class="tab-content docs--code-example__code-blocks">
+            <div  role="tabpanel" data-lang="markup" class="docs--code-example__code-block tab-pane active" id="outputHTML"><pre><code class="lang-html"></code></pre></div>
+            <div  role="tabpanel" data-lang="php" class="docs--code-example__code-block tab-pane" id="outputBLADE">
+<pre><code class="language-php">NYI
+</code></pre>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block btn-sm docs--code-example__copy-code">Copy to clipboard</button>
+    </div>
+</div>

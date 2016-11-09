@@ -19,6 +19,13 @@ jQuery(document).ready(function($) {
 	 * Ace-editor
 	 */
 	$('.ace-editor').aceEditorWrapper();
+	
+	/**
+	 * Range-slider
+	 */
+	$('.range-slider').each(function(i, el) {
+		$(el).rangeSlider();
+	});
 
 	/**
 	 * Init dropdown-menu
