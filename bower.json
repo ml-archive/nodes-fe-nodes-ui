@@ -22,7 +22,8 @@
     "eonasdan-bootstrap-datetimepicker": "git://github.com/Eonasdan/bootstrap-datetimepicker.git#master",
     "mjolnic-bootstrap-colorpicker": "~2.3.0",
     "devbridge-autocomplete": "~1.2.24",
-    "spinkit": "~1.2.5"
+    "spinkit": "~1.2.5",
+    "nouislider": "^9.0.0"
   },
   "devDependencies": {
     "zeroclipboard": "~2.2.0",
