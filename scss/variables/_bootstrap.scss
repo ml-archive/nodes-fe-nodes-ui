@@ -499,21 +499,21 @@ $jumbotron-heading-font-size:    $font-size-h1;
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:            $success-color-darker;
+$state-success-text:            $success-color-dark;
 $state-success-bg:              $success-color-lighter;
-$state-success-border:          $success-color-light;
+$state-success-border:          $success-color-dark;
 
-$state-info-text:               $info-color-darker;
+$state-info-text:               $info-color-dark;
 $state-info-bg:                 $info-color-lighter;
-$state-info-border:             $info-color-light;
+$state-info-border:             $info-color-dark;
 
-$state-warning-text:            $warning-color-darker;
+$state-warning-text:            $warning-color-dark;
 $state-warning-bg:              $warning-color-lighter;
-$state-warning-border:          $warning-color-light;
+$state-warning-border:          $warning-color-dark;
 
-$state-danger-text:             $danger-color-darker;
+$state-danger-text:             $danger-color-dark;
 $state-danger-bg:               $danger-color-lighter;
-$state-danger-border:           $danger-color-light;
+$state-danger-border:           $danger-color-dark;
 
 
 //== Alerts
