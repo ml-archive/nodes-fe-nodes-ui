@@ -2,7 +2,8 @@
 	margin: 1.5rem 0 0;
 
 	> li {
-		> a, span {
+		> a,
+		> span:not(.sr-only) {
 			padding: 0.2rem 1.2rem;
 		}
 	}
