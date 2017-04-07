@@ -1,20 +1,14 @@
 ---
 title: DHNI's legeplads
 ---
-<div class="form-group">
-    <label for="autocomplete">
-        Search
-    </label>
-    <div class="auto-complete">
-        <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input"/>
+<form id="foo">
+    <div class="form-group">
+        <div id="bar" class="input-group date-picker" data-toggle="datetime" data-options="{parseISO: true, format: 'DD/MM/YYYY HH:mm'}">
+            <input id="baz" type="text" class="form-control" name="date" placeholder="DD/MM/YYYY HH:mm">
+            <span class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </span>
+        </div>
     </div>
-</div>
-
-<div class="form-group">
-    <label for="autocomplete">
-        Search
-    </label>
-    <div class="auto-complete auto-complete--inverse">
-        <input type="text" name="jobs" id="autocomplete" class="form-control auto-complete__input"/>
-    </div>
-</div>
+    <button type="button" id="wtf" onclick="lol()">sub</button>
+</form>

@@ -404,7 +404,7 @@
 				}
 			}
 
-			var datetimepickerOptions = this.options;
+			var datetimepickerOptions = JSON.parse(JSON.stringify(this.options));
 			delete datetimepickerOptions.parseISO;
 
 			// Initialize datetimepicker plugin
@@ -412,7 +412,7 @@
 
 				if(input) {
 					var date = this.$elem.data('DateTimePicker').date();
-
+					
 					if(!date) {
 						input.value = '';
 					} else if(this.options.parseISO) {
