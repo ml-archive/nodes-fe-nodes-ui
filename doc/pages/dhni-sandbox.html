@@ -3,12 +3,23 @@ title: DHNI's legeplads
 ---
 <form id="foo">
     <div class="form-group">
-        <div id="bar" class="input-group date-picker" data-toggle="datetime" data-options="{parseISO: true, format: 'DD/MM/YYYY HH:mm'}">
-            <input id="baz" type="text" class="form-control" name="date" placeholder="DD/MM/YYYY HH:mm">
+        <div id="bar" class="input-group date-picker" data-toggle="datetime" data-options="{parseISO: true, format: 'DD/--MM/--YYYY HH:mm'}">
+            <input id="baz" type="text" class="form-control" name="date" placeholder="DD/MM/YYYY HH:mm" value="1995-06-30 00:00:00">
             <span class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </span>
         </div>
     </div>
     <button type="button" id="wtf" onclick="lol()">sub</button>
+</form>
+<form id="jan">
+    <div class="form-group">
+        <div id="bob" class="input-group date-picker" data-toggle="datetime" data-options="{parseISO: true, format: 'DD/MM/YYYY HH:mm'}">
+            <input id="raz" type="text" class="form-control" name="date" placeholder="DD/MM/YYYY HH:mm">
+            <span class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </span>
+        </div>
+    </div>
+    <button type="button" id="lolder" onclick="lol()">sub</button>
 </form>

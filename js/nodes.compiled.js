@@ -408,8 +408,14 @@
 			delete datetimepickerOptions.parseISO;
 
 			// Initialize datetimepicker plugin
-			this.$elem.datetimepicker(datetimepickerOptions).on('dp.change', function() {
-
+			this.$elem.datetimepicker(datetimepickerOptions);
+			
+			if(date) {
+				this.$elem.data('DateTimePicker').date(date);
+			}
+			
+			this.$elem.datetimepicker().on('dp.change', function() {
+				
 				if(input) {
 					var date = this.$elem.data('DateTimePicker').date();
 					
