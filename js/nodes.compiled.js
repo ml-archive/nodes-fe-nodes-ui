@@ -380,7 +380,8 @@
 			if(viewInput[0]) {
 
 				var name = viewInput[0].getAttribute('name');
-				if(name) {
+				var initialDate = viewInput[0].getAttribute('value');
+				if(name && initialDate) {
 					var form = viewInput[0].form;
 
 					// Rename original input field as this is just for the view, and should not be sent to the server
@@ -392,7 +393,7 @@
 					input.setAttribute('name', name);
 
 					// Format existing value
-					var date = moment(viewInput[0].getAttribute('value'));
+					var date = moment(initialDate);
 
 					if(date && this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
