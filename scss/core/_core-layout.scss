@@ -7,6 +7,9 @@ html, body {
 body.local,
 body.staging {
 	padding-bottom: 40px;
+	.core-layout__content {
+		padding-bottom: 20px;
+	}
 }
 
 .core-layout {
@@ -70,7 +73,10 @@ body.staging {
 	position: fixed;
 	flex: 1 1 0%;
 	width: 100%;
-	height: 100%;
+	//height: 100%;
+	max-height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -79,6 +85,7 @@ body.staging {
 
 	opacity: 0;
 	display: none;
+
 	background-color: rgba(0, 0, 0, 0.5);
 
 	@media (min-width: $screen-sm) {
@@ -89,6 +96,8 @@ body.staging {
 		max-width: $core-sidebar-width;
 
 		opacity: 1;
+
+		@include background-color($secondary-color-dark);
 	}
 }
 .core-layout__sidebar {
@@ -147,7 +156,7 @@ body.staging {
 }
 
 .core-layout__content {
-	height: 100%;
+	//height: 100%;
 	max-height: 100%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
