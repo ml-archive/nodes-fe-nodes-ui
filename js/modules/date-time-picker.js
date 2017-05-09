@@ -47,8 +47,13 @@
 
 				var name = viewInput[0].getAttribute('name');
 				var initialDate = viewInput[0].getAttribute('value');
-				if(name && initialDate) {
-					var form = viewInput[0].form;
+				var form = viewInput[0].form;
+				
+				if(!name) {
+					console.warn('Nodes UI DateTimePicker does not have a `name` attribute. If you do not parse and set the value of a named input yourself - you will need to add the `name` attribute.');
+				}
+				
+				if(name) {
 
 					// Rename original input field as this is just for the view, and should not be sent to the server
 					viewInput[0].removeAttribute('name');
@@ -58,16 +63,18 @@
 					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
 
+					form.appendChild(input);
+				}
+				
+				if(initialDate) {
 					// Format existing value
 					var date = moment(initialDate);
-
+					
 					if(date && this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
 					} else if (date && !this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DD HH:mm:ss');
 					}
-
-					form.appendChild(input);
 				}
 			}
 
