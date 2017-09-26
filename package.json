@@ -37,8 +37,7 @@
     "url": "https://github.com/nodes-frontend/nodes-ui.git"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "echo 'ok';"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "version": "0.0.0",
   "config": {
