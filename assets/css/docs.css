@@ -9418,6 +9418,8 @@ body.staging {
   overflow: hidden; }
   .file-picker__zone.highlight {
     border-color: #37EF81; }
+  .file-picker__zone img {
+    object-fit: contain; }
   .file-picker__zone .file-picker__icon {
     display: none;
     position: absolute;
@@ -9500,9 +9502,15 @@ body.staging {
   width: 100%;
   margin-left: 0; }
 
+.file-picker.file-picker--vertical img {
+  object-fit: contain; }
+
 .file-picker.file-picker--reverse .file-picker__inner {
   -ms-flex-direction: row-reverse;
       flex-direction: row-reverse; }
+
+.file-picker.file-picker--reverse img {
+  object-fit: contain; }
 
 .file-picker.file-picker--vertical.file-picker--reverse .file-picker__inner {
   -ms-flex-direction: column-reverse;
