@@ -380,8 +380,14 @@
 			if(viewInput[0]) {
 
 				var name = viewInput[0].getAttribute('name');
+				var initialDate = viewInput[0].getAttribute('value');
+				var form = viewInput[0].form;
+				
+				if(!name) {
+					console.warn('Nodes UI DateTimePicker does not have a `name` attribute. If you do not parse and set the value of a named input yourself - you will need to add the `name` attribute.');
+				}
+				
 				if(name) {
-					var form = viewInput[0].form;
 
 					// Rename original input field as this is just for the view, and should not be sent to the server
 					viewInput[0].removeAttribute('name');
@@ -391,28 +397,36 @@
 					input.setAttribute('type', 'hidden');
 					input.setAttribute('name', name);
 
+					form.appendChild(input);
+				}
+				
+				if(initialDate) {
 					// Format existing value
-					var date = moment(viewInput[0].getAttribute('value'));
-
+					var date = moment(initialDate);
+					
 					if(date && this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DDTHH:mm:ssZZ');
 					} else if (date && !this.options.parseISO) {
 						input.value = date.format('YYYY-MM-DD HH:mm:ss');
 					}
-
-					form.appendChild(input);
 				}
 			}
 
-			var datetimepickerOptions = this.options;
+			var datetimepickerOptions = JSON.parse(JSON.stringify(this.options));
 			delete datetimepickerOptions.parseISO;
 
 			// Initialize datetimepicker plugin
-			this.$elem.datetimepicker(datetimepickerOptions).on('dp.change', function() {
-
+			this.$elem.datetimepicker(datetimepickerOptions);
+			
+			if(date) {
+				this.$elem.data('DateTimePicker').date(date);
+			}
+			
+			this.$elem.datetimepicker().on('dp.change', function() {
+				
 				if(input) {
 					var date = this.$elem.data('DateTimePicker').date();
-
+					
 					if(!date) {
 						input.value = '';
 					} else if(this.options.parseISO) {
