@@ -1,16 +1,20 @@
 .file-picker {
 	width: 100%;
 }
+
 .file-picker:not(.file-picker--no-preview) .file-picker__input-group {
 	@include whitespace($side: left, $type: margin);
 }
+
 .file-picker__inner {
 	display: flex;
 	align-items: center;
 }
+
 .file-picker__zone:not([style]) {
 	padding-bottom: 25%;
 }
+
 .file-picker__zone {
 	position: relative;
 	flex: 1 0 auto;
@@ -21,6 +25,10 @@
 	overflow: hidden;
 	&.highlight {
 		border-color: $primary-color;
+	}
+
+	img {
+		object-fit: contain;
 	}
 
 	.file-picker__icon {
@@ -55,6 +63,7 @@
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 }
+
 .file-picker__preview {
 	position: absolute;
 	top: 0;
@@ -63,14 +72,17 @@
 	height: 100%;
 	z-index: 30;
 	background-color: $white;
+
 	&[src=""] {
 		display: none;
 	}
 }
+
 .file-picker__icon {
 	position: absolute;
 	z-index: 20;
 }
+
 .file-picker__input-group {
 	position: relative;
 
@@ -93,6 +105,7 @@
 		cursor: inherit;
 		display: block;
 		z-index: 10;
+
 		&:hover {
 			cursor: pointer;
 			+ .input-group .input-group-btn .btn {
@@ -126,24 +139,35 @@
 		margin-left: 0;
 	}
 
+	img {
+		object-fit: contain;
+	}
+
 }
 
 .file-picker.file-picker--reverse {
 	.file-picker__inner {
 		flex-direction: row-reverse;
 	}
+
+	img{
+		object-fit: contain;
+	}
 }
+
 .file-picker.file-picker--vertical.file-picker--reverse {
 	.file-picker__inner {
 		flex-direction: column-reverse;
 	}
 }
+
 .file-picker.file-picker--reverse:not(.file-picker--no-preview) {
 	.file-picker__input-group {
 		margin: 0;
 		@include whitespace($side: right, $type: margin);
 	}
 }
+
 .file-picker.file-picker--vertical.file-picker--reverse:not(.file-picker--no-preview) {
 	.file-picker__zone {
 		margin: 0;
