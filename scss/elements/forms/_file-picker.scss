@@ -72,6 +72,7 @@
 	height: 100%;
 	z-index: 30;
 	background-color: $white;
+	object-fit: contain;
 
 	&[src=""] {
 		display: none;
