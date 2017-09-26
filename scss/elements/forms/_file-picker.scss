@@ -76,6 +76,10 @@
 	&[src=""] {
 		display: none;
 	}
+
+	img {
+		object-fit: contain;
+	}
 }
 
 .file-picker__icon {
