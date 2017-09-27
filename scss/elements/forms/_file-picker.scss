@@ -136,7 +136,12 @@
 
 	.file-picker__zone {
 		@include whitespace($side: bottom, $type: margin);
+
+		img {
+			object-fit: contain;
+		}
 	}
+
 
 	.file-picker__input-group {
 		width: 100%;
