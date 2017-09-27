@@ -74,9 +74,11 @@
 	object-fit: contain;
 	background-color: $white;
 
-
 	&[src=""] {
 		display: none;
+	}
+	img {
+		object-fit: contain;
 	}
 }
 
@@ -132,7 +134,6 @@
 		flex-wrap: wrap;
 	}
 
-
 	.file-picker__zone {
 		@include whitespace($side: bottom, $type: margin);
 	}
@@ -153,7 +154,7 @@
 		flex-direction: row-reverse;
 	}
 
-	img{
+	img {
 		object-fit: contain;
 	}
 }
