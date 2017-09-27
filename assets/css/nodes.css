@@ -9461,8 +9461,6 @@ body.staging {
   background-color: #fff; }
   .file-picker__preview[src=""] {
     display: none; }
-  .file-picker__preview img {
-    object-fit: contain; }
 
 .file-picker__icon {
   position: absolute;
