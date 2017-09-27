@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/**
+ * Core dependencies
+ */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -9454,6 +9457,7 @@ body.staging {
   width: 100%;
   height: 100%;
   z-index: 30;
+  object-fit: contain;
   background-color: #fff; }
   .file-picker__preview[src=""] {
     display: none; }
