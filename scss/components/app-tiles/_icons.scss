@@ -1,5 +1,4 @@
 .app-tile__icon {
-	@include whitespace($side: bottom, $type: margin);
 	display: block;
 	font-size: $font-size-mega;
 	&.app-tile__icon--small {
